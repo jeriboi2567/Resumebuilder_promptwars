@@ -14,9 +14,32 @@ try:
 except ImportError:
     pdfplumber = None
 
+MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024  # 10 MB limit
+ALLOWED_EXTENSIONS = {".pdf", ".txt"}
+
 class PDFDocumentParser:
     @staticmethod
+    def validate_file_input(filename: str, file_bytes: bytes) -> Tuple[bool, str]:
+        if not filename:
+            return False, "Filename cannot be empty."
+        
+        ext = Path(filename).suffix.lower()
+        if ext not in ALLOWED_EXTENSIONS:
+            return False, f"Invalid file extension '{ext}'. Only PDF and TXT files are allowed."
+        
+        if len(file_bytes) == 0:
+            return False, "Uploaded file is empty (0 bytes)."
+        
+        if len(file_bytes) > MAX_FILE_SIZE_BYTES:
+            return False, f"File size ({len(file_bytes)/1024/1024:.1f} MB) exceeds maximum allowed limit of 10 MB."
+        
+        return True, "Valid"
+
+    @staticmethod
     def extract_text_from_pdf_bytes(pdf_bytes: bytes) -> Tuple[str, List[Dict[str, Any]]]:
+        if len(pdf_bytes) > MAX_FILE_SIZE_BYTES:
+            pdf_bytes = pdf_bytes[:MAX_FILE_SIZE_BYTES]
+
         full_text_lines = []
         line_map = []
 

@@ -141,21 +141,30 @@ with st.sidebar:
 
     if st.button("Evaluate Candidate & Update Stage 6"):
         if cand_resume_file and cand_transcript_file:
-            with st.spinner("Running 5-stage evidentiary evaluation and updating Stage 6 comparison..."):
-                r_bytes = cand_resume_file.read()
-                t_bytes = cand_transcript_file.read()
-                r_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(r_bytes)
-                t_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(t_bytes)
+            r_bytes = cand_resume_file.read()
+            t_bytes = cand_transcript_file.read()
 
-                cand_id = f"cand_{os.urandom(3).hex()}"
-                updated_role = run_async(MultiAgentPipelineOrchestratorV3.process_role_candidates(
-                    role_id=active_role.role_id,
-                    jd_text=active_role.job_description.raw_text,
-                    candidate_pairs=[(cand_id, r_text, t_text)]
-                ))
-                st.session_state["current_role"] = updated_role
-                st.success("Candidate evaluated successfully!")
-                st.rerun()
+            r_valid, r_msg = PDFDocumentParser.validate_file_input(cand_resume_file.name, r_bytes)
+            t_valid, t_msg = PDFDocumentParser.validate_file_input(cand_transcript_file.name, t_bytes)
+
+            if not r_valid:
+                st.error(f"Resume Error: {r_msg}")
+            elif not t_valid:
+                st.error(f"Transcript Error: {t_msg}")
+            else:
+                with st.spinner("Running 5-stage evidentiary evaluation and updating Stage 6 comparison..."):
+                    r_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(r_bytes)
+                    t_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(t_bytes)
+
+                    cand_id = f"cand_{os.urandom(3).hex()}"
+                    updated_role = run_async(MultiAgentPipelineOrchestratorV3.process_role_candidates(
+                        role_id=active_role.role_id,
+                        jd_text=active_role.job_description.raw_text,
+                        candidate_pairs=[(cand_id, r_text, t_text)]
+                    ))
+                    st.session_state["current_role"] = updated_role
+                    st.success("Candidate evaluated successfully!")
+                    st.rerun()
         else:
             st.error("Please upload both a Resume and Transcript file.")
 
@@ -164,18 +173,22 @@ with st.sidebar:
     new_jd_file = st.file_uploader("Upload New Job Description (PDF/TXT)", type=["pdf", "txt"], key="new_jd")
     if st.button("Create New Hiring Role"):
         if new_jd_file:
-            with st.spinner("Parsing Job Description & creating role..."):
-                jd_bytes = new_jd_file.read()
-                jd_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(jd_bytes)
-                role_id = f"role_{os.urandom(4).hex()}"
-                new_role = run_async(MultiAgentPipelineOrchestratorV3.process_role_candidates(
-                    role_id=role_id,
-                    jd_text=jd_text,
-                    candidate_pairs=[]
-                ))
-                st.session_state["current_role"] = new_role
-                st.success("New Hiring Role created!")
-                st.rerun()
+            jd_bytes = new_jd_file.read()
+            j_valid, j_msg = PDFDocumentParser.validate_file_input(new_jd_file.name, jd_bytes)
+            if not j_valid:
+                st.error(f"Job Description Error: {j_msg}")
+            else:
+                with st.spinner("Parsing Job Description & creating role..."):
+                    jd_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(jd_bytes)
+                    role_id = f"role_{os.urandom(4).hex()}"
+                    new_role = run_async(MultiAgentPipelineOrchestratorV3.process_role_candidates(
+                        role_id=role_id,
+                        jd_text=jd_text,
+                        candidate_pairs=[]
+                    ))
+                    st.session_state["current_role"] = new_role
+                    st.success("New Hiring Role created!")
+                    st.rerun()
 
 # Tabs Navigation
 tab_stage6, tab_individual, tab_jd = st.tabs([

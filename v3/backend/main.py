@@ -104,6 +104,10 @@ async def create_hiring_role(
     Creates a new general-purpose Hiring Role from an employer's uploaded Job Description (PDF/TXT).
     """
     jd_bytes = await jd_file.read()
+    is_valid, msg = PDFDocumentParser.validate_file_input(jd_file.filename, jd_bytes)
+    if not is_valid:
+        raise HTTPException(status_code=400, detail=msg)
+
     jd_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(jd_bytes)
 
     role_id = f"role_{os.urandom(4).hex()}"
@@ -133,9 +137,20 @@ async def add_candidates_to_role(
 
     candidate_pairs = []
     for idx in range(len(resume_files)):
-        r_bytes = await resume_files[idx].read()
-        t_bytes = await transcript_files[idx].read()
+        r_file = resume_files[idx]
+        t_file = transcript_files[idx]
         
+        r_bytes = await r_file.read()
+        t_bytes = await t_file.read()
+        
+        r_valid, r_msg = PDFDocumentParser.validate_file_input(r_file.filename, r_bytes)
+        if not r_valid:
+            raise HTTPException(status_code=400, detail=f"Resume #{idx+1} invalid: {r_msg}")
+
+        t_valid, t_msg = PDFDocumentParser.validate_file_input(t_file.filename, t_bytes)
+        if not t_valid:
+            raise HTTPException(status_code=400, detail=f"Transcript #{idx+1} invalid: {t_msg}")
+
         r_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(r_bytes)
         t_text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(t_bytes)
         
