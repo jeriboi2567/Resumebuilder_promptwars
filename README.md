@@ -2,6 +2,10 @@
 
 An evidentiary multi-agent job candidate evaluation platform that ingests candidate resumes, interview transcripts, and job descriptions, runs **four architecturally isolated AI agent personas**, orchestrates a **multi-turn structured debate**, synthesizes **ElevenLabs multi-voice audio narration**, and converges on a **weighted hiring decision** and **Stage 6 comparative ranking**.
 
+### 🌟 Live Streamlit Cloud Deployment
+- **Live Submission URL**: **[resumebuilderpromptwars-2ubnajlmmmh4isal2kpwdk.streamlit.app](https://resumebuilderpromptwars-2ubnajlmmmh4isal2kpwdk.streamlit.app/)**
+- **GitHub Repository**: **[github.com/jeriboi2567/Resumebuilder_promptwars](https://github.com/jeriboi2567/Resumebuilder_promptwars)**
+
 ---
 
 ## 📁 Repository Structure
