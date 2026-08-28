@@ -1,0 +1,19 @@
+[00:01:15] Intervewer: Welcome Alex. Thanks for taking time today. To start off, can you tell us about your recent role at Nexus Cloud and your architecture work there?
+
+[00:01:30] Alex Rivera: Thanks! At Nexus Cloud, I was the Lead Full-Stack Engineer. My primary focus was overhauling our analytics dashboard which was struggling under high traffic load. I led a team of engineers—well, technically 5 dedicated backend/frontend engineers plus 3 embedded QA and design folks—to re-architect our data ingress and rendering pipeline.
+
+[00:02:15] Interviewer: That latency reduction claim on your resume—reducing P99 latency by 40%—how specifically did you achieve that?
+
+[00:02:30] Alex Rivera: Great question. The main bottleneck was unindexed JSONB queries in PostgreSQL combined with redundant REST polling. We introduced a Redis write-through cache for trending metrics, restructured our SQL indexes, and migrated our heavy data crunching paths into Go microservices communicating via Kafka. That brought our P99 latency down from around 850ms to 510ms under peak load.
+
+[00:03:45] Interviewer: How do you handle technical disagreements or conflicts within your team when making architectural decisions like switching to Go?
+
+[00:04:02] Alex Rivera: I prefer data-driven consensus over top-down directives. Two engineers on the team wanted to stick with Node.js because they were more comfortable with JavaScript. I set up a 2-day benchmark spike comparing Node.js event-loop throughput against Go goroutines for our specific workload. When the benchmark proved Go handled 3x the concurrent payload with lower memory overhead, the team willingly embraced Go. I also paired with them to get them up to speed on Go syntax and idioms.
+
+[00:05:10] Interviewer: You listed Rust on your resume. What's your experience level there?
+
+[00:05:22] Alex Rivera: I tagged Rust as beginner on my resume intentionally. I've built personal side projects with Axum and solved Advent of Code challenges in Rust, but I haven't deployed production Rust services at scale yet. I understand borrow checker rules and ownership semantics, but wouldn't claim senior mastery.
+
+[00:06:30] Interviewer: What is your approach to system reliability and monitoring when things go wrong in production?
+
+[00:06:45] Alex Rivera: We enforce post-mortems with no-blame culture. When our Kafka consumer group stalled last year due to unhandled poison pill messages, I facilitated a root-cause analysis, introduced dead-letter queues, and updated Prometheus alerts so we catch lag before customer SLAs are impacted.

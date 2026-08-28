@@ -1,0 +1,26 @@
+TAYLOR MORGAN
+Email: taylor.morgan@example.com | Location: Seattle, WA | Phone: (555) 014-7733
+GitHub: github.com/tmorgan-dev
+
+OBJECTIVE
+Software Engineer with 3.5 years of experience building reliable backend services and APIs in Python, Node.js, and SQL databases. Seeking Software Engineer position.
+
+TECHNICAL SKILLS
+- Languages: Python, JavaScript, SQL, HTML/CSS
+- Frameworks: Django, FastAPI, Express.js
+- Databases & Tools: PostgreSQL, SQLite, Git, Docker, AWS (S3, EC2)
+
+EXPERIENCE
+
+Software Engineer | CloudScale Tech | Feb 2022 – Present
+- Built and maintained REST APIs using Python FastAPI and PostgreSQL serving 80k monthly active users.
+- Automated daily ETL data pipelines using Celery and Redis, reducing manual data synchronization work by 15 hours per week.
+- Wrote unit and integration tests using pytest, increasing test coverage from 55% to 82%.
+- Participated in weekly on-call rotation, resolving P2/P3 incidents and writing incident post-mortems.
+
+Junior Web Developer | BrightByte Studios | Jul 2020 – Jan 2022
+- Developed customer portal UI and Node.js backend integrations.
+- Created SQL queries and database reports for business intelligence team.
+
+EDUCATION
+- B.S. in Information Technology | Washington State University (2020)

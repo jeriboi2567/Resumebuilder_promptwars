@@ -1,0 +1,15 @@
+[00:01:05] Interviewer: Hi Taylor, welcome! Let's talk about your work at CloudScale Tech. What was your biggest technical challenge there?
+
+[00:01:22] Taylor Morgan: Hi! At CloudScale, my biggest project was automating our ETL data pipeline using Celery and Redis. Before that, our analytics team was manually running scripts every morning, which took 15 hours a week. Building asynchronous Celery workers to handle data ingestion and retry logic was challenging because of database lock contention, but we resolved it by optimizing transaction batch sizes.
+
+[00:02:30] Interviewer: The role we are hiring for involves designing distributed microservices with Kafka and Kubernetes. Have you worked with distributed message queues at scale?
+
+[00:02:45] Taylor Morgan: To be transparent, I haven't worked with Kafka or Kubernetes in production yet. I've used Redis pub/sub and Celery for async tasks, and I've deployed containers with Docker and Docker Compose. I've been studying Kubernetes architecture in my free time and completed a hands-on Udemy course, but I know there's a learning curve for production scale.
+
+[00:03:50] Interviewer: How do you handle feedback during code reviews when a reviewer asks for major revisions?
+
+[00:04:05] Taylor Morgan: I welcome code reviews as learning opportunities. Early at CloudScale, my senior engineer pointed out that my API queries had N+1 performance problems. Rather than getting defensive, I asked him to pair with me for 30 minutes. He showed me Django select_related techniques, and since then I always write query benchmarks before opening PRs.
+
+[00:05:10] Interviewer: Where do you see your technical growth over the next 2 years?
+
+[00:05:25] Taylor Morgan: I want to deepen my knowledge of database internals, distributed systems, and system design under heavy concurrency. I am looking for a team with strong senior mentorship where I can contribute immediately on backend features while expanding my architecture skills.

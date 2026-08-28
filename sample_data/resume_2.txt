@@ -1,0 +1,27 @@
+JORDAN LEE
+Email: jordan.lee@example.com | Location: Austin, TX | Phone: (555) 018-9921
+LinkedIn: linkedin.com/in/jordan-lee-ai | Portfolio: jordanlee.ai
+
+OBJECTIVE
+Principal AI/ML Engineer & Lead Architect with 6+ years of experience training custom LLMs, building distributed ML pipelines, and deploying generative AI infrastructure at scale.
+
+TECHNICAL SKILLS
+- Machine Learning & AI: PyTorch, TensorFlow, Hugging Face, vLLM, DeepSpeed, CUDA, Model Fine-tuning, RAG, Vector DBs (Pinecone, Qdrant)
+- Languages: Python, C++, SQL, Bash
+- Infrastructure: Ray, Kubernetes, AWS SageMaker, GCP Vertex AI, Triton Inference Server
+
+PROFESSIONAL EXPERIENCE
+
+Principal AI Architect | NeuralFlow Tech | Jan 2023 – Present
+- Architected and trained a custom 70B parameter Large Language Model from scratch on 200 NVIDIA A100 GPUs, achieving state-of-the-art domain accuracy.
+- Managed a $1.2M annual GPU infrastructure budget and optimized inference throughput by 300% using vLLM and TensorRT-LLM.
+- Spearheaded the enterprise RAG architecture serving over 2 million daily queries with sub-200ms latency.
+
+Lead ML Engineer | Synthetix AI | Aug 2020 – Dec 2022
+- Built end-to-end MLOps pipelines using Kubeflow, MLflow, and DVC for automated model retraining.
+- Fine-tuned BERT and LLaMA models for domain-specific sentiment analysis and entity extraction.
+- Reduced model inference cost by 60% through quantization (INT8/FP16) and distillation.
+
+EDUCATION
+- M.S. in Artificial Intelligence | Stanford University (2020)
+- B.S. in Applied Mathematics | UT Austin (2018)

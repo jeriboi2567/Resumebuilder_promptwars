@@ -1,0 +1,39 @@
+# Environments & Dependencies
+.venv/
+venv/
+ENV/
+env/
+node_modules/
+frontend/node_modules/
+
+# Python Cache & Artifacts
+__pycache__/
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Frontend Build Outputs
+frontend/dist/
+frontend/build/
+.next/
+
+# Runtime Storage Data
+backend/storage/runs/*.json
+!backend/storage/runs/.gitkeep
+
+# Secrets & Environment Variables
+.env
+.env.*
+!.env.example
+*.pem
+
+# Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
