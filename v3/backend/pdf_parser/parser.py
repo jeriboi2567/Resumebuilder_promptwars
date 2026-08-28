@@ -1,0 +1,143 @@
+import io
+import re
+import uuid
+from typing import Tuple, List, Dict, Any
+from backend.schemas.models import JobDescription
+
+try:
+    import fitz
+except ImportError:
+    fitz = None
+
+try:
+    import pdfplumber
+except ImportError:
+    pdfplumber = None
+
+class PDFDocumentParser:
+    @staticmethod
+    def extract_text_from_pdf_bytes(pdf_bytes: bytes) -> Tuple[str, List[Dict[str, Any]]]:
+        full_text_lines = []
+        line_map = []
+
+        if fitz is not None:
+            try:
+                doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+                current_line_no = 1
+                for page_num in range(len(doc)):
+                    page = doc[page_num]
+                    text = page.get_text()
+                    lines = text.splitlines()
+                    for idx, line in enumerate(lines):
+                        clean = line.strip()
+                        if clean:
+                            full_text_lines.append(clean)
+                            line_map.append({
+                                "page": page_num + 1,
+                                "line_no": current_line_no,
+                                "page_line": idx + 1,
+                                "text": clean
+                            })
+                            current_line_no += 1
+                doc.close()
+                if full_text_lines:
+                    return "\n".join(full_text_lines), line_map
+            except Exception:
+                pass
+
+        if pdfplumber is not None:
+            try:
+                with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+                    current_line_no = 1
+                    for page_num, page in enumerate(pdf.pages):
+                        text = page.extract_text() or ""
+                        lines = text.splitlines()
+                        for idx, line in enumerate(lines):
+                            clean = line.strip()
+                            if clean:
+                                full_text_lines.append(clean)
+                                line_map.append({
+                                    "page": page_num + 1,
+                                    "line_no": current_line_no,
+                                    "page_line": idx + 1,
+                                    "text": clean
+                                })
+                                current_line_no += 1
+                if full_text_lines:
+                    return "\n".join(full_text_lines), line_map
+            except Exception:
+                pass
+
+        raw = pdf_bytes.decode('utf-8', errors='ignore')
+        lines = [l.strip() for l in raw.splitlines() if l.strip()]
+        line_map = [{"page": 1, "line_no": i+1, "page_line": i+1, "text": l} for i, l in enumerate(lines)]
+        return "\n".join(lines), line_map
+
+    @staticmethod
+    def parse_job_description(jd_text: str, job_id: str = None) -> JobDescription:
+        lines = [l.strip() for l in jd_text.splitlines() if l.strip()]
+        
+        # Dynamic Title Extraction
+        title = "Target Position"
+        company = "Target Company"
+        for line in lines[:8]:
+            if "job description" in line.lower() or "role" in line.lower() or "title" in line.lower():
+                clean_title = re.sub(r'^(job description|role|title)\s*:\s*', '', line, flags=re.IGNORECASE).strip()
+                if clean_title:
+                    title = clean_title
+            elif "company" in line.lower():
+                clean_co = re.sub(r'^company\s*:\s*', '', line, flags=re.IGNORECASE).strip()
+                if clean_co:
+                    company = clean_co
+
+        if title == "Target Position" and lines:
+            title = lines[0]
+
+        # Dynamic Skills Extraction
+        required_skills = []
+        responsibilities = []
+        qualifications = []
+
+        common_tech_keywords = [
+            "Python", "FastAPI", "Go", "Java", "C++", "TypeScript", "React", "Node.js",
+            "MongoDB", "PostgreSQL", "Kafka", "Redis", "Docker", "Kubernetes", "AWS",
+            "PyTorch", "TensorFlow", "LangChain", "LangGraph", "CrewAI", "RAG", "Vector Search",
+            "Triton", "OCR", "SQL", "LLM", "Microservices", "REST API"
+        ]
+
+        for kw in common_tech_keywords:
+            if re.search(r'\b' + re.escape(kw) + r'\b', jd_text, re.IGNORECASE):
+                if kw not in required_skills:
+                    required_skills.append(kw)
+
+        # Dynamic Responsibilities & Qualifications Bullet Extraction
+        curr_section = None
+        for line in lines:
+            l_lower = line.lower()
+            if "what you'll do" in l_lower or "responsibilities" in l_lower or "what you will do" in l_lower:
+                curr_section = "resp"
+                continue
+            elif "looking for" in l_lower or "requirements" in l_lower or "qualifications" in l_lower:
+                curr_section = "qual"
+                continue
+            elif "what this role is not" in l_lower or "about the role" in l_lower:
+                curr_section = None
+                continue
+
+            if curr_section == "resp" and len(line) > 10:
+                responsibilities.append(line.lstrip("•-* "))
+            elif curr_section == "qual" and len(line) > 10:
+                qualifications.append(line.lstrip("•-* "))
+
+        if not required_skills:
+            required_skills = ["Software Engineering", "System Architecture", "Problem Solving"]
+
+        return JobDescription(
+            job_id=job_id or f"jd_{uuid.uuid4().hex[:6]}",
+            title=title,
+            company=company,
+            required_skills=required_skills[:10],
+            responsibilities=responsibilities[:6],
+            qualifications=qualifications[:6],
+            raw_text=jd_text
+        )

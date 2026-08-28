@@ -10,83 +10,67 @@ An evidentiary multi-agent job candidate evaluation platform that ingests candid
 /
 ├── README.md                          # Repository Documentation & Quickstart
 ├── DEPLOYMENT.md                      # Remote Tunnel & Cloud Deployment Guide
-├── promptwars-v2-addendum-prompt.md   # V2 Prompt Specification & Addendum
+├── hackathon/                         # Official Hackathon PDF Dataset & Problem Statement
 ├── .gitignore                         # Global Git Ignore rules
 │
 ├── v1/                                # Version 1 Core Release (5-Stage Pipeline)
-│   ├── backend/                       # FastAPI Backend & Orchestrator
-│   ├── frontend/                      # React UI & Web Speech Audio Player
-│   ├── sample_data/                   # Candidate Resume/Transcript Datasets
-│   └── projectfile.md                 # V1 Prompt Specification
-│
-└── v2/                                # Version 2 Release (PDF/JD Ingestion & Stage 6)
-    ├── backend/                       # FastAPI V2 Server, PDF Parser, ElevenLabs TTS
-    │   ├── pdf_parser/                # PDF Text & Location Extractor (pdfplumber/fitz)
-    │   ├── tts/                       # ElevenLabs Voice Debate Audio Generator
-    │   ├── agents/                    # Isolated Agents with Insufficient Evidence Rules
-    │   ├── comparison/                # Stage 6 Side-by-Side Comparative Ranking Engine
-    │   └── tests/                     # Pytest V2 Test Suite
-    ├── frontend/                      # React V2 UI with Stage 6 Dashboard & Audio Player
-    ├── sample_data/                   # 01_Job_Description.txt & Candidate PDF Datasets
+├── v2/                                # Version 2 Hackathon Release (PDF Ingestion, Insufficient Evidence & Stage 6)
+└── v3/                                # Version 3 General-Purpose Platform (Arbitrary Employers/Roles/Candidates)
+    ├── backend/                       # FastAPI V3 General-Purpose Server & Persistence
+    │   ├── pdf_parser/                # Dynamic PDF & Text Extraction Engine
+    │   ├── profile_builder/           # Dynamic Candidate Profile Builder (Arbitrary Resumes/Transcripts)
+    │   ├── agents/                    # Isolated Agents with Dynamic Insufficient Evidence Rules
+    │   ├── comparison/                # Dynamic Stage 6 Side-by-Side Comparative Ranking Engine
+    │   ├── storage/                   # Persistent Hiring Roles & Accumulated Candidate Data
+    │   └── tests/                     # Pytest V3 Test Suite
+    ├── frontend/                      # React V3 Employer Dashboard & Role Management
+    ├── pytest.ini                     # Pytest Path configuration
     └── .env                           # ElevenLabs API Key Storage (Ignored by git)
 ```
 
 ---
 
-## 🚀 Version 2 (v2) Features & Enhancements
+## 🚀 Version 3 (v3) General-Purpose Employer Platform
 
-1. **PDF & Job Description (JD) Ingestion**:
-   - Ingests `01_Job_Description.pdf` alongside candidate resumes and transcripts using `pdfplumber` / `PyMuPDF`.
-   - Threads JD requirements directly into Technical & Hiring Manager Agent prompts for requirement-specific scoring.
-2. **Section B: Insufficient-Evidence Rule (`insufficient_evidence: true`)**:
-   - If an evaluation dimension lacks supporting quotes in the candidate profile/transcript, the system **forces `insufficient_evidence: true` with a reason string**, preventing fake scores (e.g. middling 5/10 guesses).
-   - Renders an explicit **"Not Assessed / Insufficient Evidence"** section in Stage 5 reports.
-3. **ElevenLabs Multi-Voice Audio Debate Narration**:
-   - Synthesizes Stage 3 multi-turn debate exchanges into audio tracks using 4 distinct ElevenLabs persona voices (Adam, Rachel, Arnold, Sam).
-4. **Stage 6: Comparative Ranking Engine & Side-by-Side Dashboard**:
-   - Runs concurrently for $N$ candidates with strict per-candidate isolation.
-   - Executes Stage 6 after all candidate individual pipelines complete, rendering an evidence-weighted comparative ranking matrix, key differentiators, and shared JD requirement compliance table.
-5. **Batch PDF Upload Modal**:
-   - Allows users to drag-and-drop 1 shared Job Description PDF + $N$ candidate PDF pairs directly in the UI.
+1. **Arbitrary Employer Job Roles**:
+   - Create custom Hiring Roles for any employer/job title by uploading any custom Job Description PDF or TXT file (`POST /api/roles`).
+2. **Arbitrary Candidate Ingestion**:
+   - Upload Resume + Transcript PDF/TXT pairs for any candidate of choice (any name, role, or background) with zero hardcoded code changes (`POST /api/roles/{role_id}/candidates`).
+3. **Candidate Accumulation & Stage 6 Comparison**:
+   - Evaluates each new candidate through the full 5-stage pipeline and automatically appends them to the Hiring Role's Stage 6 side-by-side comparative ranking table.
+4. **Preserved V2 Core Mechanics**:
+   - Retains 100% of V2 core features: Candidate Profile Builder, 4 Isolated Agent Personas, Section B No-Guessing Rule (`insufficient_evidence: true`), Multi-Turn Debate Transcript, Non-Averaged Evidence-Weighted Judge Synthesis, and ElevenLabs Multi-Voice Debate Narration.
 
 ---
 
-## ⚙️ Running Version 2 (v2) Locally
+## ⚙️ Running Version 3 (v3) Locally
 
-### 1. Run the V2 Backend API Server
+### 1. Run the V3 Backend API Server
 ```powershell
-cd v2
+cd v3
 $env:PYTHONPATH="."
 .venv\Scripts\uvicorn backend.main:app --port 8000 --reload
 ```
 - API Documentation available at: `http://localhost:8000/docs`
 
-### 2. Run V2 Pytest Suite
+### 2. Run V3 Pytest Suite
 ```powershell
-cd v2
-$env:PYTHONPATH="."; uv run --with fastapi --with pydantic --with pytest --with pytest-asyncio --with httpx --with pdfplumber --with pymupdf --with elevenlabs --with python-dotenv pytest backend/tests -v
+cd v3
+uv run --with python-multipart --with fastapi --with pydantic --with pytest --with pytest-asyncio --with httpx --with pdfplumber --with pymupdf --with elevenlabs --with python-dotenv pytest backend/tests -v
 ```
 
-### 3. Run the V2 Frontend Dev Server
+### 3. Run the V3 Frontend Dev Server
 ```powershell
-cd v2/frontend
+cd v3/frontend
 npm run dev
 ```
 - UI available at: `http://localhost:3000`
 
 ---
 
-## ⚙️ Running Version 1 (v1) Locally
-
-### 1. Run V1 Backend
+## ⚙️ Running Version 2 (v2) Hackathon Release
 ```powershell
-cd v1
+cd v2
 $env:PYTHONPATH="."
 .venv\Scripts\uvicorn backend.main:app --port 8000 --reload
-```
-
-### 2. Run V1 Frontend
-```powershell
-cd v1/frontend
-npm run dev
 ```
