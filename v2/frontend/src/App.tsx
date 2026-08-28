@@ -4,6 +4,8 @@ import {
 } from './types';
 import { ElevenLabsAudioPlayer } from './components/ElevenLabsAudioPlayer';
 import { Stage6ComparisonView } from './components/Stage6ComparisonView';
+import { Stage3DebateThread } from './components/Stage3DebateThread';
+import { Stage2AgentOpinions } from './components/Stage2AgentOpinions';
 import { BatchUploaderModal } from './components/BatchUploaderModal';
 import {
   Users, Play, Upload, Layers, Loader2, Cpu, History, FileText, CheckCircle2, ShieldAlert
@@ -171,7 +173,17 @@ export default function App() {
                       turns={activeCandidateResult.debate_state.turns}
                     />
 
-                    {/* Report & Rationale Card */}
+                    {/* Stage 2: Independent Agent Persona Opinions */}
+                    <Stage2AgentOpinions
+                      opinions={activeCandidateResult.independent_opinions}
+                    />
+
+                    {/* Stage 3: Structured Multi-Turn Debate Transcript */}
+                    <Stage3DebateThread
+                      debateState={activeCandidateResult.debate_state}
+                    />
+
+                    {/* Stage 4 & 5: Report & Rationale Card */}
                     <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl space-y-6">
                       <div className="border-b border-slate-700 pb-4 flex justify-between items-start">
                         <div>
