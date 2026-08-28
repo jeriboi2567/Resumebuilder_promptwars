@@ -6,7 +6,7 @@ import { API_BASE_URL } from '../config';
 interface RoleUploaderModalProps {
   isOpen: boolean;
   onClose: () => void;
-  roles: Array<{ role_id: str; title: str; company: str }>;
+  roles: Array<{ role_id: string; title: string; company: string }>;
   activeRoleId?: string;
   onRoleUpdated: (role: HiringRoleV3) => void;
 }

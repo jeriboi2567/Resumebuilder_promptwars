@@ -183,7 +183,7 @@ export interface HiringRoleV3 {
   role_id: string;
   job_description: JobDescription;
   created_at: string;
-  updated_at: str;
+  updated_at: string;
   candidate_results: Record<string, PipelineRunResultV2>;
   stage6_comparison?: Stage6ComparativeRanking;
 }
