@@ -67,19 +67,30 @@ class CandidateProfileBuilderV2:
 
         # Seniority & Title detection
         full_text_lower = (resume_text + " " + transcript_text).lower()
-        if "senior" in full_text_lower or "lead" in full_text_lower or "architect" in full_text_lower:
+        # Dynamic Seniority & Role Applied Detection
+        first_lines_text = " ".join(res_lines[:3]).lower()
+        if "hardware" in first_lines_text or "pcb" in first_lines_text or "embedded" in first_lines_text:
+            role_applied = "Hardware / Embedded Engineer"
+        elif res_lines and len(res_lines) > 1 and len(res_lines[1]) < 50 and not any(k in res_lines[1].lower() for k in ["summary", "skills", "experience"]):
+            role_applied = res_lines[1].strip()
+        else:
+            role_applied = "Engineering Candidate"
+
+        if "senior" in full_text_lower or "lead" in full_text_lower or "architect" in full_text_lower or "principal" in full_text_lower:
             seniority_level = "Senior"
-            role_applied = "Senior Staff / AI Engineer"
         elif "junior" in full_text_lower or "associate" in full_text_lower:
             seniority_level = "Junior"
-            role_applied = "Junior Engineer"
+        else:
+            seniority_level = "Mid-Level"
 
         # 2. Dynamic Skill Claims Extraction
         skills: List[SkillClaim] = []
         known_techs = [
-            "Python", "FastAPI", "Go", "LangChain", "LangGraph", "CrewAI", "Chroma",
-            "Pinecone", "MongoDB", "PostgreSQL", "Kafka", "Redis", "Docker", "Kubernetes",
-            "React", "OCR", "Tesseract", "RAG", "Vector Search", "LLM", "Prompt Engineering"
+            "PCB", "Altium", "KiCad", "ESP32", "STM32", "C/C++", "C++", "C", "Verilog", "VHDL", "FPGA", "DFM", "DFA",
+            "Signal Integrity", "Power Integrity", "Firmware", "ARM", "Microcontroller", "SPI", "I2C", "UART",
+            "Python", "FastAPI", "Go", "Java", "TypeScript", "React", "Node.js", "LangChain", "LangGraph", "CrewAI",
+            "Chroma", "Pinecone", "MongoDB", "PostgreSQL", "Kafka", "Redis", "Docker", "Kubernetes", "AWS",
+            "OCR", "Tesseract", "RAG", "Vector Search", "LLM", "Prompt Engineering"
         ]
 
         for tech in known_techs:

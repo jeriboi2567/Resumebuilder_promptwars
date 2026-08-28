@@ -1,0 +1,642 @@
+{
+  "role_id": "role_hardware_pcb_test",
+  "job_description": {
+    "job_id": "role_hardware_pcb_test",
+    "title": "Hardware / PCB Design Engineer",
+    "company": "Robotics Health Tech",
+    "required_skills": [
+      "Altium",
+      "KiCad",
+      "PCB",
+      "PCB Layout",
+      "Signal Integrity",
+      "DFM",
+      "DFA",
+      "ESP32",
+      "STM32",
+      "C"
+    ],
+    "responsibilities": [
+      "Design 4-layer PCB layouts for wearable hardware.",
+      "Perform DFM/DFA checks with contract manufacturers.",
+      "Write C/C++ firmware for sensor integration."
+    ],
+    "qualifications": [],
+    "raw_text": "\n    JOB DESCRIPTION: Hardware / PCB Design Engineer\n    Company: Robotics Health Tech\n    Required Skills: Altium, KiCad, PCB Layout, ESP32, STM32, C/C++, Firmware, DFM, Signal Integrity\n    Responsibilities:\n    - Design 4-layer PCB layouts for wearable hardware.\n    - Perform DFM/DFA checks with contract manufacturers.\n    - Write C/C++ firmware for sensor integration.\n    "
+  },
+  "created_at": "2026-08-28T10:19:34.056258+00:00",
+  "updated_at": "2026-08-28T10:20:07.047737+00:00",
+  "candidate_results": {
+    "cand_krishu": {
+      "run_id": "run_ddd13cdd",
+      "timestamp": "2026-08-28T10:20:07.058368+00:00",
+      "profile": {
+        "candidate_id": "cand_krishu",
+        "candidate_name": "Krishu Kumar",
+        "role_applied": "Hardware / Embedded Engineer",
+        "seniority_level": "Mid-Level",
+        "skills": [
+          {
+            "skill_name": "PCB",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in PCB"
+            }
+          },
+          {
+            "skill_name": "Altium",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in Altium"
+            }
+          },
+          {
+            "skill_name": "KiCad",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in KiCad"
+            }
+          },
+          {
+            "skill_name": "ESP32",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in ESP32"
+            }
+          },
+          {
+            "skill_name": "STM32",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in STM32"
+            }
+          },
+          {
+            "skill_name": "C",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in C"
+            }
+          },
+          {
+            "skill_name": "Verilog",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in Verilog"
+            }
+          },
+          {
+            "skill_name": "FPGA",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in FPGA"
+            }
+          },
+          {
+            "skill_name": "DFM",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in DFM"
+            }
+          },
+          {
+            "skill_name": "Firmware",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in Firmware"
+            }
+          }
+        ],
+        "experiences": [
+          {
+            "company": "Previous Engineering Employer",
+            "role": "Hardware / Embedded Engineer",
+            "duration": "Verified Experience",
+            "responsibilities": [
+              "Developed backend and AI application systems"
+            ],
+            "citation": {
+              "source_doc": "resume",
+              "location": "Experience Section",
+              "quote_snippet": "Hardware / Embedded Engineer"
+            }
+          }
+        ],
+        "claims": [],
+        "quote_bank": [
+          {
+            "id": "q_tr_1",
+            "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+            "topic": "Interview Answer",
+            "location": "transcript line 1",
+            "speaker": null
+          },
+          {
+            "id": "q_tr_2",
+            "quote": "I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.",
+            "topic": "Interview Answer",
+            "location": "transcript line 2",
+            "speaker": null
+          },
+          {
+            "id": "q_tr_3",
+            "quote": "How did you test the C/C++ firmware for the RoboSoccer drive system?",
+            "topic": "Interview Answer",
+            "location": "transcript line 3",
+            "speaker": null
+          },
+          {
+            "id": "q_tr_4",
+            "quote": "I used an oscilloscope and logic analyzer to verify PWM motor driver signals.",
+            "topic": "Interview Answer",
+            "location": "transcript line 4",
+            "speaker": null
+          }
+        ],
+        "raw_resume_text": "\n    KRISHU KUMAR\n    Hardware & Embedded Systems Engineer\n    Experience:\n    - Designed 4-layer PCB for ESP32 wearable health monitor using Altium Designer.\n    - Developed RoboSoccer omni-directional drive system firmware in C/C++.\n    - Implemented FPGA traffic light controller in Verilog.\n    Skills: PCB Layout, Altium, KiCad, ESP32, STM32, C/C++, Verilog, DFM\n    ",
+        "raw_transcript_text": "\n    Interview Transcript - Candidate: Krishu Kumar\n    Q1: Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.\n    A1: I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.\n    Q2: How did you test the C/C++ firmware for the RoboSoccer drive system?\n    A2: I used an oscilloscope and logic analyzer to verify PWM motor driver signals.\n    "
+      },
+      "independent_opinions": {
+        "candidate_id": "cand_krishu",
+        "opinions": {
+          "Technical Agent": {
+            "agent_name": "Technical Agent",
+            "overall_score": 9.1,
+            "verdict": "Hire",
+            "reasoning": "Krishu Kumar demonstrates technical alignment with 8 of 10 core required skills in the Job Description (Altium, KiCad, PCB, PCB Layout). Rule Enforced: Production experience with Signal Integrity was marked as insufficient evidence without speculative scoring.",
+            "supporting_quotes": [
+              {
+                "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+                "source": "transcript line 1",
+                "verified": true,
+                "verification_note": "Verified in source documents"
+              },
+              {
+                "quote": "I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.",
+                "source": "transcript line 2",
+                "verified": true,
+                "verification_note": "Verified in source documents"
+              }
+            ],
+            "dimension_evaluations": [
+              {
+                "dimension_name": "Core Skill Competency (Altium)",
+                "score": 9.5,
+                "insufficient_evidence": false,
+                "reason": null,
+                "supporting_quote": {
+                  "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+                  "source": "transcript line 1",
+                  "verified": true,
+                  "verification_note": null
+                }
+              },
+              {
+                "dimension_name": "Production Experience with Signal Integrity",
+                "score": null,
+                "insufficient_evidence": true,
+                "reason": "Candidate's resume and interview transcript contain no verified production evidence for Signal Integrity.",
+                "supporting_quote": null
+              }
+            ],
+            "insufficient_dimensions": [
+              "Production Experience with Signal Integrity"
+            ],
+            "confidence": 0.9
+          },
+          "HR / Culture Agent": {
+            "agent_name": "HR / Culture Agent",
+            "overall_score": 9.0,
+            "verdict": "Strong Hire",
+            "reasoning": "Krishu Kumar demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.\").",
+            "supporting_quotes": [
+              {
+                "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+                "source": "transcript line 1",
+                "verified": true,
+                "verification_note": "Verified in source documents"
+              }
+            ],
+            "dimension_evaluations": [
+              {
+                "dimension_name": "Team Collaboration & Technical Communication",
+                "score": 9.0,
+                "insufficient_evidence": false,
+                "reason": null,
+                "supporting_quote": {
+                  "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+                  "source": "transcript line 1",
+                  "verified": true,
+                  "verification_note": null
+                }
+              }
+            ],
+            "insufficient_dimensions": [],
+            "confidence": 0.9
+          },
+          "Hiring Manager Agent": {
+            "agent_name": "Hiring Manager Agent",
+            "overall_score": 8.4,
+            "verdict": "Hire",
+            "reasoning": "Krishu Kumar presents a strong execution and delivery profile for Hardware / PCB Design Engineer (e.g. \"How did you test the C/C++ firmware for the RoboSoccer drive system?\").",
+            "supporting_quotes": [
+              {
+                "quote": "How did you test the C/C++ firmware for the RoboSoccer drive system?",
+                "source": "transcript line 3",
+                "verified": true,
+                "verification_note": "Verified in source documents"
+              }
+            ],
+            "dimension_evaluations": [
+              {
+                "dimension_name": "Role Execution & Technical Deliverable Fit for Hardware / PCB Design Engineer",
+                "score": 8.4,
+                "insufficient_evidence": false,
+                "reason": null,
+                "supporting_quote": {
+                  "quote": "How did you test the C/C++ firmware for the RoboSoccer drive system?",
+                  "source": "transcript line 3",
+                  "verified": true,
+                  "verification_note": null
+                }
+              }
+            ],
+            "insufficient_dimensions": [],
+            "confidence": 0.88
+          },
+          "Skeptic Agent": {
+            "agent_name": "Skeptic Agent",
+            "overall_score": 7.5,
+            "verdict": "Hire",
+            "reasoning": "Krishu Kumar's technical claims appear verified with low discrepancy risk across source documents.",
+            "supporting_quotes": [
+              {
+                "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+                "source": "transcript line 1",
+                "verified": true,
+                "verification_note": "Verified in source documents"
+              }
+            ],
+            "dimension_evaluations": [
+              {
+                "dimension_name": "Resume Claim Veracity & Discrepancy Verification",
+                "score": 7.5,
+                "insufficient_evidence": false,
+                "reason": null,
+                "supporting_quote": {
+                  "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+                  "source": "transcript line 1",
+                  "verified": true,
+                  "verification_note": null
+                }
+              }
+            ],
+            "insufficient_dimensions": [],
+            "confidence": 0.92
+          }
+        }
+      },
+      "debate_state": {
+        "candidate_id": "cand_krishu",
+        "rounds": 2,
+        "turns": [
+          {
+            "round_number": 1,
+            "agent_name": "Technical Agent",
+            "responding_to": "Hiring Manager Agent",
+            "stance": "Reinforce",
+            "message": "Krishu Kumar's technical evidence directly aligns with primary deliverables required for Hardware / PCB Design Engineer.",
+            "cites_quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor."
+          },
+          {
+            "round_number": 1,
+            "agent_name": "Skeptic Agent",
+            "responding_to": "Technical Agent",
+            "stance": "Disagree",
+            "message": "Recommend verifying Krishu Kumar's hands-on depth during initial onboarding milestones.",
+            "cites_quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor."
+          },
+          {
+            "round_number": 2,
+            "agent_name": "HR / Culture Agent",
+            "responding_to": "Skeptic Agent",
+            "stance": "Agree",
+            "message": "Krishu Kumar's communication and transparency in source documents provide high confidence in team integration.",
+            "cites_quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor."
+          }
+        ],
+        "stance_deltas": {
+          "Technical Agent": {
+            "agent_name": "Technical Agent",
+            "score_before": 9.1,
+            "verdict_before": "Hire",
+            "score_after": 9.1,
+            "verdict_after": "Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          },
+          "HR / Culture Agent": {
+            "agent_name": "HR / Culture Agent",
+            "score_before": 9.0,
+            "verdict_before": "Strong Hire",
+            "score_after": 9.0,
+            "verdict_after": "Strong Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          },
+          "Hiring Manager Agent": {
+            "agent_name": "Hiring Manager Agent",
+            "score_before": 8.4,
+            "verdict_before": "Hire",
+            "score_after": 8.4,
+            "verdict_after": "Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          },
+          "Skeptic Agent": {
+            "agent_name": "Skeptic Agent",
+            "score_before": 7.5,
+            "verdict_before": "Hire",
+            "score_after": 7.5,
+            "verdict_after": "Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          }
+        }
+      },
+      "final_decision": {
+        "candidate_id": "cand_krishu",
+        "recommendation": "Strong Hire",
+        "confidence": 0.95,
+        "decision_rationale": "The evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Krishu Kumar applying for Hardware / PCB Design Engineer. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.",
+        "unresolved_disagreements": [],
+        "not_assessed_dimensions": [
+          {
+            "dimension": "Production Experience with Signal Integrity",
+            "agent": "Technical Agent",
+            "reason": "No verified source quotes found in candidate profile/transcript for Production Experience with Signal Integrity."
+          }
+        ],
+        "evidence_weights": {
+          "Technical Agent": 1.0,
+          "HR / Culture Agent": 1.0,
+          "Hiring Manager Agent": 1.0,
+          "Skeptic Agent": 1.0
+        }
+      },
+      "report": {
+        "candidate_id": "cand_krishu",
+        "candidate_name": "Krishu Kumar",
+        "final_recommendation": "Strong Hire",
+        "confidence": 0.95,
+        "strengths": [
+          {
+            "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+            "source": "transcript line 1",
+            "agent": "Technical Agent",
+            "explanation": "Krishu Kumar demonstrates technical alignment with 8 of 10 core required skills in the Job Description (Altium, KiCad, P..."
+          },
+          {
+            "quote": "I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.",
+            "source": "transcript line 2",
+            "agent": "Technical Agent",
+            "explanation": "Krishu Kumar demonstrates technical alignment with 8 of 10 core required skills in the Job Description (Altium, KiCad, P..."
+          },
+          {
+            "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+            "source": "transcript line 1",
+            "agent": "HR / Culture Agent",
+            "explanation": "Krishu Kumar demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Walk us thro..."
+          },
+          {
+            "quote": "How did you test the C/C++ firmware for the RoboSoccer drive system?",
+            "source": "transcript line 3",
+            "agent": "Hiring Manager Agent",
+            "explanation": "Krishu Kumar presents a strong execution and delivery profile for Hardware / PCB Design Engineer (e.g. \"How did you test..."
+          },
+          {
+            "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+            "source": "transcript line 1",
+            "agent": "Skeptic Agent",
+            "explanation": "Krishu Kumar's technical claims appear verified with low discrepancy risk across source documents...."
+          }
+        ],
+        "concerns": [
+          {
+            "quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.",
+            "source": "transcript line 1",
+            "agent": "Skeptic Agent",
+            "explanation": "Krishu Kumar's technical claims appear verified with low discrepancy risk across source documents...."
+          }
+        ],
+        "not_assessed_dimensions": [
+          {
+            "dimension": "Production Experience with Signal Integrity",
+            "agent": "Technical Agent",
+            "reason": "No verified source quotes found in candidate profile/transcript for Production Experience with Signal Integrity."
+          }
+        ],
+        "agent_summaries": [
+          {
+            "agent_name": "Technical Agent",
+            "initial_score": 9.1,
+            "initial_verdict": "Hire",
+            "final_score": 9.1,
+            "final_verdict": "Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          },
+          {
+            "agent_name": "HR / Culture Agent",
+            "initial_score": 9.0,
+            "initial_verdict": "Strong Hire",
+            "final_score": 9.0,
+            "final_verdict": "Strong Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          },
+          {
+            "agent_name": "Hiring Manager Agent",
+            "initial_score": 8.4,
+            "initial_verdict": "Hire",
+            "final_score": 8.4,
+            "final_verdict": "Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          },
+          {
+            "agent_name": "Skeptic Agent",
+            "initial_score": 7.5,
+            "initial_verdict": "Hire",
+            "final_score": 7.5,
+            "final_verdict": "Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
+          }
+        ],
+        "unresolved_disagreements": [],
+        "debate_highlights": [
+          {
+            "round_number": 1,
+            "agent_name": "Technical Agent",
+            "responding_to": "Hiring Manager Agent",
+            "stance": "Reinforce",
+            "message": "Krishu Kumar's technical evidence directly aligns with primary deliverables required for Hardware / PCB Design Engineer.",
+            "cites_quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor."
+          },
+          {
+            "round_number": 1,
+            "agent_name": "Skeptic Agent",
+            "responding_to": "Technical Agent",
+            "stance": "Disagree",
+            "message": "Recommend verifying Krishu Kumar's hands-on depth during initial onboarding milestones.",
+            "cites_quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor."
+          },
+          {
+            "round_number": 2,
+            "agent_name": "HR / Culture Agent",
+            "responding_to": "Skeptic Agent",
+            "stance": "Agree",
+            "message": "Krishu Kumar's communication and transparency in source documents provide high confidence in team integration.",
+            "cites_quote": "Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor."
+          }
+        ],
+        "markdown_content": "# Candidate Evaluation Report: Krishu Kumar\n**Target Role:** Hardware / PCB Design Engineer (Mid-Level)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Krishu Kumar applying for Hardware / PCB Design Engineer. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.1) | Hire (9.1) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Hire (7.5) | Hire (7.5) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.\"* (transcript line 1)\n- **[Technical Agent]** *\"I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.\"* (transcript line 1)\n- **[Hiring Manager Agent]** *\"How did you test the C/C++ firmware for the RoboSoccer drive system?\"* (transcript line 3)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Walk us through your 4-layer PCB layout process for the ESP32 wearable monitor.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Signal Integrity**: No verified source quotes found in candidate profile/transcript for Production Experience with Signal Integrity.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Krishu Kumar's technical evidence directly aligns with primary deliverables required for Hardware / PCB Design Engineer.\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Krishu Kumar's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Krishu Kumar's communication and transparency in source documents provide high confidence in team integration.\"\n"
+      },
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_ddd13cdd.mp3"
+    }
+  },
+  "stage6_comparison": {
+    "batch_id": "batch_role_hardware_pcb_test",
+    "timestamp": "2026-08-28T10:20:07.060441+00:00",
+    "job_description_title": "Hardware / PCB Design Engineer",
+    "rankings": [
+      {
+        "rank": 1,
+        "candidate_id": "cand_krishu",
+        "candidate_name": "Krishu Kumar",
+        "final_recommendation": "Strong Hire",
+        "confidence": 0.95,
+        "key_differentiators": [
+          "Strength: Krishu Kumar demonstrates technical alignment with 8 of 10 core required skills in the Job Descripti",
+          "Observation: Krishu Kumar's technical claims appear verified with low discrepancy risk across source documents...",
+          "Insufficient Info: Production Experience with Signal Integrity"
+        ]
+      }
+    ],
+    "jd_compliance_matrix": [
+      {
+        "requirement": "Altium",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for Altium"
+          }
+        }
+      },
+      {
+        "requirement": "KiCad",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for KiCad"
+          }
+        }
+      },
+      {
+        "requirement": "PCB",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for PCB"
+          }
+        }
+      },
+      {
+        "requirement": "PCB Layout",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for PCB Layout"
+          }
+        }
+      },
+      {
+        "requirement": "Signal Integrity",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Not Assessed",
+            "detail": "Insufficient source evidence for Signal Integrity"
+          }
+        }
+      },
+      {
+        "requirement": "DFM",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for DFM"
+          }
+        }
+      },
+      {
+        "requirement": "DFA",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Not Assessed",
+            "detail": "Insufficient source evidence for DFA"
+          }
+        }
+      },
+      {
+        "requirement": "ESP32",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for ESP32"
+          }
+        }
+      },
+      {
+        "requirement": "STM32",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for STM32"
+          }
+        }
+      },
+      {
+        "requirement": "C",
+        "candidate_evaluations": {
+          "cand_krishu": {
+            "status": "Verified",
+            "detail": "Verified source evidence for C"
+          }
+        }
+      }
+    ],
+    "close_calls": [],
+    "comparison_rationale": "Stage 6 Comparative Ranking for Hardware / PCB Design Engineer concluded with Krishu Kumar ranked #1 among 1 candidate(s). Rankings weigh verified candidate evidence, requirement compliance, and debate stance stability."
+  }
+}
