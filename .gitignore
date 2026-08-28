@@ -21,6 +21,9 @@ v2/.pytest_cache/
 v1/backend/__pycache__/
 v1/backend/*/__pycache__/
 v1/backend/*/*/__pycache__/
+v2/backend/__pycache__/
+v2/backend/*/__pycache__/
+v2/backend/*/*/__pycache__/
 
 # Frontend Build & Cache Outputs
 frontend/dist/
@@ -30,11 +33,14 @@ v1/frontend/.vite/
 v2/frontend/dist/
 v2/frontend/.vite/
 
-# Runtime Storage Data
+# Runtime Storage Data & Audio
 backend/storage/runs/*.json
 v1/backend/storage/runs/*.json
 v2/backend/storage/runs/*.json
+v2/backend/storage/audio/*.mp3
 !v1/backend/storage/runs/.gitkeep
+!v2/backend/storage/runs/.gitkeep
+!v2/backend/storage/audio/.gitkeep
 
 # Secrets & Environment Variables
 .env

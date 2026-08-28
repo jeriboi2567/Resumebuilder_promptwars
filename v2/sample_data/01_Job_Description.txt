@@ -1,0 +1,22 @@
+JOB DESCRIPTION: Senior Staff Software & AI Infrastructure Engineer
+
+COMPANY: Promptwars Inc.
+LOCATION: San Francisco, CA / Remote
+
+ROLE OVERVIEW
+We are seeking a Senior Staff Software & AI Infrastructure Engineer to lead the architecture of our real-time distributed data pipelines, cloud infrastructure, and large language model inference platforms.
+
+REQUIRED TECHNICAL QUALIFICATIONS
+1. 6+ years of experience with Python, Go, TypeScript, PostgreSQL, and Redis.
+2. Hands-on experience optimizing database queries, microservice latency (P99 < 600ms), and Kafka event processing pipelines.
+3. Proven experience with Kubernetes, Docker, AWS (EC2, ECS, Lambda), and CI/CD pipelines.
+4. Deep understanding of LLM fine-tuning, vector databases, and inference serving engines (vLLM, TensorRT-LLM, Triton).
+
+REQUIRED LEADERSHIP & BEHAVIORAL QUALIFICATIONS
+1. Demonstrated history of leading cross-functional teams of 5+ engineers.
+2. Low ego, high transparency, and a data-driven consensus approach to architectural conflicts.
+3. Track record of mentoring junior and mid-level engineers and facilitating post-mortems with a no-blame culture.
+
+EXPECTED DELIVERABLES
+- Architect and scale multi-tenant event streams serving 10M+ daily requests with 99.99% uptime.
+- Establish automated testing standards (pytest, Playwright) and maintain >80% test coverage.

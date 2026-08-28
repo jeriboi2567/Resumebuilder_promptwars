@@ -1,0 +1,33 @@
+ALEX RIVERA
+Email: alex.rivera@example.com | Location: San Francisco, CA | Phone: (555) 019-2834
+LinkedIn: linkedin.com/in/alex-rivera-tech | GitHub: github.com/arivera-dev
+
+OBJECTIVE
+Senior Full-Stack Engineer with 7+ years of experience building high-scale distributed systems and web applications seeking Senior Staff / Lead Software Engineer role.
+
+TECHNICAL SKILLS
+- Languages: TypeScript, Python, Go, SQL, Rust (beginner)
+- Frontend: React, Next.js, Redux, Tailwind CSS, Web Workers
+- Backend: Node.js, FastAPI, PostgreSQL, Redis, Kafka, GraphQL
+- Infrastructure & Cloud: Docker, Kubernetes, AWS (EC2, S3, ECS, Lambda), Terraform, CI/CD (GitHub Actions)
+
+PROFESSIONAL EXPERIENCE
+
+Lead Full-Stack Engineer | Nexus Cloud Inc. | Jan 2022 – Present
+- Led a cross-functional engineering team of 8 developers in redesigning the core real-time analytics dashboard using React, TypeScript, and WebSockets.
+- Improved P99 endpoint latency by 40% (from 850ms to 510ms) by optimizing PostgreSQL queries, implementing Redis caching layer, and migrating key data paths to Go microservices.
+- Architected a multi-tenant event pipeline processing over 12 million events daily with 99.99% uptime.
+- Mentored 4 junior and mid-level engineers, established code review standards, and introduced automated E2E testing using Playwright.
+
+Senior Backend Engineer | DataPulse Systems | Mar 2019 – Dec 2021
+- Designed and deployed high-throughput RESTful and gRPC microservices in Python (FastAPI) and Node.js serving 500k+ active daily users.
+- Reduced cloud infrastructure costs by $45,000 annually by right-sizing Kubernetes clusters and converting idle EC2 instances to AWS Fargate.
+- Integrated Auth0 authentication and RBAC permissions across 14 internal microservices.
+
+Software Engineer | Apex Solutions | Jun 2017 – Feb 2019
+- Developed responsive web interfaces using React and Express.js backend API endpoints.
+- Managed PostgreSQL database migrations and schema designs for e-commerce client platforms.
+
+EDUCATION & CERTIFICATIONS
+- B.S. in Computer Science | University of California, Berkeley (2017)
+- AWS Certified Solutions Architect – Associate (2021)

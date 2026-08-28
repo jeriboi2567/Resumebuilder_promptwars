@@ -1,6 +1,6 @@
 # Multi-Agent Candidate Evaluation System (Promptwars)
 
-An evidentiary multi-agent job candidate evaluation platform that ingests candidate resumes and interview transcripts, runs **four architecturally isolated AI agent personas**, orchestrates a **multi-turn structured debate**, and converges on a **weighted hiring decision** (not score averaging).
+An evidentiary multi-agent job candidate evaluation platform that ingests candidate resumes, interview transcripts, and job descriptions, runs **four architecturally isolated AI agent personas**, orchestrates a **multi-turn structured debate**, synthesizes **ElevenLabs multi-voice audio narration**, and converges on a **weighted hiring decision** and **Stage 6 comparative ranking**.
 
 ---
 
@@ -9,88 +9,84 @@ An evidentiary multi-agent job candidate evaluation platform that ingests candid
 ```
 /
 ├── README.md                          # Repository Documentation & Quickstart
+├── DEPLOYMENT.md                      # Remote Tunnel & Cloud Deployment Guide
 ├── promptwars-v2-addendum-prompt.md   # V2 Prompt Specification & Addendum
 ├── .gitignore                         # Global Git Ignore rules
 │
-├── v1/                                # Version 1 Core Release
+├── v1/                                # Version 1 Core Release (5-Stage Pipeline)
 │   ├── backend/                       # FastAPI Backend & Orchestrator
-│   │   ├── profile_builder/           # Stage 1: Profile Extractor & Verifier
-│   │   ├── agents/                    # Stage 2: 4 Isolated Agent Personas
-│   │   ├── debate/                    # Stage 3: Structured Multi-Turn Debate
-│   │   ├── decision/                  # Stage 4: Judge Synthesizer (Weighted)
-│   │   ├── report/                    # Stage 5: Final Report Generator
-│   │   ├── schemas/                   # Pydantic Output Models
-│   │   ├── storage/                   # Per-Run JSON Persistence
-│   │   ├── tests/                     # Pytest Stage Unit & Integration Tests
-│   │   └── main.py                    # FastAPI REST API Server
-│   │
-│   ├── frontend/                      # React + TypeScript + Tailwind UI
-│   │   ├── src/components/            # Visual Stage Components & Audio Player
-│   │   ├── src/App.tsx                # Main Interactive Dashboard
-│   │   └── package.json               # Frontend Dependencies & Scripts
-│   │
-│   ├── sample_data/                   # Realistic Candidate Test Data
+│   ├── frontend/                      # React UI & Web Speech Audio Player
+│   ├── sample_data/                   # Candidate Resume/Transcript Datasets
 │   └── projectfile.md                 # V1 Prompt Specification
 │
-└── v2/                                # Version 2 Enhanced Release (Upcoming)
-    └── ...                            # Batch PDF Upload, JD Threading, Stage 6 Comparison
+└── v2/                                # Version 2 Release (PDF/JD Ingestion & Stage 6)
+    ├── backend/                       # FastAPI V2 Server, PDF Parser, ElevenLabs TTS
+    │   ├── pdf_parser/                # PDF Text & Location Extractor (pdfplumber/fitz)
+    │   ├── tts/                       # ElevenLabs Voice Debate Audio Generator
+    │   ├── agents/                    # Isolated Agents with Insufficient Evidence Rules
+    │   ├── comparison/                # Stage 6 Side-by-Side Comparative Ranking Engine
+    │   └── tests/                     # Pytest V2 Test Suite
+    ├── frontend/                      # React V2 UI with Stage 6 Dashboard & Audio Player
+    ├── sample_data/                   # 01_Job_Description.txt & Candidate PDF Datasets
+    └── .env                           # ElevenLabs API Key Storage (Ignored by git)
 ```
 
 ---
 
-## 🚀 Version 1 (v1) Features & Architecture
+## 🚀 Version 2 (v2) Features & Enhancements
 
-### 5-Stage Modular Pipeline
-
-1. **Stage 1 — Candidate Profile Builder**: Ingests raw resume and transcript text and extracts a single source-of-truth `CandidateProfile`. Every skill, experience, and claim carries an explicit `SourceCitation` (verbatim substring + location).
-2. **Stage 2 — Independent Agent Opinions (Strict Isolation)**: 4 parallel persona calls (**Technical Agent**, **HR / Culture Agent**, **Hiring Manager Agent**, **Skeptic Agent**).
-   - *Architectural Enforcement*: Every agent function accepts **only** `CandidateProfile`. Zero cross-agent context is passed at Stage 2.
-   - *Quote Verification*: Validates every supporting quote against raw source documents.
-3. **Stage 3 — Structured Multi-Turn Debate**:
-   - Reveals Stage 2 opinions to all agents.
-   - Agents address named peers, state stances (`Agree`, `Disagree`, `Revise`, `Reinforce`), cite quotes, and explain position shifts.
-   - Tracks provable position movement (`opinion_before`, `opinion_after`, `changed`, `change_reason`).
-4. **Stage 4 — Final Decision Synthesis ("Judge")**:
-   - Synthesizes final recommendation (`Strong Hire`, `Hire`, `Lean No`, `No Hire`) using weighted evidence quality and confidence (does **not** average raw scores).
-   - Explicitly surfaces unresolved panel disagreements rather than smoothing over them.
-5. **Stage 5 — Final Report & Persistence**:
-   - Generates auditable Markdown reports and persists full JSON run results in `backend/storage/runs/`.
-
-### Interactive Visual Frontend & Audio TTS
-- **Visual Stepper & Pipeline Inspector**: Inspect extracted citations, 4 isolated agent cards, debate thread, judge rationale, and executive report.
-- **Multi-Voice Audio Debate Player**: Uses Web Speech API (TTS) with persona pitch modulation to let users listen in on the agents arguing.
+1. **PDF & Job Description (JD) Ingestion**:
+   - Ingests `01_Job_Description.pdf` alongside candidate resumes and transcripts using `pdfplumber` / `PyMuPDF`.
+   - Threads JD requirements directly into Technical & Hiring Manager Agent prompts for requirement-specific scoring.
+2. **Section B: Insufficient-Evidence Rule (`insufficient_evidence: true`)**:
+   - If an evaluation dimension lacks supporting quotes in the candidate profile/transcript, the system **forces `insufficient_evidence: true` with a reason string**, preventing fake scores (e.g. middling 5/10 guesses).
+   - Renders an explicit **"Not Assessed / Insufficient Evidence"** section in Stage 5 reports.
+3. **ElevenLabs Multi-Voice Audio Debate Narration**:
+   - Synthesizes Stage 3 multi-turn debate exchanges into audio tracks using 4 distinct ElevenLabs persona voices (Adam, Rachel, Arnold, Sam).
+4. **Stage 6: Comparative Ranking Engine & Side-by-Side Dashboard**:
+   - Runs concurrently for $N$ candidates with strict per-candidate isolation.
+   - Executes Stage 6 after all candidate individual pipelines complete, rendering an evidence-weighted comparative ranking matrix, key differentiators, and shared JD requirement compliance table.
+5. **Batch PDF Upload Modal**:
+   - Allows users to drag-and-drop 1 shared Job Description PDF + $N$ candidate PDF pairs directly in the UI.
 
 ---
 
-## ⚙️ Running Version 1 (v1) Locally
+## ⚙️ Running Version 2 (v2) Locally
 
-### 1. Run the Backend API Server
+### 1. Run the V2 Backend API Server
 ```powershell
-cd v1
-.venv\Scripts\activate
-uvicorn backend.main:app --port 8000 --reload
+cd v2
+$env:PYTHONPATH="."
+.venv\Scripts\uvicorn backend.main:app --port 8000 --reload
 ```
-- API Docs available at: `http://localhost:8000/docs`
+- API Documentation available at: `http://localhost:8000/docs`
 
-### 2. Run Backend Unit & Integration Tests
+### 2. Run V2 Pytest Suite
 ```powershell
-cd v1
-$env:PYTHONPATH="."; .venv\Scripts\pytest backend/tests
+cd v2
+$env:PYTHONPATH="."; uv run --with fastapi --with pydantic --with pytest --with pytest-asyncio --with httpx --with pdfplumber --with pymupdf --with elevenlabs --with python-dotenv pytest backend/tests -v
 ```
 
-### 3. Run the Frontend Dev Server
+### 3. Run the V2 Frontend Dev Server
 ```powershell
-cd v1/frontend
+cd v2/frontend
 npm run dev
 ```
 - UI available at: `http://localhost:3000`
 
 ---
 
-## 🔮 Version 2 (v2) Addendum Overview
+## ⚙️ Running Version 1 (v1) Locally
 
-Version 2 extends the platform to support:
-- **PDF File Ingestion**: Ingesting `01_Job_Description.pdf`, resumes, and transcripts directly.
-- **Job Description Threading**: Evaluating candidate fit directly against JD requirements.
-- **Insufficient-Evidence Handling**: Explicit `insufficient_evidence: true` tracking ("No Guessing" rule).
-- **Stage 6: Comparative Ranking**: N-candidate batch processing and side-by-side comparison dashboard.
+### 1. Run V1 Backend
+```powershell
+cd v1
+$env:PYTHONPATH="."
+.venv\Scripts\uvicorn backend.main:app --port 8000 --reload
+```
+
+### 2. Run V1 Frontend
+```powershell
+cd v1/frontend
+npm run dev
+```

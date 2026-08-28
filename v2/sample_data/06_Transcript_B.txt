@@ -1,0 +1,19 @@
+[00:01:00] Interviewer: Hello Jordan. Thanks for joining us today. To start off, your resume mentions training a custom 70B parameter LLM from scratch on 200 A100 GPUs at NeuralFlow. That's an impressive feat. Can you walk us through the pre-training dataset curation, tokenizer training, and loss convergence curves?
+
+[00:01:25] Jordan Lee: Absolutely. So at NeuralFlow we needed a custom solution. We compiled a dataset from public crawl and internal docs. For pre-training... well, technically we didn't train the raw weights from step zero. We took a base LLaMA-2 70B model checkpoint from HuggingFace and performed supervised fine-tuning (SFT) and LoRA adapter training across a cluster of 8 A100 nodes that our cloud provider provisioned.
+
+[00:02:10] Interviewer: I see. So the resume statement "trained a custom 70B parameter model from scratch on 200 A100 GPUs" was LoRA fine-tuning on 8 nodes?
+
+[00:02:28] Jordan Lee: Right, exactly. Well, 200 GPU-hours was total compute across our experimentation phases over 3 months, not 200 GPUs simultaneously. In AI terminology, fine-tuning a base model for our domain counts as creating our custom model.
+
+[00:03:15] Interviewer: Can you explain how you configured vLLM and TensorRT-LLM for model serving, and how you handled GPU memory management like PagedAttention?
+
+[00:03:32] Jordan Lee: Oh, our DevOps team handled the low-level Triton and Kubernetes setup. I mostly called the API endpoints from our backend FastAPI microservice and configured the system prompts and temperature settings.
+
+[00:04:20] Interviewer: How do you handle feedback from senior leadership or peers when a project timeline slips?
+
+[00:04:35] Jordan Lee: I am very direct. Usually timelines slip because non-technical project managers set unrealistic deadlines without understanding ML complexity. I tell them clearly that quality takes time and they need to adjust stakeholder expectations.
+
+[00:05:40] Interviewer: What is your vision for leading an AI engineering team here?
+
+[00:05:50] Jordan Lee: I want to build cutting-edge generative AI solutions. I thrive in high autonomy environments where I can set the technical direction and delegate the routine integration coding to junior developers.
