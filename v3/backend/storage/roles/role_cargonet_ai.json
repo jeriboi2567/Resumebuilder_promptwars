@@ -33,11 +33,11 @@
     "raw_text": "Job Description: AI Engineer — Agentic Systems (Freight Operations)\nCompany: Cargonet AI — a freight-tech company that runs AI “agent” systems in real production, handling things like\nshipment quoting, booking, tracking, document processing, and fixing errors automatically.\nAbout the Role\nWe need an engineer to help improve our existing AI agent system (think of it as multiple AI workers — a planner, an\nexecutor, a reviewer, and specialized agents — working together). This is not a research-only job. You will build real features\nthat go live for real users, mostly by directing AI coding tools (like Claude Code) rather than writing every line by hand —\nand you’ll be responsible for fixing things when they break in production.\nWhat You'll Do\n•\nImprove the multi-agent AI system (planner, executor, reviewer, and other agents) that powers freight operations:\nquoting, booking, tracking, document processing, and error handling.\n•\nBuild features mainly by directing AI coding tools (like Claude Code) — reviewing and guiding their output, not just\nwriting code yourself.\n•\nWork on the Python backend (built as small services) and the React.js front-end, using MongoDB as the database, to\nbuild clean features and easy-to-use screens for operators.\n•\nImprove how the AI is prompted, what tools/memory it has access to, and how it searches for relevant information\n(RAG / vector search); help decide which AI models to use for the best balance of quality and cost.\n•\nKeep the live system running smoothly — find and fix bugs when an AI agent misbehaves, and improve how we test\nand monitor the system.\n•\nHelp connect the system to outside tools: carrier/shipping APIs, other business software, and document scanning\n(OCR) for extracting data from shipping documents like invoices.\nWhat We're Looking For\n•\nSolid Python backend skills (building APIs, working with small services).\n•\nSome real hands-on experience with AI/LLM systems — not just tutorials. Things like prompt writing, RAG/vector\nsearch, and testing how well an AI system performs.\n•\nComfortable taking ownership when something breaks in production, not just when a demo goes well.\n•\nBasic React.js skills for building simple front-end screens.\n•\nNice to have: experience with logistics/freight, document scanning (OCR), or connecting different business systems\ntogether.\nWhat This Role Is NOT\nThis is not a “build it once and move on” role. We care as much about keeping things working reliably over time as we do\nabout building the first version."
   },
   "created_at": "2026-08-28T08:51:44.401258+00:00",
-  "updated_at": "2026-08-28T09:16:05.225866+00:00",
+  "updated_at": "2026-08-28T10:14:36.612927+00:00",
   "candidate_results": {
     "cand_A": {
-      "run_id": "run_a2ad611a",
-      "timestamp": "2026-08-28T09:16:05.235447+00:00",
+      "run_id": "run_835a0517",
+      "timestamp": "2026-08-28T10:14:36.624811+00:00",
       "profile": {
         "candidate_id": "cand_A",
         "candidate_name": "Rohan Malhotra",
@@ -318,8 +318,14 @@
             "agent_name": "HR / Culture Agent",
             "overall_score": 6.0,
             "verdict": "Lean No",
-            "reasoning": "Rohan Malhotra exhibits potential job stability or retention risks based on interview responses.",
+            "reasoning": "Rohan Malhotra exhibits potential job retention or alignment risks based on interview responses.",
             "supporting_quotes": [
+              {
+                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                "source": "transcript line 2",
+                "verified": true,
+                "verification_note": "Verified in source documents"
+              },
               {
                 "quote": "Tell me about a time you disagreed with a teammate on a technical decision.",
                 "source": "transcript line 9",
@@ -329,13 +335,13 @@
             ],
             "dimension_evaluations": [
               {
-                "dimension_name": "Production Accountability & Incident Retro Ownership",
+                "dimension_name": "Team Collaboration & Technical Communication",
                 "score": 6.0,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Tell me about a time you disagreed with a teammate on a technical decision.",
-                  "source": "transcript line 9",
+                  "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                  "source": "transcript line 2",
                   "verified": true,
                   "verification_note": null
                 }
@@ -346,9 +352,9 @@
           },
           "Hiring Manager Agent": {
             "agent_name": "Hiring Manager Agent",
-            "overall_score": 8.5,
+            "overall_score": 8.4,
             "verdict": "Hire",
-            "reasoning": "Rohan Malhotra presents a strong production-ownership bet for AI Engineer — Agentic Systems (Freight Operations), prioritizing long-term system reliability.",
+            "reasoning": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g. \"Walk me through the exception-handling engine you built at Voltrix.\").",
             "supporting_quotes": [
               {
                 "quote": "Walk me through the exception-handling engine you built at Voltrix.",
@@ -357,16 +363,16 @@
                 "verification_note": "Verified in source documents"
               },
               {
-                "quote": "Who actually wrote the retry/escalation logic that’s in production now?",
-                "source": "transcript line 11",
+                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                "source": "transcript line 2",
                 "verified": true,
                 "verification_note": "Verified in source documents"
               }
             ],
             "dimension_evaluations": [
               {
-                "dimension_name": "Role Execution Fit for AI Engineer — Agentic Systems (Freight Operations)",
-                "score": 8.5,
+                "dimension_name": "Role Execution & Technical Deliverable Fit for AI Engineer — Agentic Systems (Freight Operations)",
+                "score": 8.4,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
@@ -384,7 +390,7 @@
             "agent_name": "Skeptic Agent",
             "overall_score": 4.5,
             "verdict": "Lean No",
-            "reasoning": "CONTRADICTION DETECTED: Rohan Malhotra's resume claims contained exaggeration when probed in the interview.",
+            "reasoning": "DISCREPANCY DETECTED: Rohan Malhotra's resume claims contained exaggeration when probed in the interview.",
             "supporting_quotes": [
               {
                 "quote": "Walk me through the exception-handling engine you built at Voltrix.",
@@ -421,7 +427,7 @@
             "agent_name": "Skeptic Agent",
             "responding_to": "Technical Agent & Hiring Manager Agent",
             "stance": "Disagree",
-            "message": "I must challenge Rohan Malhotra's resume claims. The interview revealed discrepancy between resume claims and actual implementation role.",
+            "message": "I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.",
             "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
           },
           {
@@ -429,7 +435,7 @@
             "agent_name": "Technical Agent",
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
-            "message": "Skeptic raises a valid concern regarding claim inflation. I revise my technical rating from 9.2 down to 8.2 (Lean Hire).",
+            "message": "Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.",
             "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
           },
           {
@@ -437,7 +443,7 @@
             "agent_name": "Hiring Manager Agent",
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
-            "message": "Agreed. Claim inflation introduces execution risk for AI Engineer — Agentic Systems (Freight Operations).",
+            "message": "Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).",
             "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
           }
         ],
@@ -449,7 +455,7 @@
             "score_after": 8.2,
             "verdict_after": "Lean Hire",
             "changed": true,
-            "change_reason": "Downward revision after Skeptic highlighted claim discrepancy in interview transcript."
+            "change_reason": "Downward revision after Skeptic highlighted discrepancy in interview responses."
           },
           "HR / Culture Agent": {
             "agent_name": "HR / Culture Agent",
@@ -462,12 +468,12 @@
           },
           "Hiring Manager Agent": {
             "agent_name": "Hiring Manager Agent",
-            "score_before": 8.5,
+            "score_before": 8.4,
             "verdict_before": "Hire",
-            "score_after": 7.5,
+            "score_after": 7.4,
             "verdict_after": "Lean Hire",
             "changed": true,
-            "change_reason": "Downward revision after Skeptic highlighted claim discrepancy in interview transcript."
+            "change_reason": "Downward revision after Skeptic highlighted discrepancy in interview responses."
           },
           "Skeptic Agent": {
             "agent_name": "Skeptic Agent",
@@ -524,27 +530,33 @@
             "quote": "Walk me through the exception-handling engine you built at Voltrix.",
             "source": "transcript line 1",
             "agent": "Hiring Manager Agent",
-            "explanation": "Rohan Malhotra presents a strong production-ownership bet for AI Engineer — Agentic Systems (Freight Operations), priori..."
+            "explanation": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (..."
           },
           {
-            "quote": "Who actually wrote the retry/escalation logic that’s in production now?",
-            "source": "transcript line 11",
+            "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+            "source": "transcript line 2",
             "agent": "Hiring Manager Agent",
-            "explanation": "Rohan Malhotra presents a strong production-ownership bet for AI Engineer — Agentic Systems (Freight Operations), priori..."
+            "explanation": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (..."
           }
         ],
         "concerns": [
           {
+            "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+            "source": "transcript line 2",
+            "agent": "HR / Culture Agent",
+            "explanation": "Rohan Malhotra exhibits potential job retention or alignment risks based on interview responses...."
+          },
+          {
             "quote": "Tell me about a time you disagreed with a teammate on a technical decision.",
             "source": "transcript line 9",
             "agent": "HR / Culture Agent",
-            "explanation": "Rohan Malhotra exhibits potential job stability or retention risks based on interview responses...."
+            "explanation": "Rohan Malhotra exhibits potential job retention or alignment risks based on interview responses...."
           },
           {
             "quote": "Walk me through the exception-handling engine you built at Voltrix.",
             "source": "transcript line 1",
             "agent": "Skeptic Agent",
-            "explanation": "CONTRADICTION DETECTED: Rohan Malhotra's resume claims contained exaggeration when probed in the interview...."
+            "explanation": "DISCREPANCY DETECTED: Rohan Malhotra's resume claims contained exaggeration when probed in the interview...."
           }
         ],
         "not_assessed_dimensions": [
@@ -562,7 +574,7 @@
             "final_score": 8.2,
             "final_verdict": "Lean Hire",
             "changed": true,
-            "change_reason": "Downward revision after Skeptic highlighted claim discrepancy in interview transcript."
+            "change_reason": "Downward revision after Skeptic highlighted discrepancy in interview responses."
           },
           {
             "agent_name": "HR / Culture Agent",
@@ -575,12 +587,12 @@
           },
           {
             "agent_name": "Hiring Manager Agent",
-            "initial_score": 8.5,
+            "initial_score": 8.4,
             "initial_verdict": "Hire",
-            "final_score": 7.5,
+            "final_score": 7.4,
             "final_verdict": "Lean Hire",
             "changed": true,
-            "change_reason": "Downward revision after Skeptic highlighted claim discrepancy in interview transcript."
+            "change_reason": "Downward revision after Skeptic highlighted discrepancy in interview responses."
           },
           {
             "agent_name": "Skeptic Agent",
@@ -601,7 +613,7 @@
             "agent_name": "Skeptic Agent",
             "responding_to": "Technical Agent & Hiring Manager Agent",
             "stance": "Disagree",
-            "message": "I must challenge Rohan Malhotra's resume claims. The interview revealed discrepancy between resume claims and actual implementation role.",
+            "message": "I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.",
             "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
           },
           {
@@ -609,7 +621,7 @@
             "agent_name": "Technical Agent",
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
-            "message": "Skeptic raises a valid concern regarding claim inflation. I revise my technical rating from 9.2 down to 8.2 (Lean Hire).",
+            "message": "Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.",
             "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
           },
           {
@@ -617,17 +629,17 @@
             "agent_name": "Hiring Manager Agent",
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
-            "message": "Agreed. Claim inflation introduces execution risk for AI Engineer — Agentic Systems (Freight Operations).",
+            "message": "Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).",
             "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
           }
         ],
-        "markdown_content": "# Candidate Evaluation Report: Rohan Malhotra\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Lean No` | **Confidence Level:** `80%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Lean No (80% confidence) for Rohan Malhotra applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Lean Hire (8.2) | Yes | Downward revision after Skeptic highlighted claim discrepancy in interview transcript. |\n| HR / Culture Agent | Lean No (6.0) | Lean No (6.0) | No | Position maintained. |\n| Hiring Manager Agent | Hire (8.5) | Lean Hire (7.5) | Yes | Downward revision after Skeptic highlighted claim discrepancy in interview transcript. |\n| Skeptic Agent | Lean No (4.5) | Lean No (4.5) | No | Position maintained. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n- **[Technical Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n- **[Hiring Manager Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n- **[Hiring Manager Agent]** *\"Who actually wrote the retry/escalation logic that’s in production now?\"* (transcript line 11)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[HR / Culture Agent]** *\"Tell me about a time you disagreed with a teammate on a technical decision.\"* (transcript line 9)\n- **[Skeptic Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Go**: No verified source quotes found in candidate profile/transcript for Production Experience with Go.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Skeptic Agent** (responding to *Technical Agent & Hiring Manager Agent*) [Disagree]:\n> \"I must challenge Rohan Malhotra's resume claims. The interview revealed discrepancy between resume claims and actual implementation role.\"\n\n**Round 1 - Technical Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Skeptic raises a valid concern regarding claim inflation. I revise my technical rating from 9.2 down to 8.2 (Lean Hire).\"\n\n**Round 2 - Hiring Manager Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Agreed. Claim inflation introduces execution risk for AI Engineer — Agentic Systems (Freight Operations).\"\n"
+        "markdown_content": "# Candidate Evaluation Report: Rohan Malhotra\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Lean No` | **Confidence Level:** `80%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Lean No (80% confidence) for Rohan Malhotra applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Lean Hire (8.2) | Yes | Downward revision after Skeptic highlighted discrepancy in interview responses. |\n| HR / Culture Agent | Lean No (6.0) | Lean No (6.0) | No | Position maintained. |\n| Hiring Manager Agent | Hire (8.4) | Lean Hire (7.4) | Yes | Downward revision after Skeptic highlighted discrepancy in interview responses. |\n| Skeptic Agent | Lean No (4.5) | Lean No (4.5) | No | Position maintained. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n- **[Technical Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n- **[Hiring Manager Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n- **[Hiring Manager Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[HR / Culture Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"Tell me about a time you disagreed with a teammate on a technical decision.\"* (transcript line 9)\n- **[Skeptic Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Go**: No verified source quotes found in candidate profile/transcript for Production Experience with Go.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Skeptic Agent** (responding to *Technical Agent & Hiring Manager Agent*) [Disagree]:\n> \"I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.\"\n\n**Round 1 - Technical Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.\"\n\n**Round 2 - Hiring Manager Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).\"\n"
       },
-      "audio_url": "/api/audio/run_a2ad611a.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_835a0517.mp3"
     },
     "cand_B": {
-      "run_id": "run_d664b3f2",
-      "timestamp": "2026-08-28T09:16:05.236364+00:00",
+      "run_id": "run_61ae8be5",
+      "timestamp": "2026-08-28T10:14:36.626163+00:00",
       "profile": {
         "candidate_id": "cand_B",
         "candidate_name": "Ananya Iyer",
@@ -890,32 +902,32 @@
           },
           "HR / Culture Agent": {
             "agent_name": "HR / Culture Agent",
-            "overall_score": 9.2,
+            "overall_score": 9.0,
             "verdict": "Strong Hire",
-            "reasoning": "Ananya Iyer demonstrates exceptional accountability, transparency, and production incident ownership.",
+            "reasoning": "Ananya Iyer demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\").",
             "supporting_quotes": [
               {
-                "quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a",
-                "source": "transcript line 4",
+                "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+                "source": "transcript line 6",
                 "verified": true,
                 "verification_note": "Verified in source documents"
               },
               {
-                "quote": "Tell me about a mistake you made and how you handled it.",
-                "source": "transcript line 9",
+                "quote": "A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t",
+                "source": "transcript line 12",
                 "verified": true,
                 "verification_note": "Verified in source documents"
               }
             ],
             "dimension_evaluations": [
               {
-                "dimension_name": "Production Accountability & Incident Retro Ownership",
-                "score": 9.2,
+                "dimension_name": "Team Collaboration & Technical Communication",
+                "score": 9.0,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a",
-                  "source": "transcript line 4",
+                  "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+                  "source": "transcript line 6",
                   "verified": true,
                   "verification_note": null
                 }
@@ -926,9 +938,9 @@
           },
           "Hiring Manager Agent": {
             "agent_name": "Hiring Manager Agent",
-            "overall_score": 8.5,
+            "overall_score": 8.4,
             "verdict": "Hire",
-            "reasoning": "Ananya Iyer presents a strong production-ownership bet for AI Engineer — Agentic Systems (Freight Operations), prioritizing long-term system reliability.",
+            "reasoning": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g. \"Tell me about the RAG pipeline you built for the support-ticket assistant.\").",
             "supporting_quotes": [
               {
                 "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
@@ -945,8 +957,8 @@
             ],
             "dimension_evaluations": [
               {
-                "dimension_name": "Role Execution Fit for AI Engineer — Agentic Systems (Freight Operations)",
-                "score": 8.5,
+                "dimension_name": "Role Execution & Technical Deliverable Fit for AI Engineer — Agentic Systems (Freight Operations)",
+                "score": 8.4,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
@@ -962,9 +974,9 @@
           },
           "Skeptic Agent": {
             "agent_name": "Skeptic Agent",
-            "overall_score": 5.5,
-            "verdict": "Lean No",
-            "reasoning": "Ananya Iyer acknowledged experience gaps in interview responses without inflating claims.",
+            "overall_score": 6.0,
+            "verdict": "Lean Hire",
+            "reasoning": "Ananya Iyer acknowledged specific technical experience limits in interview responses without inflating claims (e.g. \"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\").",
             "supporting_quotes": [
               {
                 "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
@@ -976,7 +988,7 @@
             "dimension_evaluations": [
               {
                 "dimension_name": "Resume Claim Veracity & Discrepancy Verification",
-                "score": 5.5,
+                "score": 6.0,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
@@ -998,27 +1010,27 @@
         "turns": [
           {
             "round_number": 1,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "Technical Agent",
-            "stance": "Disagree",
-            "message": "Ananya Iyer lacks production experience with several required technologies listed in AI Engineer — Agentic Systems (Freight Operations).",
-            "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
+            "agent_name": "Technical Agent",
+            "responding_to": "Hiring Manager Agent",
+            "stance": "Reinforce",
+            "message": "Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).",
+            "cites_quote": "Tell me about the RAG pipeline you built for the support-ticket assistant."
           },
           {
             "round_number": 1,
-            "agent_name": "HR / Culture Agent",
-            "responding_to": "Skeptic Agent",
+            "agent_name": "Skeptic Agent",
+            "responding_to": "Technical Agent",
             "stance": "Disagree",
-            "message": "Ananya Iyer's transparency is exceptional. High production accountability and voluntary metric disclosure outweigh tool gaps.",
-            "cites_quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a"
+            "message": "Recommend verifying Ananya Iyer's hands-on depth during initial onboarding milestones.",
+            "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
           },
           {
             "round_number": 2,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "HR / Culture Agent & Hiring Manager Agent",
-            "stance": "Revise",
-            "message": "I am persuaded by HR regarding Ananya Iyer's zero claim inflation and incident retro discipline. I revise my stance from Lean No (5.5) up to Hire (7.5).",
-            "cites_quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a"
+            "agent_name": "HR / Culture Agent",
+            "responding_to": "Skeptic Agent",
+            "stance": "Agree",
+            "message": "Ananya Iyer's communication and transparency in source documents provide high confidence in team integration.",
+            "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
           }
         ],
         "stance_deltas": {
@@ -1029,42 +1041,42 @@
             "score_after": 9.2,
             "verdict_after": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           "HR / Culture Agent": {
             "agent_name": "HR / Culture Agent",
-            "score_before": 9.2,
+            "score_before": 9.0,
             "verdict_before": "Strong Hire",
-            "score_after": 9.2,
+            "score_after": 9.0,
             "verdict_after": "Strong Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           "Hiring Manager Agent": {
             "agent_name": "Hiring Manager Agent",
-            "score_before": 8.5,
+            "score_before": 8.4,
             "verdict_before": "Hire",
-            "score_after": 8.5,
+            "score_after": 8.4,
             "verdict_after": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           "Skeptic Agent": {
             "agent_name": "Skeptic Agent",
-            "score_before": 5.5,
-            "verdict_before": "Lean No",
-            "score_after": 7.5,
-            "verdict_after": "Hire",
-            "changed": true,
-            "change_reason": "Upward revision after HR & Hiring Manager highlighted zero claim inflation and prompt retro discipline."
+            "score_before": 6.0,
+            "verdict_before": "Lean Hire",
+            "score_after": 6.0,
+            "verdict_after": "Lean Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           }
         }
       },
       "final_decision": {
         "candidate_id": "cand_B",
-        "recommendation": "Strong Hire",
-        "confidence": 0.95,
-        "decision_rationale": "The evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Ananya Iyer applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.",
+        "recommendation": "Hire",
+        "confidence": 0.88,
+        "decision_rationale": "The evaluation panel reached a final recommendation of Hire (88% confidence) for Ananya Iyer applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.",
         "unresolved_disagreements": [],
         "not_assessed_dimensions": [
           {
@@ -1083,8 +1095,8 @@
       "report": {
         "candidate_id": "cand_B",
         "candidate_name": "Ananya Iyer",
-        "final_recommendation": "Strong Hire",
-        "confidence": 0.95,
+        "final_recommendation": "Hire",
+        "confidence": 0.88,
         "strengths": [
           {
             "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
@@ -1099,28 +1111,28 @@
             "explanation": "Ananya Iyer demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, Go, React,..."
           },
           {
-            "quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a",
-            "source": "transcript line 4",
+            "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+            "source": "transcript line 6",
             "agent": "HR / Culture Agent",
-            "explanation": "Ananya Iyer demonstrates exceptional accountability, transparency, and production incident ownership...."
+            "explanation": "Ananya Iyer demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Not in produc..."
           },
           {
-            "quote": "Tell me about a mistake you made and how you handled it.",
-            "source": "transcript line 9",
+            "quote": "A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t",
+            "source": "transcript line 12",
             "agent": "HR / Culture Agent",
-            "explanation": "Ananya Iyer demonstrates exceptional accountability, transparency, and production incident ownership...."
+            "explanation": "Ananya Iyer demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Not in produc..."
           },
           {
             "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
             "source": "transcript line 1",
             "agent": "Hiring Manager Agent",
-            "explanation": "Ananya Iyer presents a strong production-ownership bet for AI Engineer — Agentic Systems (Freight Operations), prioritiz..."
+            "explanation": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g..."
           },
           {
             "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
             "source": "transcript line 2",
             "agent": "Hiring Manager Agent",
-            "explanation": "Ananya Iyer presents a strong production-ownership bet for AI Engineer — Agentic Systems (Freight Operations), prioritiz..."
+            "explanation": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g..."
           }
         ],
         "concerns": [
@@ -1128,7 +1140,7 @@
             "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
             "source": "transcript line 6",
             "agent": "Skeptic Agent",
-            "explanation": "Ananya Iyer acknowledged experience gaps in interview responses without inflating claims...."
+            "explanation": "Ananya Iyer acknowledged specific technical experience limits in interview responses without inflating claims (e.g. \"Not..."
           }
         ],
         "not_assessed_dimensions": [
@@ -1146,82 +1158,82 @@
             "final_score": 9.2,
             "final_verdict": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           {
             "agent_name": "HR / Culture Agent",
-            "initial_score": 9.2,
+            "initial_score": 9.0,
             "initial_verdict": "Strong Hire",
-            "final_score": 9.2,
+            "final_score": 9.0,
             "final_verdict": "Strong Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           {
             "agent_name": "Hiring Manager Agent",
-            "initial_score": 8.5,
+            "initial_score": 8.4,
             "initial_verdict": "Hire",
-            "final_score": 8.5,
+            "final_score": 8.4,
             "final_verdict": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           {
             "agent_name": "Skeptic Agent",
-            "initial_score": 5.5,
-            "initial_verdict": "Lean No",
-            "final_score": 7.5,
-            "final_verdict": "Hire",
-            "changed": true,
-            "change_reason": "Upward revision after HR & Hiring Manager highlighted zero claim inflation and prompt retro discipline."
+            "initial_score": 6.0,
+            "initial_verdict": "Lean Hire",
+            "final_score": 6.0,
+            "final_verdict": "Lean Hire",
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           }
         ],
         "unresolved_disagreements": [],
         "debate_highlights": [
           {
             "round_number": 1,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "Technical Agent",
-            "stance": "Disagree",
-            "message": "Ananya Iyer lacks production experience with several required technologies listed in AI Engineer — Agentic Systems (Freight Operations).",
-            "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
+            "agent_name": "Technical Agent",
+            "responding_to": "Hiring Manager Agent",
+            "stance": "Reinforce",
+            "message": "Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).",
+            "cites_quote": "Tell me about the RAG pipeline you built for the support-ticket assistant."
           },
           {
             "round_number": 1,
-            "agent_name": "HR / Culture Agent",
-            "responding_to": "Skeptic Agent",
+            "agent_name": "Skeptic Agent",
+            "responding_to": "Technical Agent",
             "stance": "Disagree",
-            "message": "Ananya Iyer's transparency is exceptional. High production accountability and voluntary metric disclosure outweigh tool gaps.",
-            "cites_quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a"
+            "message": "Recommend verifying Ananya Iyer's hands-on depth during initial onboarding milestones.",
+            "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
           },
           {
             "round_number": 2,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "HR / Culture Agent & Hiring Manager Agent",
-            "stance": "Revise",
-            "message": "I am persuaded by HR regarding Ananya Iyer's zero claim inflation and incident retro discipline. I revise my stance from Lean No (5.5) up to Hire (7.5).",
-            "cites_quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a"
+            "agent_name": "HR / Culture Agent",
+            "responding_to": "Skeptic Agent",
+            "stance": "Agree",
+            "message": "Ananya Iyer's communication and transparency in source documents provide high confidence in team integration.",
+            "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
           }
         ],
-        "markdown_content": "# Candidate Evaluation Report: Ananya Iyer\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Ananya Iyer applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Hire (9.2) | No | Position strongly reinforced. |\n| HR / Culture Agent | Strong Hire (9.2) | Strong Hire (9.2) | No | Position strongly reinforced. |\n| Hiring Manager Agent | Hire (8.5) | Hire (8.5) | No | Position strongly reinforced. |\n| Skeptic Agent | Lean No (5.5) | Hire (7.5) | Yes | Upward revision after HR & Hiring Manager highlighted zero claim inflation and prompt retro discipline. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Tell me about the RAG pipeline you built for the support-ticket assistant.\"* (transcript line 1)\n- **[Technical Agent]** *\"Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a\"* (transcript line 4)\n- **[HR / Culture Agent]** *\"Tell me about a mistake you made and how you handled it.\"* (transcript line 9)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 6)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Vector Search**: No verified source quotes found in candidate profile/transcript for Production Experience with Vector Search.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Ananya Iyer lacks production experience with several required technologies listed in AI Engineer — Agentic Systems (Freight Operations).\"\n\n**Round 1 - HR / Culture Agent** (responding to *Skeptic Agent*) [Disagree]:\n> \"Ananya Iyer's transparency is exceptional. High production accountability and voluntary metric disclosure outweigh tool gaps.\"\n\n**Round 2 - Skeptic Agent** (responding to *HR / Culture Agent & Hiring Manager Agent*) [Revise]:\n> \"I am persuaded by HR regarding Ananya Iyer's zero claim inflation and incident retro discipline. I revise my stance from Lean No (5.5) up to Hire (7.5).\"\n"
+        "markdown_content": "# Candidate Evaluation Report: Ananya Iyer\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Hire` | **Confidence Level:** `88%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Hire (88% confidence) for Ananya Iyer applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Hire (9.2) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Lean Hire (6.0) | Lean Hire (6.0) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Tell me about the RAG pipeline you built for the support-ticket assistant.\"* (transcript line 1)\n- **[Technical Agent]** *\"Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 6)\n- **[HR / Culture Agent]** *\"A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t\"* (transcript line 12)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 6)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Vector Search**: No verified source quotes found in candidate profile/transcript for Production Experience with Vector Search.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Ananya Iyer's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Ananya Iyer's communication and transparency in source documents provide high confidence in team integration.\"\n"
       },
-      "audio_url": "/api/audio/run_d664b3f2.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_61ae8be5.mp3"
     }
   },
   "stage6_comparison": {
     "batch_id": "batch_role_cargonet_ai",
-    "timestamp": "2026-08-28T09:16:05.239241+00:00",
+    "timestamp": "2026-08-28T10:14:36.632657+00:00",
     "job_description_title": "AI Engineer — Agentic Systems (Freight Operations)",
     "rankings": [
       {
         "rank": 1,
         "candidate_id": "cand_B",
         "candidate_name": "Ananya Iyer",
-        "final_recommendation": "Strong Hire",
-        "confidence": 0.95,
+        "final_recommendation": "Hire",
+        "confidence": 0.88,
         "key_differentiators": [
           "Strength: Ananya Iyer demonstrates technical alignment with 7 of 8 core required skills in the Job Description",
-          "Observation: Ananya Iyer acknowledged experience gaps in interview responses without inflating claims....",
+          "Observation: Ananya Iyer acknowledged specific technical experience limits in interview responses without inflati",
           "Insufficient Info: Production Experience with Vector Search"
         ]
       },
@@ -1233,7 +1245,7 @@
         "confidence": 0.8,
         "key_differentiators": [
           "Strength: Rohan Malhotra demonstrates technical alignment with 7 of 8 core required skills in the Job Descript",
-          "Observation: Rohan Malhotra exhibits potential job stability or retention risks based on interview responses....",
+          "Observation: Rohan Malhotra exhibits potential job retention or alignment risks based on interview responses....",
           "Insufficient Info: Production Experience with Go"
         ]
       }

@@ -66,7 +66,7 @@ class Stage6ComparativeEvaluator:
             ))
 
         # Dynamic JD Requirement Compliance Matrix generated from jd.required_skills
-        jd_requirements = jd.required_skills if jd.required_skills else ["Core Engineering Competency", "System Architecture", "Team Collaboration"]
+        jd_requirements = jd.required_skills[:10] if jd.required_skills else (jd.qualifications[:8] if jd.qualifications else ["Core Technical Deliverables", "System Architecture", "Technical Execution"])
 
         jd_matrix: List[JDRequirementCompliance] = []
         for req in jd_requirements:

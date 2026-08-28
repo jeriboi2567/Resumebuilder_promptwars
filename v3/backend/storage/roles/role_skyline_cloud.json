@@ -19,11 +19,11 @@
     "raw_text": "\n    JOB DESCRIPTION: Principal Cloud Infrastructure Architect\n    Company: Skyline Cloud Systems\n    Role: Build scalable Kubernetes clusters, Terraform infrastructure, and high-throughput Go gRPC services.\n    Required Skills: Go, Kubernetes, Terraform, gRPC, AWS\n    Responsibilities:\n    - Architect multi-region EKS Kubernetes clusters.\n    - Automate infrastructure provisioning using Terraform.\n    Qualifications:\n    - 7+ years of cloud platform engineering experience.\n    "
   },
   "created_at": "2026-08-28T08:51:44.073376+00:00",
-  "updated_at": "2026-08-28T08:51:52.684676+00:00",
+  "updated_at": "2026-08-28T10:14:36.546775+00:00",
   "candidate_results": {
     "cand_jordan": {
-      "run_id": "run_c1827e7a",
-      "timestamp": "2026-08-28T08:51:52.694174+00:00",
+      "run_id": "run_32f83989",
+      "timestamp": "2026-08-28T10:14:36.558739+00:00",
       "profile": {
         "candidate_id": "cand_jordan",
         "candidate_name": "Jordan Hayes",
@@ -158,9 +158,9 @@
           },
           "HR / Culture Agent": {
             "agent_name": "HR / Culture Agent",
-            "overall_score": 9.2,
+            "overall_score": 9.0,
             "verdict": "Strong Hire",
-            "reasoning": "Jordan Hayes demonstrates exceptional accountability, transparency, and production incident ownership.",
+            "reasoning": "Jordan Hayes demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\").",
             "supporting_quotes": [
               {
                 "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
@@ -171,8 +171,8 @@
             ],
             "dimension_evaluations": [
               {
-                "dimension_name": "Production Accountability & Incident Retro Ownership",
-                "score": 9.2,
+                "dimension_name": "Team Collaboration & Technical Communication",
+                "score": 9.0,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
@@ -188,32 +188,26 @@
           },
           "Hiring Manager Agent": {
             "agent_name": "Hiring Manager Agent",
-            "overall_score": 8.5,
+            "overall_score": 8.4,
             "verdict": "Hire",
-            "reasoning": "Jordan Hayes presents a strong production-ownership bet for Principal Cloud Infrastructure Architect, prioritizing long-term system reliability.",
+            "reasoning": "Jordan Hayes presents a strong execution and delivery profile for Principal Cloud Infrastructure Architect (e.g. \"Walk us through your multi-region Kubernetes deployment with Terraform.\").",
             "supporting_quotes": [
               {
-                "quote": "Tell us about a production incident you owned.",
-                "source": "transcript line 3",
-                "verified": true,
-                "verification_note": "Verified in source documents"
-              },
-              {
-                "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
-                "source": "transcript line 4",
+                "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
+                "source": "transcript line 1",
                 "verified": true,
                 "verification_note": "Verified in source documents"
               }
             ],
             "dimension_evaluations": [
               {
-                "dimension_name": "Role Execution Fit for Principal Cloud Infrastructure Architect",
-                "score": 8.5,
+                "dimension_name": "Role Execution & Technical Deliverable Fit for Principal Cloud Infrastructure Architect",
+                "score": 8.4,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Tell us about a production incident you owned.",
-                  "source": "transcript line 3",
+                  "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
+                  "source": "transcript line 1",
                   "verified": true,
                   "verification_note": null
                 }
@@ -224,9 +218,9 @@
           },
           "Skeptic Agent": {
             "agent_name": "Skeptic Agent",
-            "overall_score": 7.0,
-            "verdict": "Lean Hire",
-            "reasoning": "Jordan Hayes's claims appear verified with low contradiction risk.",
+            "overall_score": 7.5,
+            "verdict": "Hire",
+            "reasoning": "Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents.",
             "supporting_quotes": [
               {
                 "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
@@ -238,7 +232,7 @@
             "dimension_evaluations": [
               {
                 "dimension_name": "Resume Claim Veracity & Discrepancy Verification",
-                "score": 7.0,
+                "score": 7.5,
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
@@ -260,26 +254,26 @@
         "turns": [
           {
             "round_number": 1,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "Technical Agent",
-            "stance": "Disagree",
-            "message": "Jordan Hayes lacks production experience with several required technologies listed in Principal Cloud Infrastructure Architect.",
+            "agent_name": "Technical Agent",
+            "responding_to": "Hiring Manager Agent",
+            "stance": "Reinforce",
+            "message": "Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.",
             "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
           },
           {
             "round_number": 1,
-            "agent_name": "HR / Culture Agent",
-            "responding_to": "Skeptic Agent",
+            "agent_name": "Skeptic Agent",
+            "responding_to": "Technical Agent",
             "stance": "Disagree",
-            "message": "Jordan Hayes's transparency is exceptional. High production accountability and voluntary metric disclosure outweigh tool gaps.",
-            "cites_quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
+            "message": "Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.",
+            "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
           },
           {
             "round_number": 2,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "HR / Culture Agent & Hiring Manager Agent",
-            "stance": "Revise",
-            "message": "I am persuaded by HR regarding Jordan Hayes's zero claim inflation and incident retro discipline. I revise my stance from Lean No (5.5) up to Hire (7.5).",
+            "agent_name": "HR / Culture Agent",
+            "responding_to": "Skeptic Agent",
+            "stance": "Agree",
+            "message": "Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.",
             "cites_quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
           }
         ],
@@ -291,34 +285,34 @@
             "score_after": 9.5,
             "verdict_after": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           "HR / Culture Agent": {
             "agent_name": "HR / Culture Agent",
-            "score_before": 9.2,
+            "score_before": 9.0,
             "verdict_before": "Strong Hire",
-            "score_after": 9.2,
+            "score_after": 9.0,
             "verdict_after": "Strong Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           "Hiring Manager Agent": {
             "agent_name": "Hiring Manager Agent",
-            "score_before": 8.5,
+            "score_before": 8.4,
             "verdict_before": "Hire",
-            "score_after": 8.5,
+            "score_after": 8.4,
             "verdict_after": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           "Skeptic Agent": {
             "agent_name": "Skeptic Agent",
-            "score_before": 5.5,
-            "verdict_before": "Lean No",
+            "score_before": 7.5,
+            "verdict_before": "Hire",
             "score_after": 7.5,
             "verdict_after": "Hire",
-            "changed": true,
-            "change_reason": "Upward revision after HR & Hiring Manager highlighted zero claim inflation and prompt retro discipline."
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           }
         }
       },
@@ -358,25 +352,19 @@
             "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
             "source": "transcript line 4",
             "agent": "HR / Culture Agent",
-            "explanation": "Jordan Hayes demonstrates exceptional accountability, transparency, and production incident ownership...."
+            "explanation": "Jordan Hayes demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"A terraform ..."
           },
           {
-            "quote": "Tell us about a production incident you owned.",
-            "source": "transcript line 3",
+            "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
+            "source": "transcript line 1",
             "agent": "Hiring Manager Agent",
-            "explanation": "Jordan Hayes presents a strong production-ownership bet for Principal Cloud Infrastructure Architect, prioritizing long-..."
-          },
-          {
-            "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
-            "source": "transcript line 4",
-            "agent": "Hiring Manager Agent",
-            "explanation": "Jordan Hayes presents a strong production-ownership bet for Principal Cloud Infrastructure Architect, prioritizing long-..."
+            "explanation": "Jordan Hayes presents a strong execution and delivery profile for Principal Cloud Infrastructure Architect (e.g. \"Walk u..."
           },
           {
             "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
             "source": "transcript line 1",
             "agent": "Skeptic Agent",
-            "explanation": "Jordan Hayes's claims appear verified with low contradiction risk...."
+            "explanation": "Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents...."
           }
         ],
         "concerns": [
@@ -384,7 +372,7 @@
             "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
             "source": "transcript line 1",
             "agent": "Skeptic Agent",
-            "explanation": "Jordan Hayes's claims appear verified with low contradiction risk...."
+            "explanation": "Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents...."
           }
         ],
         "not_assessed_dimensions": [],
@@ -396,71 +384,71 @@
             "final_score": 9.5,
             "final_verdict": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           {
             "agent_name": "HR / Culture Agent",
-            "initial_score": 9.2,
+            "initial_score": 9.0,
             "initial_verdict": "Strong Hire",
-            "final_score": 9.2,
+            "final_score": 9.0,
             "final_verdict": "Strong Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           {
             "agent_name": "Hiring Manager Agent",
-            "initial_score": 8.5,
+            "initial_score": 8.4,
             "initial_verdict": "Hire",
-            "final_score": 8.5,
+            "final_score": 8.4,
             "final_verdict": "Hire",
             "changed": false,
-            "change_reason": "Position strongly reinforced."
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           },
           {
             "agent_name": "Skeptic Agent",
-            "initial_score": 7.0,
-            "initial_verdict": "Lean Hire",
+            "initial_score": 7.5,
+            "initial_verdict": "Hire",
             "final_score": 7.5,
             "final_verdict": "Hire",
-            "changed": true,
-            "change_reason": "Upward revision after HR & Hiring Manager highlighted zero claim inflation and prompt retro discipline."
+            "changed": false,
+            "change_reason": "Position reinforced after reviewing cross-agent evidence."
           }
         ],
         "unresolved_disagreements": [],
         "debate_highlights": [
           {
             "round_number": 1,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "Technical Agent",
-            "stance": "Disagree",
-            "message": "Jordan Hayes lacks production experience with several required technologies listed in Principal Cloud Infrastructure Architect.",
+            "agent_name": "Technical Agent",
+            "responding_to": "Hiring Manager Agent",
+            "stance": "Reinforce",
+            "message": "Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.",
             "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
           },
           {
             "round_number": 1,
-            "agent_name": "HR / Culture Agent",
-            "responding_to": "Skeptic Agent",
+            "agent_name": "Skeptic Agent",
+            "responding_to": "Technical Agent",
             "stance": "Disagree",
-            "message": "Jordan Hayes's transparency is exceptional. High production accountability and voluntary metric disclosure outweigh tool gaps.",
-            "cites_quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
+            "message": "Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.",
+            "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
           },
           {
             "round_number": 2,
-            "agent_name": "Skeptic Agent",
-            "responding_to": "HR / Culture Agent & Hiring Manager Agent",
-            "stance": "Revise",
-            "message": "I am persuaded by HR regarding Jordan Hayes's zero claim inflation and incident retro discipline. I revise my stance from Lean No (5.5) up to Hire (7.5).",
+            "agent_name": "HR / Culture Agent",
+            "responding_to": "Skeptic Agent",
+            "stance": "Agree",
+            "message": "Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.",
             "cites_quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
           }
         ],
-        "markdown_content": "# Candidate Evaluation Report: Jordan Hayes\n**Target Role:** Principal Cloud Infrastructure Architect (Senior)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Jordan Hayes applying for Principal Cloud Infrastructure Architect. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. \n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.5) | Hire (9.5) | No | Position strongly reinforced. |\n| HR / Culture Agent | Strong Hire (9.2) | Strong Hire (9.2) | No | Position strongly reinforced. |\n| Hiring Manager Agent | Hire (8.5) | Hire (8.5) | No | Position strongly reinforced. |\n| Skeptic Agent | Lean Hire (7.0) | Hire (7.5) | Yes | Upward revision after HR & Hiring Manager highlighted zero claim inflation and prompt retro discipline. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n- **[Technical Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 4)\n- **[Hiring Manager Agent]** *\"Tell us about a production incident you owned.\"* (transcript line 3)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- *All JD evaluation dimensions had sufficient source evidence.*\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Jordan Hayes lacks production experience with several required technologies listed in Principal Cloud Infrastructure Architect.\"\n\n**Round 1 - HR / Culture Agent** (responding to *Skeptic Agent*) [Disagree]:\n> \"Jordan Hayes's transparency is exceptional. High production accountability and voluntary metric disclosure outweigh tool gaps.\"\n\n**Round 2 - Skeptic Agent** (responding to *HR / Culture Agent & Hiring Manager Agent*) [Revise]:\n> \"I am persuaded by HR regarding Jordan Hayes's zero claim inflation and incident retro discipline. I revise my stance from Lean No (5.5) up to Hire (7.5).\"\n"
+        "markdown_content": "# Candidate Evaluation Report: Jordan Hayes\n**Target Role:** Principal Cloud Infrastructure Architect (Senior)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Jordan Hayes applying for Principal Cloud Infrastructure Architect. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. \n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.5) | Hire (9.5) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Hire (7.5) | Hire (7.5) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n- **[Technical Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 4)\n- **[Hiring Manager Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- *All JD evaluation dimensions had sufficient source evidence.*\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.\"\n"
       },
-      "audio_url": "/api/audio/run_c1827e7a.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_32f83989.mp3"
     }
   },
   "stage6_comparison": {
     "batch_id": "batch_role_skyline_cloud",
-    "timestamp": "2026-08-28T08:51:52.695050+00:00",
+    "timestamp": "2026-08-28T10:14:36.560420+00:00",
     "job_description_title": "Principal Cloud Infrastructure Architect",
     "rankings": [
       {
@@ -471,7 +459,7 @@
         "confidence": 0.95,
         "key_differentiators": [
           "Strength: Jordan Hayes demonstrates technical alignment with 3 of 3 core required skills in the Job Descriptio",
-          "Observation: Jordan Hayes's claims appear verified with low contradiction risk...."
+          "Observation: Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents..."
         ]
       }
     ],

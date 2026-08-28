@@ -100,7 +100,10 @@ class PDFDocumentParser:
         qualifications = []
 
         common_tech_keywords = [
-            "Python", "FastAPI", "Go", "Java", "C++", "TypeScript", "React", "Node.js",
+            "Altium", "KiCad", "PCB", "PCB Layout", "Signal Integrity", "Power Integrity", "DFM", "DFA",
+            "ESP32", "STM32", "C/C++", "C++", "C", "Firmware", "Schematic Capture", "FPGA", "Verilog", "VHDL",
+            "Embedded", "Microcontroller", "ARM", "SPI", "I2C", "UART", "Board Bring-up",
+            "Python", "FastAPI", "Go", "Java", "TypeScript", "React", "Node.js",
             "MongoDB", "PostgreSQL", "Kafka", "Redis", "Docker", "Kubernetes", "AWS",
             "PyTorch", "TensorFlow", "LangChain", "LangGraph", "CrewAI", "RAG", "Vector Search",
             "Triton", "OCR", "SQL", "LLM", "Microservices", "REST API"
@@ -118,20 +121,26 @@ class PDFDocumentParser:
             if "what you'll do" in l_lower or "responsibilities" in l_lower or "what you will do" in l_lower:
                 curr_section = "resp"
                 continue
-            elif "looking for" in l_lower or "requirements" in l_lower or "qualifications" in l_lower:
+            elif "looking for" in l_lower or "requirements" in l_lower or "qualifications" in l_lower or "required skills" in l_lower:
                 curr_section = "qual"
                 continue
             elif "what this role is not" in l_lower or "about the role" in l_lower:
                 curr_section = None
                 continue
 
-            if curr_section == "resp" and len(line) > 10:
-                responsibilities.append(line.lstrip("•-* "))
-            elif curr_section == "qual" and len(line) > 10:
-                qualifications.append(line.lstrip("•-* "))
+            clean_line = line.lstrip("•-* ").strip()
+            if curr_section == "resp" and len(clean_line) > 8:
+                responsibilities.append(clean_line)
+            elif curr_section == "qual" and len(clean_line) > 8:
+                qualifications.append(clean_line)
+                if len(clean_line) < 60 and clean_line not in required_skills:
+                    required_skills.append(clean_line)
 
         if not required_skills:
-            required_skills = ["Software Engineering", "System Architecture", "Problem Solving"]
+            if qualifications:
+                required_skills = [q[:45] for q in qualifications[:5]]
+            else:
+                required_skills = ["Core Engineering Deliverables", "System Architecture", "Technical Execution"]
 
         return JobDescription(
             job_id=job_id or f"jd_{uuid.uuid4().hex[:6]}",

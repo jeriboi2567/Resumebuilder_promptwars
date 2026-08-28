@@ -15,7 +15,7 @@ class SkepticAgentV2(BaseAgentV2):
         quotes = []
         for q in profile.quote_bank:
             q_lower = q.quote.lower()
-            if any(w in q_lower for w in ["too strong", "built most", "gap", "not in production", "haven't looked", "informal"]):
+            if any(w in q_lower for w in ["gap", "exaggerat", "informal", "not in production", "haven't used", "limited", "lack"]):
                 quotes.append(SupportingQuote(quote=q.quote, source=q.location))
                 if len(quotes) >= 2:
                     break
@@ -23,28 +23,29 @@ class SkepticAgentV2(BaseAgentV2):
         if not quotes and profile.quote_bank:
             quotes.append(SupportingQuote(quote=profile.quote_bank[0].quote, source=profile.quote_bank[0].location))
 
-        has_exaggeration = "too strong" in tr_text or "priya" in tr_text or "haven't looked" in tr_text
-        has_acknowledged_gap = "gap" in tr_text or "not in production" in tr_text or "upfront" in tr_text
+        has_exaggeration = "too strong" in tr_text or "exaggerat" in tr_text or "claimed" in tr_text
+        has_acknowledged_gap = "gap" in tr_text or "not in production" in tr_text or "limited" in tr_text or "haven't" in tr_text
 
         if has_exaggeration:
             overall_score = 4.5
             verdict = "Lean No"
-            reasoning = f"CONTRADICTION DETECTED: {cand_name}'s resume claims contained exaggeration when probed in the interview."
+            reasoning = f"DISCREPANCY DETECTED: {cand_name}'s resume claims contained exaggeration when probed in the interview."
         elif has_acknowledged_gap:
-            overall_score = 5.5
-            verdict = "Lean No"
-            reasoning = f"{cand_name} acknowledged experience gaps in interview responses without inflating claims."
-        else:
-            overall_score = 7.0
+            overall_score = 6.0
             verdict = "Lean Hire"
-            reasoning = f"{cand_name}'s claims appear verified with low contradiction risk."
+            quote_text = f" (e.g. \"{quotes[0].quote}\")" if quotes else ""
+            reasoning = f"{cand_name} acknowledged specific technical experience limits in interview responses without inflating claims{quote_text}."
+        else:
+            overall_score = 7.5
+            verdict = "Hire"
+            reasoning = f"{cand_name}'s technical claims appear verified with low discrepancy risk across source documents."
 
         raw_dimensions = [
             DimensionEvaluation(
                 dimension_name="Resume Claim Veracity & Discrepancy Verification",
                 score=overall_score,
                 insufficient_evidence=False,
-                supporting_quote=quotes[0] if quotes else SupportingQuote(quote=cand_name, source="transcript")
+                supporting_quote=quotes[0] if quotes else SupportingQuote(quote=f"{cand_name} interview transcript", source="transcript")
             )
         ]
 

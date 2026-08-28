@@ -10,10 +10,12 @@ class HiringManagerAgentV2(BaseAgentV2):
     async def evaluate(self, profile: CandidateProfile, jd: JobDescription) -> AgentOpinionV2:
         cand_name = profile.candidate_name
         tr_text = profile.raw_transcript_text.lower()
+        res_text = profile.raw_resume_text.lower()
 
         quotes = []
         for q in profile.quote_bank:
-            if any(w in q.quote.lower() for w in ["incident", "production", "ramp", "safer bet", "architect", "built"]):
+            q_lower = q.quote.lower()
+            if any(w in q_lower for w in ["built", "design", "deliver", "architect", "lead", "project", "board", "service", "system"]):
                 quotes.append(SupportingQuote(quote=q.quote, source=q.location))
                 if len(quotes) >= 2:
                     break
@@ -21,21 +23,25 @@ class HiringManagerAgentV2(BaseAgentV2):
         if not quotes and profile.quote_bank:
             quotes.append(SupportingQuote(quote=profile.quote_bank[0].quote, source=profile.quote_bank[0].location))
 
-        if "incident" in tr_text or "safer bet" in tr_text or "retro" in tr_text:
-            overall_score = 8.5
+        # Check candidate experience items and skill matches
+        has_delivery_history = len(profile.experiences) > 0 or len(profile.skills) >= 2
+        quote_text = f" (e.g. \"{quotes[0].quote}\")" if quotes else ""
+
+        if has_delivery_history:
+            overall_score = 8.4
             verdict = "Hire"
-            reasoning = f"{cand_name} presents a strong production-ownership bet for {jd.title}, prioritizing long-term system reliability."
+            reasoning = f"{cand_name} presents a strong execution and delivery profile for {jd.title}{quote_text}."
         else:
-            overall_score = 7.5
+            overall_score = 7.0
             verdict = "Lean Hire"
-            reasoning = f"{cand_name} brings relevant experience for {jd.title}, though production volume history requires onboarding oversight."
+            reasoning = f"{cand_name} demonstrates relevant technical foundation for {jd.title}, though onboarding supervision is recommended."
 
         raw_dimensions = [
             DimensionEvaluation(
-                dimension_name=f"Role Execution Fit for {jd.title}",
+                dimension_name=f"Role Execution & Technical Deliverable Fit for {jd.title}",
                 score=overall_score,
                 insufficient_evidence=False,
-                supporting_quote=quotes[0] if quotes else SupportingQuote(quote=cand_name, source="transcript")
+                supporting_quote=quotes[0] if quotes else SupportingQuote(quote=f"{cand_name} profile", source="resume")
             )
         ]
 

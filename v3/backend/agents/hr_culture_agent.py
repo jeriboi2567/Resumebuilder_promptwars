@@ -1,4 +1,3 @@
-import re
 from backend.agents.base_agent import BaseAgentV2
 from backend.schemas.models import (
     CandidateProfile, JobDescription, AgentOpinionV2, SupportingQuote, DimensionEvaluation
@@ -13,11 +12,11 @@ class HRCultureAgentV2(BaseAgentV2):
         tr_text = profile.raw_transcript_text.lower()
         res_text = profile.raw_resume_text.lower()
 
+        # Find relevant culture/communication quotes from candidate's quote bank
         quotes = []
-        # Look for accountability, retro, or mistake disclosures
         for q in profile.quote_bank:
             q_lower = q.quote.lower()
-            if any(w in q_lower for w in ["retro", "upfront", "mistake", "checklist", "disagreed", "pay", "tenure"]):
+            if any(w in q_lower for w in ["team", "lead", "collaborat", "retro", "ownership", "learn", "project", "design", "deliver"]):
                 quotes.append(SupportingQuote(quote=q.quote, source=q.location))
                 if len(quotes) >= 2:
                     break
@@ -25,29 +24,31 @@ class HRCultureAgentV2(BaseAgentV2):
         if not quotes and profile.quote_bank:
             quotes.append(SupportingQuote(quote=profile.quote_bank[0].quote, source=profile.quote_bank[0].location))
 
-        # Detect honesty / accountability signals vs job hopping signals
-        has_retro = "retro" in tr_text or "upfront" in tr_text or "mistake" in tr_text or "checklist" in tr_text
-        has_tenure_risk = "pay and title" in tr_text or "better pay" in tr_text
+        # Check for transparency, teamwork, or retention indicators in source text
+        has_transparency = any(w in tr_text for w in ["retro", "ownership", "honest", "mistake", "learned", "review", "test"])
+        has_retention_risk = "pay and title" in tr_text or "better pay" in tr_text or "hopping" in tr_text
 
-        if has_retro and not has_tenure_risk:
-            overall_score = 9.2
+        if has_transparency and not has_retention_risk:
+            overall_score = 9.0
             verdict = "Strong Hire"
-            reasoning = f"{cand_name} demonstrates exceptional accountability, transparency, and production incident ownership."
-        elif has_tenure_risk:
+            quote_text = f" (e.g. \"{quotes[0].quote}\")" if quotes else ""
+            reasoning = f"{cand_name} demonstrates high professional accountability, team collaboration, and learning mindset{quote_text}."
+        elif has_retention_risk:
             overall_score = 6.0
             verdict = "Lean No"
-            reasoning = f"{cand_name} exhibits potential job stability or retention risks based on interview responses."
+            reasoning = f"{cand_name} exhibits potential job retention or alignment risks based on interview responses."
         else:
-            overall_score = 7.5
+            overall_score = 7.8
             verdict = "Hire"
-            reasoning = f"{cand_name} demonstrates standard team collaboration and communication."
+            quote_text = f" (e.g. \"{quotes[0].quote}\")" if quotes else ""
+            reasoning = f"{cand_name} demonstrates standard team collaboration, technical communication, and workplace alignment{quote_text}."
 
         raw_dimensions = [
             DimensionEvaluation(
-                dimension_name="Production Accountability & Incident Retro Ownership",
+                dimension_name="Team Collaboration & Technical Communication",
                 score=overall_score,
                 insufficient_evidence=False,
-                supporting_quote=quotes[0] if quotes else SupportingQuote(quote=cand_name, source="transcript")
+                supporting_quote=quotes[0] if quotes else SupportingQuote(quote=f"{cand_name} interview transcript", source="transcript")
             )
         ]
 

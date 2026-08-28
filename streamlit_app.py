@@ -13,6 +13,7 @@ from backend.pipeline import MultiAgentPipelineOrchestratorV3
 from backend.schemas.models import HiringRoleV3, PipelineRunResultV2, JobDescription
 from backend.pdf_parser.parser import PDFDocumentParser
 from backend.storage.repository import RoleStorageRepositoryV3
+from backend.tts.elevenlabs_service import ElevenLabsTTSService
 
 # Streamlit Page Configuration
 st.set_page_config(
@@ -241,16 +242,45 @@ with tab_individual:
 
         st.markdown("---")
 
+        # ElevenLabs Multi-Voice Audio Player (Bonus Feature)
+        st.subheader("🔊 ElevenLabs Multi-Voice AI Debate Narration")
+        api_key = os.getenv("ELEVENLABS_API_KEY")
+        if hasattr(st, "secrets") and "ELEVENLABS_API_KEY" in st.secrets:
+            api_key = st.secrets["ELEVENLABS_API_KEY"]
+            os.environ["ELEVENLABS_API_KEY"] = api_key
+
+        with st.spinner("Synthesizing multi-voice debate narration..."):
+            audio_path = run_async(ElevenLabsTTSService.synthesize_debate_audio(res.run_id, res.debate_state.turns))
+
+        if audio_path and os.path.exists(audio_path):
+            with open(audio_path, "rb") as f_audio:
+                st.audio(f_audio.read(), format="audio/mp3")
+            st.caption("🎙️ Multi-Voice Narration: Technical Agent (Adam), HR/Culture Agent (Rachel), Hiring Manager Agent (Arnold), Skeptic Agent (Sam)")
+        else:
+            st.info("ElevenLabs API Key configured in Streamlit Secrets (`ELEVENLABS_API_KEY`).")
+
+        st.markdown("---")
+
         # Stage 2 Agent Opinions
         st.subheader("Stage 2: Four Architecturally Isolated Agent Personas")
-        grid_cols = st.columns(2)
+        cols_4 = st.columns(4)
+        agent_styles = {
+            "Technical Agent": "🟦 Technical Agent",
+            "HR / Culture Agent": "🟩 HR / Culture Agent",
+            "Hiring Manager Agent": "🟪 Hiring Manager Agent",
+            "Skeptic Agent": "🟥 Skeptic Agent"
+        }
+
         for idx, (agent_name, op) in enumerate(res.independent_opinions.opinions.items()):
-            with grid_cols[idx % 2]:
-                st.markdown(f"### {agent_name}")
+            col_target = cols_4[idx % 4]
+            with col_target:
+                card_title = agent_styles.get(agent_name, agent_name)
+                st.markdown(f"#### {card_title}")
                 st.markdown(f"**Verdict:** `{op.verdict}` (Score: `{op.overall_score or 'N/A'}`)")
+                st.caption(f"Confidence: {int(op.confidence*100)}%")
                 st.write(op.reasoning)
                 if op.supporting_quotes:
-                    st.markdown("**Cited Quotes:**")
+                    st.markdown("**Cited Evidence:**")
                     for q in op.supporting_quotes:
                         st.markdown(f"> *\"{q.quote}\"* ({q.source})")
                 if op.insufficient_dimensions:
