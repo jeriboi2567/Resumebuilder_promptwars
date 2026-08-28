@@ -81,14 +81,15 @@ class PDFDocumentParser:
         title = "Target Position"
         company = "Target Company"
         for line in lines[:8]:
-            if "job description" in line.lower() or "role" in line.lower() or "title" in line.lower():
-                clean_title = re.sub(r'^(job description|role|title)\s*:\s*', '', line, flags=re.IGNORECASE).strip()
-                if clean_title:
-                    title = clean_title
-            elif "company" in line.lower():
-                clean_co = re.sub(r'^company\s*:\s*', '', line, flags=re.IGNORECASE).strip()
-                if clean_co:
-                    company = clean_co
+            l_clean = line.strip()
+            if l_clean.lower().startswith("job description:") and title == "Target Position":
+                title = re.sub(r'^job description\s*:\s*', '', l_clean, flags=re.IGNORECASE).strip()
+            elif l_clean.lower().startswith("title:") and title == "Target Position":
+                title = re.sub(r'^title\s*:\s*', '', l_clean, flags=re.IGNORECASE).strip()
+            elif "role:" in l_clean.lower() and title == "Target Position":
+                title = re.sub(r'^role\s*:\s*', '', l_clean, flags=re.IGNORECASE).strip()
+            elif "company:" in l_clean.lower() and company == "Target Company":
+                company = re.sub(r'^company\s*:\s*', '', l_clean, flags=re.IGNORECASE).strip()
 
         if title == "Target Position" and lines:
             title = lines[0]

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Upload, FileText, Plus, Trash2, X, Loader2, Briefcase } from 'lucide-react';
 import { HiringRoleV3 } from '../types';
+import { API_BASE_URL } from '../config';
 
 interface RoleUploaderModalProps {
   isOpen: boolean;
@@ -56,7 +57,7 @@ export const RoleUploaderModal: React.FC<RoleUploaderModalProps> = ({
       const formData = new FormData();
       formData.append("jd_file", jdFile);
 
-      const res = await fetch("/api/roles", {
+      const res = await fetch(`${API_BASE_URL}/api/roles`, {
         method: "POST",
         body: formData
       });
@@ -97,7 +98,7 @@ export const RoleUploaderModal: React.FC<RoleUploaderModalProps> = ({
         if (pair.transcript) formData.append("transcript_files", pair.transcript);
       });
 
-      const res = await fetch(`/api/roles/${selectedRoleId}/candidates`, {
+      const res = await fetch(`${API_BASE_URL}/api/roles/${selectedRoleId}/candidates`, {
         method: "POST",
         body: formData
       });

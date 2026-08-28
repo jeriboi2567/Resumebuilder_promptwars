@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   HiringRoleV3, PipelineRunResultV2
 } from './types';
+import { API_BASE_URL } from './config';
 import { ElevenLabsAudioPlayer } from './components/ElevenLabsAudioPlayer';
 import { Stage6ComparisonView } from './components/Stage6ComparisonView';
 import { Stage3DebateThread } from './components/Stage3DebateThread';
@@ -28,7 +29,7 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/sample-batch');
+      const res = await fetch(`${API_BASE_URL}/api/sample-batch`);
       if (!res.ok) {
         throw new Error(`Sample batch failed with status ${res.status}`);
       }
@@ -61,7 +62,7 @@ export default function App() {
   const fetchRoleDetails = async (roleId: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/roles/${roleId}`);
+      const res = await fetch(`${API_BASE_URL}/api/roles/${roleId}`);
       if (!res.ok) throw new Error("Failed to fetch role details.");
       const data: HiringRoleV3 = await res.json();
       setActiveRole(data);
