@@ -25,11 +25,11 @@
     "raw_text": "\n    JOB DESCRIPTION: Hardware / PCB Design Engineer\n    Company: Robotics Health Tech\n    Required Skills: Altium, KiCad, PCB Layout, ESP32, STM32, C/C++, Firmware, DFM, Signal Integrity\n    Responsibilities:\n    - Design 4-layer PCB layouts for wearable hardware.\n    - Perform DFM/DFA checks with contract manufacturers.\n    - Write C/C++ firmware for sensor integration.\n    "
   },
   "created_at": "2026-08-28T10:19:34.056258+00:00",
-  "updated_at": "2026-08-28T10:29:05.183847+00:00",
+  "updated_at": "2026-08-28T10:30:04.171221+00:00",
   "candidate_results": {
     "cand_krishu": {
-      "run_id": "run_34585611",
-      "timestamp": "2026-08-28T10:29:05.195927+00:00",
+      "run_id": "run_a0523e55",
+      "timestamp": "2026-08-28T10:30:04.180567+00:00",
       "profile": {
         "candidate_id": "cand_krishu",
         "candidate_name": "Krishu Kumar",
@@ -495,12 +495,12 @@
         ],
         "markdown_content": "# Candidate Evaluation Report: Krishu Kumar\n**Target Role:** Hardware / PCB Design Engineer (Mid-Level)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Krishu Kumar applying for Hardware / PCB Design Engineer. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.1) | Hire (9.1) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Hire (7.5) | Hire (7.5) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.\"* (transcript line 3)\n- **[Technical Agent]** *\"I used an oscilloscope and logic analyzer to verify PWM motor driver signals.\"* (transcript line 5)\n- **[HR / Culture Agent]** *\"I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.\"* (transcript line 3)\n- **[Hiring Manager Agent]** *\"I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.\"* (transcript line 3)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"I placed component footprints in Altium, set up ground planes for noise immunity, and ran DFM checks.\"* (transcript line 3)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Signal Integrity**: No verified source quotes found in candidate profile/transcript for Production Experience with Signal Integrity.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Krishu Kumar's technical evidence directly aligns with primary deliverables required for Hardware / PCB Design Engineer.\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Krishu Kumar's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Krishu Kumar's communication and transparency in source documents provide high confidence in team integration.\"\n"
       },
-      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_34585611.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_a0523e55.mp3"
     }
   },
   "stage6_comparison": {
     "batch_id": "batch_role_hardware_pcb_test",
-    "timestamp": "2026-08-28T10:29:05.198075+00:00",
+    "timestamp": "2026-08-28T10:30:04.182446+00:00",
     "job_description_title": "Hardware / PCB Design Engineer",
     "rankings": [
       {

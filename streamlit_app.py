@@ -35,31 +35,35 @@ st.markdown("""
     }
     .agent-card {
         background-color: #1e293b;
-        border: 1px solid #334155;
+        border: 2px solid #475569;
         border-radius: 12px;
-        padding: 16px;
+        padding: 18px;
         margin-bottom: 16px;
+        color: #ffffff;
     }
     .badge-hire {
-        background-color: #059669;
-        color: white;
-        padding: 4px 12px;
+        background-color: #047857;
+        color: #ffffff;
+        padding: 6px 14px;
         border-radius: 9999px;
-        font-weight: bold;
+        font-weight: 800;
+        font-size: 0.85rem;
     }
     .badge-nohire {
-        background-color: #e11d48;
-        color: white;
-        padding: 4px 12px;
+        background-color: #be123c;
+        color: #ffffff;
+        padding: 6px 14px;
         border-radius: 9999px;
-        font-weight: bold;
+        font-weight: 800;
+        font-size: 0.85rem;
     }
     .quote-box {
-        background-color: #0f172a;
-        border-left: 3px solid #6366f1;
-        padding: 8px 12px;
-        margin: 6px 0;
-        font-size: 0.85rem;
+        background-color: #020617;
+        border-left: 4px solid #818cf8;
+        color: #e2e8f0;
+        padding: 10px 14px;
+        margin: 8px 0;
+        font-size: 0.88rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -136,10 +140,20 @@ with st.sidebar:
 
     st.markdown("---")
     st.subheader("➕ Add Candidate to Current Role")
-    cand_resume_file = st.file_uploader("Upload Candidate Resume (PDF/TXT)", type=["pdf", "txt"], key="cand_res")
-    cand_transcript_file = st.file_uploader("Upload Interview Transcript (PDF/TXT)", type=["pdf", "txt"], key="cand_tr")
+    cand_resume_file = st.file_uploader(
+        "Upload Candidate Resume (PDF/TXT)",
+        type=["pdf", "txt"],
+        key="cand_res",
+        help="Select a candidate resume in PDF or TXT format (max 10 MB)."
+    )
+    cand_transcript_file = st.file_uploader(
+        "Upload Interview Transcript (PDF/TXT)",
+        type=["pdf", "txt"],
+        key="cand_tr",
+        help="Select the candidate's interview transcript in PDF or TXT format (max 10 MB)."
+    )
 
-    if st.button("Evaluate Candidate & Update Stage 6"):
+    if st.button("Evaluate Candidate & Update Stage 6", help="Runs 5-stage evidentiary evaluation and updates Stage 6 comparison table."):
         if cand_resume_file and cand_transcript_file:
             r_bytes = cand_resume_file.read()
             t_bytes = cand_transcript_file.read()
@@ -170,8 +184,13 @@ with st.sidebar:
 
     st.markdown("---")
     st.subheader("📝 Create New Hiring Role (New JD)")
-    new_jd_file = st.file_uploader("Upload New Job Description (PDF/TXT)", type=["pdf", "txt"], key="new_jd")
-    if st.button("Create New Hiring Role"):
+    new_jd_file = st.file_uploader(
+        "Upload New Job Description (PDF/TXT)",
+        type=["pdf", "txt"],
+        key="new_jd",
+        help="Upload an employer Job Description in PDF or TXT format (max 10 MB)."
+    )
+    if st.button("Create New Hiring Role", help="Parses Job Description and initializes a new Hiring Role."):
         if new_jd_file:
             jd_bytes = new_jd_file.read()
             j_valid, j_msg = PDFDocumentParser.validate_file_input(new_jd_file.name, jd_bytes)
@@ -249,8 +268,17 @@ with tab_individual:
         st.header(f"Candidate Evaluation Deep-Dive: {res.profile.candidate_name}")
         st.caption(f"Candidate ID: {res.profile.candidate_id} | Role Applied: {res.profile.role_applied}")
 
+        rec_symbols = {
+            "Strong Hire": "🟢 Strong Hire",
+            "Hire": "✅ Hire",
+            "Lean Hire": "🟡 Lean Hire",
+            "Lean No": "🟠 Lean No",
+            "No Hire": "🔴 No Hire"
+        }
+        rec_display = rec_symbols.get(res.final_decision.recommendation, res.final_decision.recommendation)
+
         col_rec, col_conf = st.columns(2)
-        col_rec.metric("Final Recommendation", res.final_decision.recommendation)
+        col_rec.metric("Final Recommendation", rec_display)
         col_conf.metric("Panel Confidence", f"{int(res.final_decision.confidence*100)}%")
 
         st.markdown("---")
