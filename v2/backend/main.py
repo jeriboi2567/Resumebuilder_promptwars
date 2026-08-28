@@ -13,7 +13,7 @@ from backend.pdf_parser.parser import PDFDocumentParser
 
 app = FastAPI(
     title="Multi-Agent Candidate Evaluation System V2 API",
-    description="Multi-candidate PDF/JD ingestion pipeline, insufficient-evidence validation, ElevenLabs TTS audio narration, and Stage 6 comparative ranking.",
+    description="Hackathon Ingestion Pipeline for Cargonet AI (02_Job_Description.pdf, Rohan Malhotra, Ananya Iyer) with multi-voice ElevenLabs TTS and Stage 6 comparative ranking.",
     version="2.0.0"
 )
 
@@ -25,36 +25,58 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-SAMPLE_DATA_DIR = Path(__file__).parent.parent / "sample_data"
+HACKATHON_DIR = Path(__file__).parent.parent.parent / "hackathon"
+FALLBACK_SAMPLE_DIR = Path(__file__).parent.parent / "sample_data"
 
 @app.get("/")
 def read_root():
-    return {"status": "online", "version": "2.0.0", "service": "Multi-Agent Candidate Evaluation System V2"}
+    return {
+        "status": "online",
+        "version": "2.0.0",
+        "service": "Multi-Agent Candidate Evaluation System V2",
+        "hackathon_folder_detected": HACKATHON_DIR.exists()
+    }
+
+def _load_file_content(path: Path) -> str:
+    if not path.exists():
+        raise FileNotFoundError(f"File not found: {path}")
+    if path.suffix.lower() == ".pdf":
+        with open(path, "rb") as f:
+            text, _ = PDFDocumentParser.extract_text_from_pdf_bytes(f.read())
+            return text
+    else:
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
 
 @app.get("/api/sample-batch", response_model=BatchPipelineRunResult)
 async def run_sample_batch():
     """
-    Executes V2 batch evaluation on sample candidates (Candidate A: Alex Rivera, Candidate B: Jordan Lee)
-    with 01_Job_Description.txt.
+    Executes V2 batch evaluation on the actual Hackathon candidate files:
+    - Shared Job Description: 02_Job_Description.pdf
+    - Candidate A: Rohan Malhotra (03_Resume_A.pdf, 05_Transcript_A.pdf)
+    - Candidate B: Ananya Iyer (04_Resume_B.pdf, 06_Transcript_B.pdf)
+    Falls back to v2/sample_data if hackathon folder is missing.
     """
-    jd_path = SAMPLE_DATA_DIR / "01_Job_Description.txt"
-    r_a_path = SAMPLE_DATA_DIR / "03_Resume_A.txt"
-    t_a_path = SAMPLE_DATA_DIR / "05_Transcript_A.txt"
-    r_b_path = SAMPLE_DATA_DIR / "04_Resume_B.txt"
-    t_b_path = SAMPLE_DATA_DIR / "06_Transcript_B.txt"
+    if HACKATHON_DIR.exists():
+        jd_path = HACKATHON_DIR / "02_Job_Description.pdf"
+        r_a_path = HACKATHON_DIR / "03_Resume_A.pdf"
+        t_a_path = HACKATHON_DIR / "05_Transcript_A.pdf"
+        r_b_path = HACKATHON_DIR / "04_Resume_B.pdf"
+        t_b_path = HACKATHON_DIR / "06_Transcript_B.pdf"
+    else:
+        jd_path = FALLBACK_SAMPLE_DIR / "01_Job_Description.txt"
+        r_a_path = FALLBACK_SAMPLE_DIR / "03_Resume_A.txt"
+        t_a_path = FALLBACK_SAMPLE_DIR / "05_Transcript_A.txt"
+        r_b_path = FALLBACK_SAMPLE_DIR / "04_Resume_B.txt"
+        t_b_path = FALLBACK_SAMPLE_DIR / "06_Transcript_B.txt"
 
-    with open(jd_path, "r", encoding="utf-8") as f:
-        jd_text = f.read()
-    with open(r_a_path, "r", encoding="utf-8") as f:
-        ra_text = f.read()
-    with open(t_a_path, "r", encoding="utf-8") as f:
-        ta_text = f.read()
-    with open(r_b_path, "r", encoding="utf-8") as f:
-        rb_text = f.read()
-    with open(t_b_path, "r", encoding="utf-8") as f:
-        tb_text = f.read()
+    jd_text = _load_file_content(jd_path)
+    ra_text = _load_file_content(r_a_path)
+    ta_text = _load_file_content(t_a_path)
+    rb_text = _load_file_content(r_b_path)
+    tb_text = _load_file_content(t_b_path)
 
-    batch_id = "batch_sample_01"
+    batch_id = "batch_hackathon_01"
     candidate_pairs = [
         ("cand_A", ra_text, ta_text),
         ("cand_B", rb_text, tb_text)
@@ -74,7 +96,7 @@ async def evaluate_batch_files(
     transcript_files: List[UploadFile] = File(...)
 ):
     """
-    Ingests real uploaded PDF files (01_Job_Description.pdf + Resume/Transcript PDF pairs),
+    Ingests uploaded PDF/TXT files (Job Description PDF + Resume/Transcript PDF pairs),
     executes individual 5-stage candidate pipelines in parallel, and runs Stage 6 comparative ranking.
     """
     jd_bytes = await jd_file.read()
@@ -109,7 +131,6 @@ def get_audio_file(run_id: str):
     """
     audio_path = Path(__file__).parent / "storage" / "audio" / f"{run_id}.mp3"
     if not audio_path.exists():
-        # Fallback to run_id without extension if already formatted
         audio_path = Path(__file__).parent / "storage" / "audio" / run_id
     if not audio_path.exists():
         raise HTTPException(status_code=404, detail="Audio file not found.")

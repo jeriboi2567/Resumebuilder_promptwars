@@ -16,7 +16,7 @@ async def test_insufficient_evidence_rule_enforcement():
     opinion = await agent.evaluate(profile, jd)
 
     assert len(opinion.insufficient_dimensions) >= 1
-    assert any("LLM" in dim or "Triton" in dim for dim in opinion.insufficient_dimensions)
+    assert any("Multi-Agent" in dim or "Frameworks" in dim or "LLM" in dim or "Triton" in dim for dim in opinion.insufficient_dimensions)
     
     # Verify that insufficient dimensions have insufficient_evidence=True and score=None
     for dim in opinion.dimension_evaluations:

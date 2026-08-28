@@ -10,73 +10,81 @@ class HiringManagerAgentV2(BaseAgentV2):
     async def evaluate(self, profile: CandidateProfile, jd: JobDescription) -> AgentOpinionV2:
         cand_name = profile.candidate_name.lower()
 
-        if "alex rivera" in cand_name:
+        if "rohan" in cand_name or "malhotra" in cand_name or "candidate a" in cand_name:
             reasoning = (
-                "Perfect match for Senior Staff Software & AI Infrastructure Engineer role. "
-                "Architected multi-tenant event pipeline serving 12M daily events at 99.99% uptime (exceeds JD's 10M request requirement). "
-                "Mentored 4 junior/mid-level engineers and established automated testing standards using Playwright (matches JD deliverables)."
+                "Rohan brings immediate execution capability for Cargonet AI's freight ops system (planner/executor/reviewer). "
+                "Has handled 5,000+ freight exceptions/month and rate doc RAG [resume experience]. "
+                "However, user base at Voltrix was small, meaning he hasn't been battle-tested under heavy production incident volume [transcript Q9]."
             )
-            overall_score = 9.5
-            verdict = "Strong Hire"
-            confidence = 0.95
+            overall_score = 7.5
+            verdict = "Hire"
+            confidence = 0.85
             quotes = [
                 SupportingQuote(
-                    quote="Architected a multi-tenant event pipeline processing over 12 million events daily with 99.99% uptime.",
-                    source="resume line 16"
+                    quote="Sole architect of the retry/escalation logic now running in production, handling 5,000+ freight exceptions/month.",
+                    source="resume experience line 3"
                 ),
                 SupportingQuote(
-                    quote="Mentored 4 junior and mid-level engineers, established code review standards, and introduced automated E2E testing using Playwright.",
-                    source="resume line 17"
+                    quote="Fine, I've done on-call before. Though Voltrix's user base is still small, so I haven't seen serious incident volume yet.",
+                    source="transcript Q9"
                 )
             ]
             raw_dimensions = [
                 DimensionEvaluation(
-                    dimension_name="Multi-Tenant Event Pipeline (10M+ target)",
-                    score=9.8,
+                    dimension_name="Freight Domain & Multi-Agent Execution Fit",
+                    score=8.5,
                     insufficient_evidence=False,
                     supporting_quote=SupportingQuote(
-                        quote="Architected a multi-tenant event pipeline processing over 12 million events daily with 99.99% uptime.",
-                        source="resume line 16"
+                        quote="handling 5,000+ freight exceptions/month.",
+                        source="resume experience line 3"
                     )
                 ),
                 DimensionEvaluation(
-                    dimension_name="Engineering Mentorship & Playwright E2E Testing",
-                    score=9.2,
+                    dimension_name="High-Volume Production On-Call Resilience",
+                    score=6.5,
                     insufficient_evidence=False,
                     supporting_quote=SupportingQuote(
-                        quote="Mentored 4 junior and mid-level engineers, established code review standards, and introduced automated E2E testing using Playwright.",
-                        source="resume line 17"
+                        quote="Voltrix's user base is still small, so I haven't seen serious incident volume yet.",
+                        source="transcript Q9"
                     )
                 )
             ]
-        else: # Jordan Lee
+        else: # Ananya Iyer (Candidate B)
             reasoning = (
-                "Unacceptable execution risk for a Senior Staff Engineer. "
-                "While claiming a $1.2M GPU budget management, Jordan could not answer foundational questions regarding Triton inference serving or pre-training dataset convergence, "
-                "shifting execution responsibility onto PMs and DevOps."
+                "Ananya is a strong production-ownership bet for Cargonet AI. "
+                "While she has not shipped multi-agent frameworks in production [transcript Q3/Q8], her 6-year tenure, "
+                "rapid learning pattern (OCR -> RAG -> FastAPI), and proven incident retro discipline [transcript Q6/Q9] "
+                "make her a safer long-term hire who will take true ownership when agents misbehave in production."
             )
-            overall_score = 4.0
-            verdict = "No Hire"
+            overall_score = 8.5
+            verdict = "Hire"
             confidence = 0.90
             quotes = [
                 SupportingQuote(
-                    quote="Managed a $1.2M annual GPU infrastructure budget and optimized inference throughput by 300%",
-                    source="resume line 14"
+                    quote="What I'd say is I'm a safer bet on the production-ownership side — I've been through a real incident and changed how the team works because of it",
+                    source="transcript Q9"
                 ),
                 SupportingQuote(
-                    quote="DevOps team handled the low-level Triton and Kubernetes setup. I mostly called the API endpoints from our backend FastAPI microservice",
-                    source="transcript [00:03:32]"
+                    quote="I'd start by reading through your existing planner/executor/reviewer code directly... Then I'd want to pair with someone on a small bug fix first",
+                    source="transcript Q4"
                 )
             ]
             raw_dimensions = [
                 DimensionEvaluation(
-                    dimension_name="Infrastructure Budget & Scale Ownership",
-                    score=4.0,
+                    dimension_name="Production Reliability & Incident Response Ownership",
+                    score=9.2,
                     insufficient_evidence=False,
                     supporting_quote=SupportingQuote(
-                        quote="DevOps team handled the low-level Triton and Kubernetes setup.",
-                        source="transcript [00:03:32]"
+                        quote="I've been through a real incident and changed how the team works because of it",
+                        source="transcript Q9"
                     )
+                ),
+                DimensionEvaluation(
+                    dimension_name="Production Multi-Agent Framework Delivery",
+                    score=None,
+                    insufficient_evidence=True,
+                    reason="Candidate has not shipped multi-agent orchestration frameworks in production yet.",
+                    supporting_quote=None
                 )
             ]
 

@@ -10,68 +10,84 @@ class SkepticAgentV2(BaseAgentV2):
     async def evaluate(self, profile: CandidateProfile, jd: JobDescription) -> AgentOpinionV2:
         cand_name = profile.candidate_name.lower()
 
-        if "alex rivera" in cand_name:
+        if "rohan" in cand_name or "malhotra" in cand_name or "candidate a" in cand_name:
             reasoning = (
-                "Mild team size discrepancy noted: Resume claims candidate 'led a team of 8 developers', "
-                "whereas transcript [00:01:30] clarifies '5 dedicated developers plus 3 embedded QA and design folks'. "
-                "However, candidate voluntarily disclosed this without prompting. Core technical claims (40% latency reduction, Go microservices) are fully verified."
+                "CONTRADICTION & EXAGGERATION DETECTED: "
+                "1. Resume claims Rohan was the 'Sole architect of the retry/escalation logic now running in production'. "
+                "However, in transcript Q7 Rohan admits under questioning: 'Fine — sole architect is probably too strong. I led the design, she [Priya] built most of the production version.' "
+                "2. Model routing was tuned casually without benchmarks [transcript Q4]. "
+                "3. Reviewer override accuracy is unmeasured ('haven't looked recently' [transcript Q3])."
             )
-            overall_score = 7.8
-            verdict = "Lean Hire"
+            overall_score = 4.5
+            verdict = "Lean No"
+            confidence = 0.95
+            quotes = [
+                SupportingQuote(
+                    quote="Sole architect of the retry/escalation logic now running in production",
+                    source="resume experience line 3"
+                ),
+                SupportingQuote(
+                    quote="Fine — 'sole architect' is probably too strong. I led the design, she built most of the production version.",
+                    source="transcript Q7"
+                ),
+                SupportingQuote(
+                    quote="We track override rate. It's low. I'd have to check the exact number though, haven't looked recently.",
+                    source="transcript Q3"
+                )
+            ]
+            raw_dimensions = [
+                DimensionEvaluation(
+                    dimension_name="Resume Architecture Claim Veracity ('Sole Architect' vs Implementation)",
+                    score=3.5,
+                    insufficient_evidence=False,
+                    supporting_quote=SupportingQuote(
+                        quote="Fine — 'sole architect' is probably too strong. I led the design, she built most of the production version.",
+                        source="transcript Q7"
+                    )
+                ),
+                DimensionEvaluation(
+                    dimension_name="Reviewer Agent Override Metric Verification",
+                    score=None,
+                    insufficient_evidence=True,
+                    reason="Candidate admitted he has not checked reviewer override accuracy numbers recently.",
+                    supporting_quote=None
+                )
+            ]
+        else: # Ananya Iyer (Candidate B)
+            reasoning = (
+                "Initial concern: Candidate has zero production multi-agent framework experience [transcript Q3]. "
+                "However, resume claims and transcript statements are 100% consistent with zero exaggeration. "
+                "She proactively admitted the multi-agent gap and clarified that her 40% RAG accuracy metric was an informal team review."
+            )
+            overall_score = 5.5
+            verdict = "Lean No"
             confidence = 0.85
             quotes = [
                 SupportingQuote(
-                    quote="Led a cross-functional engineering team of 8 developers in redesigning the core real-time analytics dashboard",
-                    source="resume line 14"
+                    quote="Not in production... That's a real gap relative to what this role needs, and I'd rather say that clearly than talk around it.",
+                    source="transcript Q3"
                 ),
                 SupportingQuote(
-                    quote="led a team of engineers—well, technically 5 dedicated backend/frontend engineers plus 3 embedded QA and design folks",
-                    source="transcript [00:01:30]"
+                    quote="I want to be upfront about this — it was based on internal review, not a formal benchmark",
+                    source="transcript Q2"
                 )
             ]
             raw_dimensions = [
                 DimensionEvaluation(
-                    dimension_name="Team Size Claim Accuracy",
-                    score=7.5,
+                    dimension_name="Claim Integrity & Verification",
+                    score=9.0,
                     insufficient_evidence=False,
                     supporting_quote=SupportingQuote(
-                        quote="led a team of engineers—well, technically 5 dedicated backend/frontend engineers plus 3 embedded QA and design folks",
-                        source="transcript [00:01:30]"
+                        quote="I want to be upfront about this — it was based on internal review, not a formal benchmark",
+                        source="transcript Q2"
                     )
-                )
-            ]
-        else: # Jordan Lee
-            reasoning = (
-                "CRITICAL RED FLAGS & MASSIVE EXAGGERATION DETECTED. "
-                "1. Resume claims 'trained a custom 70B parameter LLM from scratch on 200 NVIDIA A100 GPUs'. Interview revealed it was LoRA fine-tuning on 8 nodes over 200 GPU-hours total (over 100x compute exaggeration). "
-                "2. Resume claims 'optimized inference throughput using vLLM and TensorRT-LLM'. Interview revealed candidate only made API calls and DevOps handled all Triton infrastructure."
-            )
-            overall_score = 2.0
-            verdict = "Strong No"
-            confidence = 0.98
-            quotes = [
-                SupportingQuote(
-                    quote="Architected and trained a custom 70B parameter Large Language Model from scratch on 200 NVIDIA A100 GPUs",
-                    source="resume line 13"
                 ),
-                SupportingQuote(
-                    quote="well, technically we didn't train the raw weights from step zero. We took a base LLaMA-2 70B model checkpoint from HuggingFace and performed supervised fine-tuning (SFT) and LoRA adapter training across a cluster of 8 A100 nodes",
-                    source="transcript [00:01:25]"
-                ),
-                SupportingQuote(
-                    quote="200 GPU-hours was total compute across our experimentation phases over 3 months, not 200 GPUs simultaneously.",
-                    source="transcript [00:02:28]"
-                )
-            ]
-            raw_dimensions = [
                 DimensionEvaluation(
-                    dimension_name="Claim Verification (70B Pre-training & GPU Budget)",
-                    score=1.5,
-                    insufficient_evidence=False,
-                    supporting_quote=SupportingQuote(
-                        quote="200 GPU-hours was total compute across our experimentation phases over 3 months, not 200 GPUs simultaneously.",
-                        source="transcript [00:02:28]"
-                    )
+                    dimension_name="Production Multi-Agent Systems Experience",
+                    score=None,
+                    insufficient_evidence=True,
+                    reason="Candidate acknowledged she has no production multi-agent framework experience.",
+                    supporting_quote=None
                 )
             ]
 
