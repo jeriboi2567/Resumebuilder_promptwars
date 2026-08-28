@@ -5,6 +5,10 @@ from backend.schemas.models import (
 )
 
 class Stage5ReportGeneratorV2:
+    """
+    Stage 5 Final Report Generator.
+    Generates a structured CandidateReportV2 object and Markdown report document.
+    """
     @staticmethod
     def generate_report(
         profile: CandidateProfile,
@@ -13,6 +17,19 @@ class Stage5ReportGeneratorV2:
         debate: DebateState,
         decision: FinalDecision
     ) -> CandidateReportV2:
+        """
+        Generates the Stage 5 evaluation report.
+
+        Args:
+            profile (CandidateProfile): Candidate profile object.
+            jd (JobDescription): Target Job Description object.
+            opinions (IndependentOpinionsV2): Stage 2 agent opinions.
+            debate (DebateState): Stage 3 debate state object.
+            decision (FinalDecision): Stage 4 final decision object.
+
+        Returns:
+            CandidateReportV2: Formatted report object.
+        """
         strengths: List[Dict[str, str]] = []
         for name, op in opinions.opinions.items():
             if op.overall_score and op.overall_score >= 7.0:

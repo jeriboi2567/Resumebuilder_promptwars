@@ -1,36 +1,48 @@
 import re
-import uuid
-from typing import Tuple, List
+from typing import List, Tuple, Dict, Any
 from backend.schemas.models import (
     CandidateProfile, SkillClaim, ExperienceItem, CandidateClaim,
     DirectQuote, SourceCitation
 )
 
-def verify_quote_in_source(quote: str, resume_text: str = "", transcript_text: str = "") -> Tuple[bool, str]:
-    if not quote:
-        return False, "Empty quote"
-    lower_q = quote.lower().strip()
-    full_source = (resume_text + " " + transcript_text).lower()
-    if lower_q in full_source:
-        return True, "Verified in source documents"
-    
-    words = [w for w in lower_q.split() if len(w) > 3]
-    if len(words) >= 3:
-        matches = sum(1 for w in words if w in full_source)
-        if matches / len(words) >= 0.55:
-            return True, "Fuzzy matched in source documents"
+def verify_quote_in_source(quote: str, resume_text: str, transcript_text: str) -> Tuple[bool, str]:
+    """
+    Verifies whether a cited quote or fact exists within the raw resume or transcript text.
 
-    return False, "Quote not found in resume or transcript"
+    Args:
+        quote (str): The quote string to verify.
+        resume_text (str): The candidate's raw resume text.
+        transcript_text (str): The candidate's raw transcript text.
+
+    Returns:
+        Tuple[bool, str]: A tuple containing (is_verified, verification_note).
+    """
+    if not quote or len(quote.strip()) < 3:
+        return False, "Quote snippet too short for verification."
+
+    quote_lower = quote.lower().strip()
+    full_source = (resume_text + " " + transcript_text).lower()
+
+    if quote_lower in full_source:
+        if quote_lower in resume_text.lower():
+            return True, "Verified in Candidate Resume."
+        else:
+            return True, "Verified in Candidate Interview Transcript."
+
+    words = [w for w in re.split(r'\W+', quote_lower) if len(w) > 3]
+    if words:
+        matches = sum(1 for w in words if w in full_source)
+        ratio = matches / len(words)
+        if ratio >= 0.7:
+            return True, f"Verified in source documents ({int(ratio*100)}% keyword match)."
+
+    return False, "Quote not found in resume or transcript."
 
 class CandidateProfileBuilderV2:
     """
-    V3 General-Purpose Dynamic Candidate Profile Builder.
-    Parses any arbitrary candidate resume and transcript text to dynamically extract:
-    - Candidate Name & Seniority
-    - Skill Claims with Source Citations
-    - Experience Items with Source Citations
-    - Quantitative & Qualitative Candidate Claims
-    - Quote Bank of Direct Quotes from Interview Transcript
+    Dynamic Stage 1 Candidate Profile Builder.
+    Parses arbitrary resume and transcript text to extract candidate metadata,
+    skills, work experience items, candidate claims, and quote bank.
     """
     @classmethod
     def build_profile(
@@ -39,20 +51,26 @@ class CandidateProfileBuilderV2:
         resume_text: str,
         transcript_text: str
     ) -> CandidateProfile:
+        """
+        Builds a structured CandidateProfile from raw resume and transcript text.
+
+        Args:
+            candidate_id (str): Unique identifier for the candidate.
+            resume_text (str): Raw resume text.
+            transcript_text (str): Raw interview transcript text.
+
+        Returns:
+            CandidateProfile: Extracted candidate profile object.
+        """
         res_lines = [l.strip() for l in resume_text.splitlines() if l.strip()]
         tr_lines = [l.strip() for l in transcript_text.splitlines() if l.strip()]
 
-        # 1. Dynamic Candidate Name Extraction
-        cand_name = f"Candidate {candidate_id}"
-        role_applied = "Software / AI Engineer"
-        seniority_level = "Mid-Senior"
+        cand_name = f"Candidate {candidate_id[:6]}"
 
-        # Search transcript header or first resume line for candidate name
         for line in tr_lines[:5]:
             m = re.search(r'(?:transcript|candidate|interviewee)\s*[\:\-\—]\s*([A-Z][a-zA-Z\s]{2,30})', line, re.IGNORECASE)
             if m:
                 extracted = m.group(1).strip()
-                # Clean prefix keywords if matched
                 clean_name = re.sub(r'^(candidate|transcript|interviewee)\s*[\:\-\—]?\s*', '', extracted, flags=re.IGNORECASE).strip()
                 if len(clean_name) > 2 and clean_name.lower() not in ["candidate", "transcript", "interviewee"]:
                     cand_name = clean_name
@@ -65,10 +83,10 @@ class CandidateProfileBuilderV2:
 
         cand_name = cand_name.title().strip()
 
-        # Seniority & Title detection
-        full_text_lower = (resume_text + " " + transcript_text).lower()
         # Dynamic Seniority & Role Applied Detection
+        full_text_lower = (resume_text + " " + transcript_text).lower()
         first_lines_text = " ".join(res_lines[:3]).lower()
+
         if "hardware" in first_lines_text or "pcb" in first_lines_text or "embedded" in first_lines_text:
             role_applied = "Hardware / Embedded Engineer"
         elif res_lines and len(res_lines) > 1 and len(res_lines[1]) < 50 and not any(k in res_lines[1].lower() for k in ["summary", "skills", "experience"]):
@@ -83,7 +101,7 @@ class CandidateProfileBuilderV2:
         else:
             seniority_level = "Mid-Level"
 
-        # 2. Dynamic Skill Claims Extraction
+        # Skill Claims Extraction
         skills: List[SkillClaim] = []
         known_techs = [
             "PCB", "Altium", "KiCad", "ESP32", "STM32", "C/C++", "C++", "C", "Verilog", "VHDL", "FPGA", "DFM", "DFA",
@@ -105,7 +123,7 @@ class CandidateProfileBuilderV2:
                     )
                 ))
 
-        # 3. Dynamic Experience Items Extraction
+        # Experience Items Extraction
         experiences: List[ExperienceItem] = []
         exp_matches = re.findall(r'([A-Z][A-Za-z0-9\s]+(?:Engineer|Developer|Manager|Lead|Architect))\s*[\-\—\–]\s*([A-Za-z0-9\s\.\,]+)', resume_text)
         for role, company in exp_matches[:3]:
@@ -121,66 +139,43 @@ class CandidateProfileBuilderV2:
                 )
             ))
 
-        if not experiences:
-            experiences.append(ExperienceItem(
-                company="Previous Engineering Employer",
-                role=role_applied,
-                duration="Verified Experience",
-                responsibilities=["Developed backend and AI application systems"],
-                citation=SourceCitation(
-                    source_doc="resume",
-                    location="Experience Section",
-                    quote_snippet=role_applied
-                )
-            ))
-
-        # 4. Dynamic Transcript Quote Bank & Claims Extraction
-        quote_bank: List[DirectQuote] = []
+        # Candidate Claims Extraction
         claims: List[CandidateClaim] = []
-
-        q_idx = 1
         for line in tr_lines:
-            if line.startswith("A") or line.startswith("Q") or ":" in line:
-                if len(line) > 25 and not line.startswith("Interview Transcript"):
-                    clean_quote = line.split(":", 1)[-1].strip() if ":" in line else line
-                    if len(clean_quote) > 20:
-                        quote_bank.append(DirectQuote(
-                            id=f"q_tr_{q_idx}",
-                            quote=clean_quote,
-                            topic="Interview Answer",
-                            location=f"transcript line {q_idx}"
-                        ))
-                        
-                        # Detect quantitative metrics vs claims
-                        if re.search(r'\d+%', clean_quote) or re.search(r'\d+\+', clean_quote):
-                            claims.append(CandidateClaim(
-                                claim_type="quantitative",
-                                description=f"Metric claim: {clean_quote[:100]}...",
-                                citation=SourceCitation(
-                                    source_doc="transcript",
-                                    location=f"transcript Q{q_idx}",
-                                    quote_snippet=clean_quote
-                                )
-                            ))
-                        q_idx += 1
+            if any(kw in line.lower() for kw in ["built", "designed", "implemented", "scaled", "led", "reduced", "improved"]):
+                claims.append(CandidateClaim(
+                    claim_type="Technical Contribution",
+                    description=line[:150],
+                    citation=SourceCitation(
+                        source_doc="transcript",
+                        location="Interview Q&A",
+                        quote_snippet=line[:100]
+                    )
+                ))
 
-        if not quote_bank:
-            quote_bank.append(DirectQuote(
-                id="q_tr_1",
-                quote=transcript_text[:150],
-                topic="Interview Statement",
-                location="transcript start"
-            ))
+        # Direct Quote Bank Extraction
+        quote_bank: List[DirectQuote] = []
+        quote_id = 1
+        for idx, line in enumerate(tr_lines):
+            if len(line) > 20 and not line.lower().startswith("interview transcript") and not line.lower().startswith("q"):
+                quote_bank.append(DirectQuote(
+                    id=f"q_{quote_id}",
+                    quote=line.lstrip("A1234567890:.- ").strip(),
+                    topic="Technical Experience",
+                    location=f"transcript line {idx+1}",
+                    speaker=cand_name
+                ))
+                quote_id += 1
 
         return CandidateProfile(
             candidate_id=candidate_id,
             candidate_name=cand_name,
             role_applied=role_applied,
             seniority_level=seniority_level,
-            skills=skills[:10],
+            skills=skills,
             experiences=experiences,
             claims=claims[:5],
-            quote_bank=quote_bank[:12],
+            quote_bank=quote_bank[:10],
             raw_resume_text=resume_text,
             raw_transcript_text=transcript_text
         )

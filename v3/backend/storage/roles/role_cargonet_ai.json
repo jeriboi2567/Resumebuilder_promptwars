@@ -33,11 +33,11 @@
     "raw_text": "Job Description: AI Engineer — Agentic Systems (Freight Operations)\nCompany: Cargonet AI — a freight-tech company that runs AI “agent” systems in real production, handling things like\nshipment quoting, booking, tracking, document processing, and fixing errors automatically.\nAbout the Role\nWe need an engineer to help improve our existing AI agent system (think of it as multiple AI workers — a planner, an\nexecutor, a reviewer, and specialized agents — working together). This is not a research-only job. You will build real features\nthat go live for real users, mostly by directing AI coding tools (like Claude Code) rather than writing every line by hand —\nand you’ll be responsible for fixing things when they break in production.\nWhat You'll Do\n•\nImprove the multi-agent AI system (planner, executor, reviewer, and other agents) that powers freight operations:\nquoting, booking, tracking, document processing, and error handling.\n•\nBuild features mainly by directing AI coding tools (like Claude Code) — reviewing and guiding their output, not just\nwriting code yourself.\n•\nWork on the Python backend (built as small services) and the React.js front-end, using MongoDB as the database, to\nbuild clean features and easy-to-use screens for operators.\n•\nImprove how the AI is prompted, what tools/memory it has access to, and how it searches for relevant information\n(RAG / vector search); help decide which AI models to use for the best balance of quality and cost.\n•\nKeep the live system running smoothly — find and fix bugs when an AI agent misbehaves, and improve how we test\nand monitor the system.\n•\nHelp connect the system to outside tools: carrier/shipping APIs, other business software, and document scanning\n(OCR) for extracting data from shipping documents like invoices.\nWhat We're Looking For\n•\nSolid Python backend skills (building APIs, working with small services).\n•\nSome real hands-on experience with AI/LLM systems — not just tutorials. Things like prompt writing, RAG/vector\nsearch, and testing how well an AI system performs.\n•\nComfortable taking ownership when something breaks in production, not just when a demo goes well.\n•\nBasic React.js skills for building simple front-end screens.\n•\nNice to have: experience with logistics/freight, document scanning (OCR), or connecting different business systems\ntogether.\nWhat This Role Is NOT\nThis is not a “build it once and move on” role. We care as much about keeping things working reliably over time as we do\nabout building the first version."
   },
   "created_at": "2026-08-28T08:51:44.401258+00:00",
-  "updated_at": "2026-08-28T10:28:02.207741+00:00",
+  "updated_at": "2026-08-28T10:29:05.248021+00:00",
   "candidate_results": {
     "cand_A": {
-      "run_id": "run_a12c20c8",
-      "timestamp": "2026-08-28T10:28:02.220586+00:00",
+      "run_id": "run_f0efbfdf",
+      "timestamp": "2026-08-28T10:29:05.258786+00:00",
       "profile": {
         "candidate_id": "cand_A",
         "candidate_name": "Rohan Malhotra",
@@ -133,6 +133,42 @@
               "location": "Skills Section",
               "quote_snippet": "Proficient in Kubernetes"
             }
+          },
+          {
+            "skill_name": "OCR",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in OCR"
+            }
+          },
+          {
+            "skill_name": "RAG",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in RAG"
+            }
+          },
+          {
+            "skill_name": "Vector Search",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in Vector Search"
+            }
+          },
+          {
+            "skill_name": "LLM",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in LLM"
+            }
           }
         ],
         "experiences": [
@@ -176,91 +212,123 @@
             }
           }
         ],
-        "claims": [],
+        "claims": [
+          {
+            "claim_type": "Technical Contribution",
+            "description": "Q1 (Interviewer): Walk me through the exception-handling engine you built at Voltrix.",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "Q1 (Interviewer): Walk me through the exception-handling engine you built at Voltrix."
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "A1: It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "A1: It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then dou"
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "A6: I designed it. Priya did a lot of the implementation, I reviewed her PRs. I was the architect.",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "A6: I designed it. Priya did a lot of the implementation, I reviewed her PRs. I was the architect."
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "Q7 (Skeptic follow-up): Your resume says “sole architect.” But it sounds like Priya built a lot of it. Can you clarify?",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "Q7 (Skeptic follow-up): Your resume says “sole architect.” But it sounds like Priya built a lot of i"
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "A7: Fine — “sole architect” is probably too strong. I led the design, she built most of the production version.",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "A7: Fine — “sole architect” is probably too strong. I led the design, she built most of the producti"
+            }
+          }
+        ],
         "quote_bank": [
           {
-            "id": "q_tr_1",
-            "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-            "topic": "Interview Answer",
-            "location": "transcript line 1",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_2",
+            "id": "q_1",
             "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-            "topic": "Interview Answer",
-            "location": "transcript line 2",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_3",
-            "quote": "What made you choose that structure over a simpler rule-based system?",
-            "topic": "Interview Answer",
-            "location": "transcript line 3",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_4",
-            "quote": "Rules don’t scale. Too many failure types — timeouts, bad EDI, missing BOL fields. Agents handle that better.",
-            "topic": "Interview Answer",
+            "topic": "Technical Experience",
             "location": "transcript line 4",
-            "speaker": null
+            "speaker": "Rohan Malhotra"
           },
           {
-            "id": "q_tr_5",
-            "quote": "How do you measure whether the reviewer agent is actually catching real problems?",
-            "topic": "Interview Answer",
+            "id": "q_2",
+            "quote": "whole retry/escalation logic.",
+            "topic": "Technical Experience",
             "location": "transcript line 5",
-            "speaker": null
+            "speaker": "Rohan Malhotra"
           },
           {
-            "id": "q_tr_6",
-            "quote": "We track override rate. It’s low. I’d have to check the exact number though, haven’t looked recently.",
-            "topic": "Interview Answer",
-            "location": "transcript line 6",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_7",
-            "quote": "What’s your approach to model routing?",
-            "topic": "Interview Answer",
+            "id": "q_3",
+            "quote": "Rules don’t scale. Too many failure types — timeouts, bad EDI, missing BOL fields. Agents handle that better.",
+            "topic": "Technical Experience",
             "location": "transcript line 7",
-            "speaker": null
+            "speaker": "Rohan Malhotra"
           },
           {
-            "id": "q_tr_8",
-            "quote": "Cost-based. Simple stuff to the SLM, harder reasoning to GPT-4. No formal study, just tuned it as things broke.",
-            "topic": "Interview Answer",
-            "location": "transcript line 8",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_9",
-            "quote": "Tell me about a time you disagreed with a teammate on a technical decision.",
-            "topic": "Interview Answer",
+            "id": "q_4",
+            "quote": "We track override rate. It’s low. I’d have to check the exact number though, haven’t looked recently.",
+            "topic": "Technical Experience",
             "location": "transcript line 9",
-            "speaker": null
+            "speaker": "Rohan Malhotra"
           },
           {
-            "id": "q_tr_10",
-            "quote": "Teammate wanted to hardcode more categories up front. I pushed for the agent approach. We went with mine.",
-            "topic": "Interview Answer",
-            "location": "transcript line 10",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_11",
-            "quote": "Who actually wrote the retry/escalation logic that’s in production now?",
-            "topic": "Interview Answer",
+            "id": "q_5",
+            "quote": "Cost-based. Simple stuff to the SLM, harder reasoning to GPT-4. No formal study, just tuned it as things broke.",
+            "topic": "Technical Experience",
             "location": "transcript line 11",
-            "speaker": null
+            "speaker": "Rohan Malhotra"
           },
           {
-            "id": "q_tr_12",
+            "id": "q_6",
+            "quote": "Teammate wanted to hardcode more categories up front. I pushed for the agent approach. We went with mine.",
+            "topic": "Technical Experience",
+            "location": "transcript line 14",
+            "speaker": "Rohan Malhotra"
+          },
+          {
+            "id": "q_7",
             "quote": "I designed it. Priya did a lot of the implementation, I reviewed her PRs. I was the architect.",
-            "topic": "Interview Answer",
-            "location": "transcript line 12",
-            "speaker": null
+            "topic": "Technical Experience",
+            "location": "transcript line 16",
+            "speaker": "Rohan Malhotra"
+          },
+          {
+            "id": "q_8",
+            "quote": "Fine — “sole architect” is probably too strong. I led the design, she built most of the production version.",
+            "topic": "Technical Experience",
+            "location": "transcript line 18",
+            "speaker": "Rohan Malhotra"
+          },
+          {
+            "id": "q_9",
+            "quote": "Ownership / Hiring Manager Section",
+            "topic": "Technical Experience",
+            "location": "transcript line 19",
+            "speaker": "Rohan Malhotra"
+          },
+          {
+            "id": "q_10",
+            "quote": "I move fast. I’ve built something structurally close to this already. I don’t think I’d need much ramp time.",
+            "topic": "Technical Experience",
+            "location": "transcript line 21",
+            "speaker": "Rohan Malhotra"
           }
         ],
         "raw_resume_text": "Rohan Malhotra\nSenior AI/Backend Engineer\nSummary\nAI engineer with 3.5 years of experience building multi-agent LLM systems and Python backends. Led design of a\nproduction agent platform now handling thousands of daily freight exceptions. Known for moving fast and shipping under\npressure.\nExperience\nSenior AI Engineer — Voltrix Logistics Tech (Jan 2025 – Present, 7 months)\n•\nDesigned and built the exception-handling engine end-to-end for Voltrix’s multi-agent freight ops platform\n(planner/executor/reviewer pattern), cutting manual exception review time by 40%.\n•\nOwned prompt design and model routing across GPT-4 and open-weight SLMs, reducing inference cost by ~30%.\n•\nSole architect of the retry/escalation logic now running in production, handling 5,000+ freight exceptions/month.\n•\nPresented the system design at a company-wide tech talk.\nAI Engineer — Quickship Data Systems (Feb 2024 – Dec 2024, 11 months)\n•\nBuilt a RAG pipeline over carrier rate documents using LangChain + Pinecone, cutting manual rate lookup time\nsignificantly.\n•\nImproved BOL/invoice extraction accuracy through better OCR pre-processing.\nBackend Developer — Nimbus Cloud Solutions (Aug 2022 – Jan 2024, 1.5 years)\n•\nBuilt Python microservices for a SaaS analytics product used by 50+ enterprise clients.\n•\nLed a 4-person team migrating a legacy monolith to microservices.\nSkills\nPython, FastAPI, LangGraph, CrewAI, MongoDB, React (basic), RAG, Vector Search (Pinecone, FAISS), Prompt\nEngineering, Docker, Kubernetes\nEducation\nB.Tech Computer Science, 2022\nCertifications\n•\nLangChain for LLM Application Development (2024)",
@@ -276,16 +344,16 @@
             "reasoning": "Rohan Malhotra demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, React, MongoDB, RAG). Rule Enforced: Production experience with Go was marked as insufficient evidence without speculative scoring.",
             "supporting_quotes": [
               {
-                "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-                "source": "transcript line 1",
+                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                "source": "transcript line 4",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               },
               {
-                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-                "source": "transcript line 2",
+                "quote": "whole retry/escalation logic.",
+                "source": "transcript line 5",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -295,8 +363,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-                  "source": "transcript line 1",
+                  "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                  "source": "transcript line 4",
                   "verified": true,
                   "verification_note": null
                 }
@@ -322,15 +390,15 @@
             "supporting_quotes": [
               {
                 "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-                "source": "transcript line 2",
+                "source": "transcript line 4",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               },
               {
-                "quote": "Tell me about a time you disagreed with a teammate on a technical decision.",
-                "source": "transcript line 9",
+                "quote": "Teammate wanted to hardcode more categories up front. I pushed for the agent approach. We went with mine.",
+                "source": "transcript line 14",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -341,7 +409,7 @@
                 "reason": null,
                 "supporting_quote": {
                   "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-                  "source": "transcript line 2",
+                  "source": "transcript line 4",
                   "verified": true,
                   "verification_note": null
                 }
@@ -354,19 +422,19 @@
             "agent_name": "Hiring Manager Agent",
             "overall_score": 8.4,
             "verdict": "Hire",
-            "reasoning": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g. \"Walk me through the exception-handling engine you built at Voltrix.\").",
+            "reasoning": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g. \"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\").",
             "supporting_quotes": [
               {
-                "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-                "source": "transcript line 1",
+                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                "source": "transcript line 4",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               },
               {
-                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-                "source": "transcript line 2",
+                "quote": "I designed it. Priya did a lot of the implementation, I reviewed her PRs. I was the architect.",
+                "source": "transcript line 16",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -376,8 +444,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-                  "source": "transcript line 1",
+                  "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                  "source": "transcript line 4",
                   "verified": true,
                   "verification_note": null
                 }
@@ -393,10 +461,10 @@
             "reasoning": "DISCREPANCY DETECTED: Rohan Malhotra's resume claims contained exaggeration when probed in the interview.",
             "supporting_quotes": [
               {
-                "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-                "source": "transcript line 1",
+                "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                "source": "transcript line 4",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -406,8 +474,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-                  "source": "transcript line 1",
+                  "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+                  "source": "transcript line 4",
                   "verified": true,
                   "verification_note": null
                 }
@@ -428,7 +496,7 @@
             "responding_to": "Technical Agent & Hiring Manager Agent",
             "stance": "Disagree",
             "message": "I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.",
-            "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
+            "cites_quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the"
           },
           {
             "round_number": 1,
@@ -436,7 +504,7 @@
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
             "message": "Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.",
-            "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
+            "cites_quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the"
           },
           {
             "round_number": 2,
@@ -444,7 +512,7 @@
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
             "message": "Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).",
-            "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
+            "cites_quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the"
           }
         ],
         "stance_deltas": {
@@ -492,7 +560,7 @@
         "confidence": 0.8,
         "decision_rationale": "The evaluation panel reached a final recommendation of Lean No (80% confidence) for Rohan Malhotra applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.",
         "unresolved_disagreements": [
-          "Disagreement on production ownership vs experience gaps for Rohan Malhotra."
+          "Disagreement on deliverable depth vs experience limits for Rohan Malhotra."
         ],
         "not_assessed_dimensions": [
           {
@@ -515,26 +583,26 @@
         "confidence": 0.8,
         "strengths": [
           {
-            "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-            "source": "transcript line 1",
+            "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+            "source": "transcript line 4",
+            "agent": "Technical Agent",
+            "explanation": "Rohan Malhotra demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, React, ..."
+          },
+          {
+            "quote": "whole retry/escalation logic.",
+            "source": "transcript line 5",
             "agent": "Technical Agent",
             "explanation": "Rohan Malhotra demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, React, ..."
           },
           {
             "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-            "source": "transcript line 2",
-            "agent": "Technical Agent",
-            "explanation": "Rohan Malhotra demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, React, ..."
-          },
-          {
-            "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-            "source": "transcript line 1",
+            "source": "transcript line 4",
             "agent": "Hiring Manager Agent",
             "explanation": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (..."
           },
           {
-            "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-            "source": "transcript line 2",
+            "quote": "I designed it. Priya did a lot of the implementation, I reviewed her PRs. I was the architect.",
+            "source": "transcript line 16",
             "agent": "Hiring Manager Agent",
             "explanation": "Rohan Malhotra presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (..."
           }
@@ -542,19 +610,19 @@
         "concerns": [
           {
             "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
-            "source": "transcript line 2",
+            "source": "transcript line 4",
             "agent": "HR / Culture Agent",
             "explanation": "Rohan Malhotra exhibits potential job retention or alignment risks based on interview responses...."
           },
           {
-            "quote": "Tell me about a time you disagreed with a teammate on a technical decision.",
-            "source": "transcript line 9",
+            "quote": "Teammate wanted to hardcode more categories up front. I pushed for the agent approach. We went with mine.",
+            "source": "transcript line 14",
             "agent": "HR / Culture Agent",
             "explanation": "Rohan Malhotra exhibits potential job retention or alignment risks based on interview responses...."
           },
           {
-            "quote": "Walk me through the exception-handling engine you built at Voltrix.",
-            "source": "transcript line 1",
+            "quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the",
+            "source": "transcript line 4",
             "agent": "Skeptic Agent",
             "explanation": "DISCREPANCY DETECTED: Rohan Malhotra's resume claims contained exaggeration when probed in the interview...."
           }
@@ -605,7 +673,7 @@
           }
         ],
         "unresolved_disagreements": [
-          "Disagreement on production ownership vs experience gaps for Rohan Malhotra."
+          "Disagreement on deliverable depth vs experience limits for Rohan Malhotra."
         ],
         "debate_highlights": [
           {
@@ -614,7 +682,7 @@
             "responding_to": "Technical Agent & Hiring Manager Agent",
             "stance": "Disagree",
             "message": "I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.",
-            "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
+            "cites_quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the"
           },
           {
             "round_number": 1,
@@ -622,7 +690,7 @@
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
             "message": "Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.",
-            "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
+            "cites_quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the"
           },
           {
             "round_number": 2,
@@ -630,16 +698,16 @@
             "responding_to": "Skeptic Agent",
             "stance": "Revise",
             "message": "Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).",
-            "cites_quote": "Walk me through the exception-handling engine you built at Voltrix."
+            "cites_quote": "It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the"
           }
         ],
-        "markdown_content": "# Candidate Evaluation Report: Rohan Malhotra\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Lean No` | **Confidence Level:** `80%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Lean No (80% confidence) for Rohan Malhotra applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Lean Hire (8.2) | Yes | Downward revision after Skeptic highlighted discrepancy in interview responses. |\n| HR / Culture Agent | Lean No (6.0) | Lean No (6.0) | No | Position maintained. |\n| Hiring Manager Agent | Hire (8.4) | Lean Hire (7.4) | Yes | Downward revision after Skeptic highlighted discrepancy in interview responses. |\n| Skeptic Agent | Lean No (4.5) | Lean No (4.5) | No | Position maintained. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n- **[Technical Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n- **[Hiring Manager Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n- **[Hiring Manager Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[HR / Culture Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"Tell me about a time you disagreed with a teammate on a technical decision.\"* (transcript line 9)\n- **[Skeptic Agent]** *\"Walk me through the exception-handling engine you built at Voltrix.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Go**: No verified source quotes found in candidate profile/transcript for Production Experience with Go.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Skeptic Agent** (responding to *Technical Agent & Hiring Manager Agent*) [Disagree]:\n> \"I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.\"\n\n**Round 1 - Technical Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.\"\n\n**Round 2 - Hiring Manager Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).\"\n"
+        "markdown_content": "# Candidate Evaluation Report: Rohan Malhotra\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Lean No` | **Confidence Level:** `80%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Lean No (80% confidence) for Rohan Malhotra applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Lean Hire (8.2) | Yes | Downward revision after Skeptic highlighted discrepancy in interview responses. |\n| HR / Culture Agent | Lean No (6.0) | Lean No (6.0) | No | Position maintained. |\n| Hiring Manager Agent | Hire (8.4) | Lean Hire (7.4) | Yes | Downward revision after Skeptic highlighted discrepancy in interview responses. |\n| Skeptic Agent | Lean No (4.5) | Lean No (4.5) | No | Position maintained. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 4)\n- **[Technical Agent]** *\"whole retry/escalation logic.\"* (transcript line 5)\n- **[Hiring Manager Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 4)\n- **[Hiring Manager Agent]** *\"I designed it. Priya did a lot of the implementation, I reviewed her PRs. I was the architect.\"* (transcript line 16)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[HR / Culture Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 4)\n- **[HR / Culture Agent]** *\"Teammate wanted to hardcode more categories up front. I pushed for the agent approach. We went with mine.\"* (transcript line 14)\n- **[Skeptic Agent]** *\"It’s planner-executor-reviewer. Failures come in, get classified, retried or escalated, then double-checked. I designed the\"* (transcript line 4)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Go**: No verified source quotes found in candidate profile/transcript for Production Experience with Go.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Skeptic Agent** (responding to *Technical Agent & Hiring Manager Agent*) [Disagree]:\n> \"I must challenge Rohan Malhotra's resume claims. Probing in the interview revealed discrepancy between claimed depth and actual implementation role.\"\n\n**Round 1 - Technical Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.\"\n\n**Round 2 - Hiring Manager Agent** (responding to *Skeptic Agent*) [Revise]:\n> \"Agreed. Claim inflation introduces execution risk for deliverable goals in AI Engineer — Agentic Systems (Freight Operations).\"\n"
       },
-      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_a12c20c8.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_f0efbfdf.mp3"
     },
     "cand_B": {
-      "run_id": "run_b656fa3e",
-      "timestamp": "2026-08-28T10:28:02.222412+00:00",
+      "run_id": "run_97018088",
+      "timestamp": "2026-08-28T10:29:05.260676+00:00",
       "profile": {
         "candidate_id": "cand_B",
         "candidate_name": "Ananya Iyer",
@@ -735,6 +803,42 @@
               "location": "Skills Section",
               "quote_snippet": "Proficient in Docker"
             }
+          },
+          {
+            "skill_name": "OCR",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in OCR"
+            }
+          },
+          {
+            "skill_name": "Tesseract",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in Tesseract"
+            }
+          },
+          {
+            "skill_name": "RAG",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in RAG"
+            }
+          },
+          {
+            "skill_name": "LLM",
+            "category": "Technical Skill",
+            "citation": {
+              "source_doc": "resume",
+              "location": "Skills Section",
+              "quote_snippet": "Proficient in LLM"
+            }
           }
         ],
         "experiences": [
@@ -754,99 +858,121 @@
         ],
         "claims": [
           {
-            "claim_type": "quantitative",
-            "description": "Metric claim: Your resume mentions a ~40% accuracy improvement. How was that measured?...",
+            "claim_type": "Technical Contribution",
+            "description": "Q1 (Interviewer): Tell me about the RAG pipeline you built for the support-ticket assistant.",
             "citation": {
               "source_doc": "transcript",
-              "location": "transcript Q3",
-              "quote_snippet": "Your resume mentions a ~40% accuracy improvement. How was that measured?"
+              "location": "Interview Q&A",
+              "quote_snippet": "Q1 (Interviewer): Tell me about the RAG pipeline you built for the support-ticket assistant."
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "A1: Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "A1: Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from "
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "A3: Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "A3: Not in production. I’ve read through the docs for both and built a small planner/executor toy pr"
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "Q5 (Interviewer): Tell me about a mistake you made and how you handled it.",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "Q5 (Interviewer): Tell me about a mistake you made and how you handled it."
+            }
+          },
+          {
+            "claim_type": "Technical Contribution",
+            "description": "so nothing stopped me. It caused a spike in bad responses for about two hours before we caught it and rolled back.",
+            "citation": {
+              "source_doc": "transcript",
+              "location": "Interview Q&A",
+              "quote_snippet": "so nothing stopped me. It caused a spike in bad responses for about two hours before we caught it an"
             }
           }
         ],
         "quote_bank": [
           {
-            "id": "q_tr_1",
-            "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-            "topic": "Interview Answer",
-            "location": "transcript line 1",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_2",
+            "id": "q_1",
             "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
-            "topic": "Interview Answer",
-            "location": "transcript line 2",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_3",
-            "quote": "Your resume mentions a ~40% accuracy improvement. How was that measured?",
-            "topic": "Interview Answer",
-            "location": "transcript line 3",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_4",
-            "quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a",
-            "topic": "Interview Answer",
+            "topic": "Technical Experience",
             "location": "transcript line 4",
-            "speaker": null
+            "speaker": "Ananya Iyer"
           },
           {
-            "id": "q_tr_5",
-            "quote": "Have you worked with multi-agent orchestration frameworks — LangGraph, CrewAI?",
-            "topic": "Interview Answer",
+            "id": "q_2",
+            "quote": "and internal docs. The top few matches get passed to the LLM, which drafts a response for a human agent to review before it",
+            "topic": "Technical Experience",
             "location": "transcript line 5",
-            "speaker": null
+            "speaker": "Ananya Iyer"
           },
           {
-            "id": "q_tr_6",
-            "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-            "topic": "Interview Answer",
+            "id": "q_3",
+            "quote": "goes out. We chunked documents by section rather than fixed length, since that kept related context together.",
+            "topic": "Technical Experience",
             "location": "transcript line 6",
-            "speaker": null
+            "speaker": "Ananya Iyer"
           },
           {
-            "id": "q_tr_7",
-            "quote": "How would you approach ramping up on multi-agent systems specifically?",
-            "topic": "Interview Answer",
-            "location": "transcript line 7",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_8",
-            "quote": "I’d start by reading through your existing planner/executor/reviewer code directly, rather than a general course, since the",
-            "topic": "Interview Answer",
+            "id": "q_4",
+            "quote": "I want to be upfront about this — it was based on internal review, not a formal benchmark. A few of us spot-checked a",
+            "topic": "Technical Experience",
             "location": "transcript line 8",
-            "speaker": null
+            "speaker": "Ananya Iyer"
           },
           {
-            "id": "q_tr_9",
-            "quote": "Tell me about a mistake you made and how you handled it.",
-            "topic": "Interview Answer",
+            "id": "q_5",
+            "quote": "sample of responses before and after the change and it felt clearly better, but I wouldn’t want to present that number as",
+            "topic": "Technical Experience",
             "location": "transcript line 9",
-            "speaker": null
+            "speaker": "Ananya Iyer"
           },
           {
-            "id": "q_tr_10",
-            "quote": "I pushed a prompt change to the support assistant straight to production — we didn’t have a review process at the time,",
-            "topic": "Interview Answer",
+            "id": "q_6",
+            "quote": "something rigorous if it comes up again.",
+            "topic": "Technical Experience",
             "location": "transcript line 10",
-            "speaker": null
+            "speaker": "Ananya Iyer"
           },
           {
-            "id": "q_tr_11",
-            "quote": "What did you do after that?",
-            "topic": "Interview Answer",
-            "location": "transcript line 11",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_12",
-            "quote": "A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t",
-            "topic": "Interview Answer",
+            "id": "q_7",
+            "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+            "topic": "Technical Experience",
             "location": "transcript line 12",
-            "speaker": null
+            "speaker": "Ananya Iyer"
+          },
+          {
+            "id": "q_8",
+            "quote": "everything I’ve actually shipped has been single-agent RAG. That’s a real gap relative to what this role needs, and I’d rather",
+            "topic": "Technical Experience",
+            "location": "transcript line 13",
+            "speaker": "Ananya Iyer"
+          },
+          {
+            "id": "q_9",
+            "quote": "say that clearly than talk around it.",
+            "topic": "Technical Experience",
+            "location": "transcript line 14",
+            "speaker": "Ananya Iyer"
+          },
+          {
+            "id": "q_10",
+            "quote": "I’d start by reading through your existing planner/executor/reviewer code directly, rather than a general course, since the",
+            "topic": "Technical Experience",
+            "location": "transcript line 16",
+            "speaker": "Ananya Iyer"
           }
         ],
         "raw_resume_text": "Ananya Iyer\nSoftware Engineer (Backend → AI)\nSummary\nBackend engineer with steady experience maintaining internal tools, recently moved into applied AI work. Comfortable with\nPython and standard web APIs; still building depth in AI-specific tooling.\nExperience\nSoftware Engineer II — Bridgepoint Systems (Jun 2021 – Present, 4 years)\n•\nMaintains Python/FastAPI microservices for an internal ops platform used by a few internal teams.\n•\nHelped migrate part of the document ingestion pipeline to use OCR-based extraction for scanned forms.\n•\nOver the last 1.5 years, started building an internal RAG-based support-ticket assistant: set up a retrieval pipeline\n(LangChain + Chroma); team estimated answer accuracy improved by around 40% based on informal review.\n•\nAfter a production incident (see interview), introduced a pre-deploy checklist for prompt changes that the team\nadopted.\nJunior Backend Developer — Bridgepoint Systems (Jul 2019 – Jun 2021, 2 years)\n•\nBuilt basic REST APIs for internal tooling.\n•\nWorked with QA and product to define API contracts.\nSkills\nPython, FastAPI, MongoDB, PostgreSQL, LangChain, Chroma, basic React, OCR pipelines (Tesseract), Docker\nEducation\nB.E. Information Technology, 2019\nNote\nHas not used multi-agent orchestration frameworks (LangGraph, CrewAI, AutoGen) in production — most LLM work to\ndate has been a single-agent RAG pipeline.",
@@ -862,16 +988,16 @@
             "reasoning": "Ananya Iyer demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, Go, React, MongoDB). Rule Enforced: Production experience with Vector Search was marked as insufficient evidence without speculative scoring.",
             "supporting_quotes": [
               {
-                "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-                "source": "transcript line 1",
+                "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+                "source": "transcript line 4",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               },
               {
-                "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
-                "source": "transcript line 2",
+                "quote": "and internal docs. The top few matches get passed to the LLM, which drafts a response for a human agent to review before it",
+                "source": "transcript line 5",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -881,8 +1007,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-                  "source": "transcript line 1",
+                  "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+                  "source": "transcript line 4",
                   "verified": true,
                   "verification_note": null
                 }
@@ -908,15 +1034,9 @@
             "supporting_quotes": [
               {
                 "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-                "source": "transcript line 6",
-                "verified": true,
-                "verification_note": "Verified in source documents"
-              },
-              {
-                "quote": "A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t",
                 "source": "transcript line 12",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -927,7 +1047,7 @@
                 "reason": null,
                 "supporting_quote": {
                   "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-                  "source": "transcript line 6",
+                  "source": "transcript line 12",
                   "verified": true,
                   "verification_note": null
                 }
@@ -940,19 +1060,19 @@
             "agent_name": "Hiring Manager Agent",
             "overall_score": 8.4,
             "verdict": "Hire",
-            "reasoning": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g. \"Tell me about the RAG pipeline you built for the support-ticket assistant.\").",
+            "reasoning": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g. \"Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets\").",
             "supporting_quotes": [
               {
-                "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-                "source": "transcript line 1",
+                "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+                "source": "transcript line 4",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               },
               {
-                "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
-                "source": "transcript line 2",
+                "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+                "source": "transcript line 12",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -962,8 +1082,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-                  "source": "transcript line 1",
+                  "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+                  "source": "transcript line 4",
                   "verified": true,
                   "verification_note": null
                 }
@@ -980,9 +1100,15 @@
             "supporting_quotes": [
               {
                 "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-                "source": "transcript line 6",
+                "source": "transcript line 12",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
+              },
+              {
+                "quote": "everything I’ve actually shipped has been single-agent RAG. That’s a real gap relative to what this role needs, and I’d rather",
+                "source": "transcript line 13",
+                "verified": true,
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -993,7 +1119,7 @@
                 "reason": null,
                 "supporting_quote": {
                   "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-                  "source": "transcript line 6",
+                  "source": "transcript line 12",
                   "verified": true,
                   "verification_note": null
                 }
@@ -1014,7 +1140,7 @@
             "responding_to": "Hiring Manager Agent",
             "stance": "Reinforce",
             "message": "Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).",
-            "cites_quote": "Tell me about the RAG pipeline you built for the support-ticket assistant."
+            "cites_quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets"
           },
           {
             "round_number": 1,
@@ -1099,38 +1225,32 @@
         "confidence": 0.88,
         "strengths": [
           {
-            "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-            "source": "transcript line 1",
+            "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+            "source": "transcript line 4",
             "agent": "Technical Agent",
             "explanation": "Ananya Iyer demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, Go, React,..."
           },
           {
-            "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
-            "source": "transcript line 2",
+            "quote": "and internal docs. The top few matches get passed to the LLM, which drafts a response for a human agent to review before it",
+            "source": "transcript line 5",
             "agent": "Technical Agent",
             "explanation": "Ananya Iyer demonstrates technical alignment with 7 of 8 core required skills in the Job Description (Python, Go, React,..."
           },
           {
             "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-            "source": "transcript line 6",
-            "agent": "HR / Culture Agent",
-            "explanation": "Ananya Iyer demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Not in produc..."
-          },
-          {
-            "quote": "A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t",
             "source": "transcript line 12",
             "agent": "HR / Culture Agent",
             "explanation": "Ananya Iyer demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"Not in produc..."
           },
           {
-            "quote": "Tell me about the RAG pipeline you built for the support-ticket assistant.",
-            "source": "transcript line 1",
+            "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
+            "source": "transcript line 4",
             "agent": "Hiring Manager Agent",
             "explanation": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g..."
           },
           {
-            "quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets",
-            "source": "transcript line 2",
+            "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
+            "source": "transcript line 12",
             "agent": "Hiring Manager Agent",
             "explanation": "Ananya Iyer presents a strong execution and delivery profile for AI Engineer — Agentic Systems (Freight Operations) (e.g..."
           }
@@ -1138,7 +1258,13 @@
         "concerns": [
           {
             "quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but",
-            "source": "transcript line 6",
+            "source": "transcript line 12",
+            "agent": "Skeptic Agent",
+            "explanation": "Ananya Iyer acknowledged specific technical experience limits in interview responses without inflating claims (e.g. \"Not..."
+          },
+          {
+            "quote": "everything I’ve actually shipped has been single-agent RAG. That’s a real gap relative to what this role needs, and I’d rather",
+            "source": "transcript line 13",
             "agent": "Skeptic Agent",
             "explanation": "Ananya Iyer acknowledged specific technical experience limits in interview responses without inflating claims (e.g. \"Not..."
           }
@@ -1196,7 +1322,7 @@
             "responding_to": "Hiring Manager Agent",
             "stance": "Reinforce",
             "message": "Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).",
-            "cites_quote": "Tell me about the RAG pipeline you built for the support-ticket assistant."
+            "cites_quote": "Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets"
           },
           {
             "round_number": 1,
@@ -1215,14 +1341,14 @@
             "cites_quote": "Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but"
           }
         ],
-        "markdown_content": "# Candidate Evaluation Report: Ananya Iyer\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Hire` | **Confidence Level:** `88%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Hire (88% confidence) for Ananya Iyer applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Hire (9.2) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Lean Hire (6.0) | Lean Hire (6.0) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Tell me about the RAG pipeline you built for the support-ticket assistant.\"* (transcript line 1)\n- **[Technical Agent]** *\"Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 6)\n- **[HR / Culture Agent]** *\"A few things. First, I ran an incident retro with the team and was direct that it was my mistake in the writeup — I didn’t\"* (transcript line 12)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 6)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Vector Search**: No verified source quotes found in candidate profile/transcript for Production Experience with Vector Search.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Ananya Iyer's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Ananya Iyer's communication and transparency in source documents provide high confidence in team integration.\"\n"
+        "markdown_content": "# Candidate Evaluation Report: Ananya Iyer\n**Target Role:** AI Engineer — Agentic Systems (Freight Operations) (Senior)  \n**Final Recommendation:** `Hire` | **Confidence Level:** `88%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Hire (88% confidence) for Ananya Iyer applying for AI Engineer — Agentic Systems (Freight Operations). Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. Rule Enforced: 1 unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing.\n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.2) | Hire (9.2) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Lean Hire (6.0) | Lean Hire (6.0) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets\"* (transcript line 4)\n- **[Technical Agent]** *\"and internal docs. The top few matches get passed to the LLM, which drafts a response for a human agent to review before it\"* (transcript line 5)\n- **[HR / Culture Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 12)\n- **[Hiring Manager Agent]** *\"Sure — happy to walk through it step by step. We retrieve from a Chroma vector store built from past resolved tickets\"* (transcript line 4)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Not in production. I’ve read through the docs for both and built a small planner/executor toy project on my own time, but\"* (transcript line 12)\n- **[Skeptic Agent]** *\"everything I’ve actually shipped has been single-agent RAG. That’s a real gap relative to what this role needs, and I’d rather\"* (transcript line 13)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- ❓ **[Technical Agent] Production Experience with Vector Search**: No verified source quotes found in candidate profile/transcript for Production Experience with Vector Search.\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Ananya Iyer's technical evidence directly aligns with primary deliverables required for AI Engineer — Agentic Systems (Freight Operations).\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Ananya Iyer's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Ananya Iyer's communication and transparency in source documents provide high confidence in team integration.\"\n"
       },
-      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_b656fa3e.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_97018088.mp3"
     }
   },
   "stage6_comparison": {
     "batch_id": "batch_role_cargonet_ai",
-    "timestamp": "2026-08-28T10:28:02.228659+00:00",
+    "timestamp": "2026-08-28T10:29:05.266561+00:00",
     "job_description_title": "AI Engineer — Agentic Systems (Freight Operations)",
     "rankings": [
       {

@@ -4,6 +4,11 @@ from backend.schemas.models import (
 )
 
 class Stage4DecisionSynthesizerV2:
+    """
+    Stage 4 Judge Decision Synthesizer.
+    Calculates non-averaged evidence quality weights (W_agent) based on quote verification,
+    persona confidence, and post-debate stance stability to synthesize the final decision.
+    """
     @staticmethod
     def synthesize_decision(
         profile: CandidateProfile,
@@ -11,8 +16,20 @@ class Stage4DecisionSynthesizerV2:
         opinions: IndependentOpinionsV2,
         debate: DebateState
     ) -> FinalDecision:
+        """
+        Synthesizes the final decision for a candidate.
+
+        Args:
+            profile (CandidateProfile): Candidate profile object.
+            jd (JobDescription): Target Job Description object.
+            opinions (IndependentOpinionsV2): Stage 2 isolated agent opinions.
+            debate (DebateState): Stage 3 debate state object.
+
+        Returns:
+            FinalDecision: Synthesized decision object with evidence weights and rationale.
+        """
         cand_name = profile.candidate_name
-        
+
         weights: Dict[str, float] = {}
         for name, op in opinions.opinions.items():
             base_w = op.confidence
@@ -60,8 +77,8 @@ class Stage4DecisionSynthesizerV2:
             rationale += f"Rule Enforced: {len(not_assessed)} unmentioned requirement dimension(s) were explicitly marked as insufficient evidence without speculative score guessing."
 
         unresolved = []
-        if avg_score < 7.5 and avg_score >= 6.0:
-            unresolved.append(f"Disagreement on production ownership vs experience gaps for {cand_name}.")
+        if 6.0 <= avg_score < 7.5:
+            unresolved.append(f"Disagreement on deliverable depth vs experience limits for {cand_name}.")
 
         return FinalDecision(
             candidate_id=profile.candidate_id,

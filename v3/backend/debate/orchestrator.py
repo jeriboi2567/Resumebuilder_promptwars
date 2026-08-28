@@ -5,12 +5,28 @@ from backend.schemas.models import (
 )
 
 class Stage3DebateOrchestratorV2:
+    """
+    Stage 3 Debate Orchestrator.
+    Orchestrates multi-turn deliberation across isolated persona agents,
+    identifying stance conflicts, generating turn dialogue, and tracking stance deltas.
+    """
     @staticmethod
     def run_debate(
         profile: CandidateProfile,
         jd: JobDescription,
         opinions: IndependentOpinionsV2
     ) -> DebateState:
+        """
+        Runs Stage 3 multi-turn debate across persona agents.
+
+        Args:
+            profile (CandidateProfile): Candidate profile object.
+            jd (JobDescription): Target Job Description object.
+            opinions (IndependentOpinionsV2): Stage 2 independent agent opinions.
+
+        Returns:
+            DebateState: The multi-turn debate state including turns and stance deltas.
+        """
         cand_name = profile.candidate_name
         turns: List[DebateTurn] = []
         stance_deltas: Dict[str, AgentStanceDelta] = {}
@@ -26,7 +42,6 @@ class Stage3DebateOrchestratorV2:
         sk_quote = sk_op.supporting_quotes[0].quote if sk_op and sk_op.supporting_quotes else f"{cand_name} profile audit"
 
         if sk_op and sk_op.overall_score and sk_op.overall_score <= 5.0:
-            # Skeptic detected claim exaggeration
             turns.append(DebateTurn(
                 round_number=1,
                 agent_name="Skeptic Agent",
@@ -40,7 +55,7 @@ class Stage3DebateOrchestratorV2:
                 agent_name="Technical Agent",
                 responding_to="Skeptic Agent",
                 stance="Revise",
-                message=f"Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.",
+                message="Skeptic raises a valid point regarding claim depth. I revise my rating down to Lean Hire.",
                 cites_quote=tech_quote
             ))
             turns.append(DebateTurn(
@@ -62,7 +77,7 @@ class Stage3DebateOrchestratorV2:
                         score_after=new_score,
                         verdict_after="Lean Hire" if new_score >= 6.5 else "Lean No",
                         changed=True,
-                        change_reason=f"Downward revision after Skeptic highlighted discrepancy in interview responses."
+                        change_reason="Downward revision after Skeptic highlighted discrepancy in interview responses."
                     )
                 else:
                     stance_deltas[name] = AgentStanceDelta(
@@ -76,7 +91,6 @@ class Stage3DebateOrchestratorV2:
                     )
 
         else:
-            # Standard dynamic deliberation exchange
             turns.append(DebateTurn(
                 round_number=1,
                 agent_name="Technical Agent",

@@ -1,19 +1,43 @@
 from abc import ABC, abstractmethod
-from typing import List, Tuple, Optional
+from typing import List, Tuple
 from backend.schemas.models import (
     CandidateProfile, JobDescription, AgentOpinionV2, SupportingQuote, DimensionEvaluation
 )
 from backend.profile_builder.builder import verify_quote_in_source
 
 class BaseAgentV2(ABC):
+    """
+    Abstract Base Agent class for Stage 2 isolated persona evaluation.
+    Provides verified quote verification and Section B insufficient evidence enforcement.
+    """
     def __init__(self, name: str):
         self.name = name
 
     @abstractmethod
     async def evaluate(self, profile: CandidateProfile, jd: JobDescription) -> AgentOpinionV2:
+        """
+        Evaluates a candidate profile against a Job Description in strict isolation.
+
+        Args:
+            profile (CandidateProfile): Candidate profile object.
+            jd (JobDescription): Target Job Description object.
+
+        Returns:
+            AgentOpinionV2: The agent persona's independent opinion.
+        """
         pass
 
     def validate_quotes(self, quotes: List[SupportingQuote], profile: CandidateProfile) -> List[SupportingQuote]:
+        """
+        Validates cited quotes against candidate source documents.
+
+        Args:
+            quotes (List[SupportingQuote]): Cited supporting quotes.
+            profile (CandidateProfile): Candidate profile object.
+
+        Returns:
+            List[SupportingQuote]: Validated supporting quotes with verification notes.
+        """
         validated: List[SupportingQuote] = []
         for q in quotes:
             is_valid, note = verify_quote_in_source(
@@ -36,6 +60,13 @@ class BaseAgentV2(ABC):
         Enforces Section B Rule:
         Any dimension that lacks verified source evidence MUST have insufficient_evidence=True
         and score=None with a reason string.
+
+        Args:
+            dimensions (List[DimensionEvaluation]): Dimension evaluations list.
+            profile (CandidateProfile): Candidate profile object.
+
+        Returns:
+            Tuple[List[DimensionEvaluation], List[str]]: Validated dimensions and unassessed names list.
         """
         validated_dims: List[DimensionEvaluation] = []
         insufficient_names: List[str] = []
@@ -52,7 +83,7 @@ class BaseAgentV2(ABC):
                 validated_dims.append(dim_obj)
                 insufficient_names.append(dim.dimension_name)
             else:
-                is_valid, note = verify_quote_in_source(
+                is_valid, _ = verify_quote_in_source(
                     dim.supporting_quote.quote,
                     profile.raw_resume_text,
                     profile.raw_transcript_text

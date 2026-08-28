@@ -19,11 +19,11 @@
     "raw_text": "\n    JOB DESCRIPTION: Principal Cloud Infrastructure Architect\n    Company: Skyline Cloud Systems\n    Role: Build scalable Kubernetes clusters, Terraform infrastructure, and high-throughput Go gRPC services.\n    Required Skills: Go, Kubernetes, Terraform, gRPC, AWS\n    Responsibilities:\n    - Architect multi-region EKS Kubernetes clusters.\n    - Automate infrastructure provisioning using Terraform.\n    Qualifications:\n    - 7+ years of cloud platform engineering experience.\n    "
   },
   "created_at": "2026-08-28T08:51:44.073376+00:00",
-  "updated_at": "2026-08-28T10:28:02.112277+00:00",
+  "updated_at": "2026-08-28T10:29:05.150892+00:00",
   "candidate_results": {
     "cand_jordan": {
-      "run_id": "run_4b58e857",
-      "timestamp": "2026-08-28T10:28:02.123873+00:00",
+      "run_id": "run_0ad2d35b",
+      "timestamp": "2026-08-28T10:29:05.170293+00:00",
       "profile": {
         "candidate_id": "cand_jordan",
         "candidate_name": "Jordan Hayes",
@@ -82,45 +82,21 @@
             }
           }
         ],
-        "claims": [
-          {
-            "claim_type": "quantitative",
-            "description": "Metric claim: A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, ...",
-            "citation": {
-              "source_doc": "transcript",
-              "location": "transcript Q4",
-              "quote_snippet": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
-            }
-          }
-        ],
+        "claims": [],
         "quote_bank": [
           {
-            "id": "q_tr_1",
-            "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-            "topic": "Interview Answer",
-            "location": "transcript line 1",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_2",
+            "id": "q_1",
             "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
-            "topic": "Interview Answer",
-            "location": "transcript line 2",
-            "speaker": null
-          },
-          {
-            "id": "q_tr_3",
-            "quote": "Tell us about a production incident you owned.",
-            "topic": "Interview Answer",
+            "topic": "Technical Experience",
             "location": "transcript line 3",
-            "speaker": null
+            "speaker": "Jordan Hayes"
           },
           {
-            "id": "q_tr_4",
-            "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
-            "topic": "Interview Answer",
-            "location": "transcript line 4",
-            "speaker": null
+            "id": "q_2",
+            "quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
+            "topic": "Technical Experience",
+            "location": "transcript line 5",
+            "speaker": "Jordan Hayes"
           }
         ],
         "raw_resume_text": "\n    JORDAN HAYES\n    Principal Cloud Engineer\n    Experience:\n    - Lead Cloud Architect — Nexa Systems (2022-Present): Built multi-region EKS clusters serving 50M requests/day using Terraform and Go gRPC.\n    Skills: Go, Kubernetes, Terraform, gRPC, AWS, Docker\n    ",
@@ -136,16 +112,16 @@
             "reasoning": "Jordan Hayes demonstrates technical alignment with 3 of 3 core required skills in the Job Description (Go, Kubernetes, AWS). Candidate has verified evidence across all primary technical requirements.",
             "supporting_quotes": [
               {
-                "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-                "source": "transcript line 1",
+                "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+                "source": "transcript line 3",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               },
               {
-                "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
-                "source": "transcript line 2",
+                "quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
+                "source": "transcript line 5",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -155,8 +131,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-                  "source": "transcript line 1",
+                  "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+                  "source": "transcript line 3",
                   "verified": true,
                   "verification_note": null
                 }
@@ -169,13 +145,13 @@
             "agent_name": "HR / Culture Agent",
             "overall_score": 9.0,
             "verdict": "Strong Hire",
-            "reasoning": "Jordan Hayes demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\").",
+            "reasoning": "Jordan Hayes demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\").",
             "supporting_quotes": [
               {
-                "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
-                "source": "transcript line 4",
+                "quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
+                "source": "transcript line 5",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -185,8 +161,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
-                  "source": "transcript line 4",
+                  "quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
+                  "source": "transcript line 5",
                   "verified": true,
                   "verification_note": null
                 }
@@ -199,13 +175,13 @@
             "agent_name": "Hiring Manager Agent",
             "overall_score": 8.4,
             "verdict": "Hire",
-            "reasoning": "Jordan Hayes presents a strong execution and delivery profile for Principal Cloud Infrastructure Architect (e.g. \"Walk us through your multi-region Kubernetes deployment with Terraform.\").",
+            "reasoning": "Jordan Hayes presents a strong execution and delivery profile for Principal Cloud Infrastructure Architect (e.g. \"We deployed Terraform modules across 3 AWS regions with EKS.\").",
             "supporting_quotes": [
               {
-                "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-                "source": "transcript line 1",
+                "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+                "source": "transcript line 3",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -215,8 +191,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-                  "source": "transcript line 1",
+                  "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+                  "source": "transcript line 3",
                   "verified": true,
                   "verification_note": null
                 }
@@ -232,10 +208,10 @@
             "reasoning": "Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents.",
             "supporting_quotes": [
               {
-                "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-                "source": "transcript line 1",
+                "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+                "source": "transcript line 3",
                 "verified": true,
-                "verification_note": "Verified in source documents"
+                "verification_note": "Verified in Candidate Interview Transcript."
               }
             ],
             "dimension_evaluations": [
@@ -245,8 +221,8 @@
                 "insufficient_evidence": false,
                 "reason": null,
                 "supporting_quote": {
-                  "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-                  "source": "transcript line 1",
+                  "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+                  "source": "transcript line 3",
                   "verified": true,
                   "verification_note": null
                 }
@@ -267,7 +243,7 @@
             "responding_to": "Hiring Manager Agent",
             "stance": "Reinforce",
             "message": "Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.",
-            "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
+            "cites_quote": "We deployed Terraform modules across 3 AWS regions with EKS."
           },
           {
             "round_number": 1,
@@ -275,7 +251,7 @@
             "responding_to": "Technical Agent",
             "stance": "Disagree",
             "message": "Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.",
-            "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
+            "cites_quote": "We deployed Terraform modules across 3 AWS regions with EKS."
           },
           {
             "round_number": 2,
@@ -283,7 +259,7 @@
             "responding_to": "Skeptic Agent",
             "stance": "Agree",
             "message": "Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.",
-            "cites_quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
+            "cites_quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
           }
         ],
         "stance_deltas": {
@@ -346,40 +322,40 @@
         "confidence": 0.95,
         "strengths": [
           {
-            "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-            "source": "transcript line 1",
+            "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+            "source": "transcript line 3",
             "agent": "Technical Agent",
             "explanation": "Jordan Hayes demonstrates technical alignment with 3 of 3 core required skills in the Job Description (Go, Kubernetes, A..."
+          },
+          {
+            "quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
+            "source": "transcript line 5",
+            "agent": "Technical Agent",
+            "explanation": "Jordan Hayes demonstrates technical alignment with 3 of 3 core required skills in the Job Description (Go, Kubernetes, A..."
+          },
+          {
+            "quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
+            "source": "transcript line 5",
+            "agent": "HR / Culture Agent",
+            "explanation": "Jordan Hayes demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"terraform dr..."
           },
           {
             "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
-            "source": "transcript line 2",
-            "agent": "Technical Agent",
-            "explanation": "Jordan Hayes demonstrates technical alignment with 3 of 3 core required skills in the Job Description (Go, Kubernetes, A..."
-          },
-          {
-            "quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.",
-            "source": "transcript line 4",
-            "agent": "HR / Culture Agent",
-            "explanation": "Jordan Hayes demonstrates high professional accountability, team collaboration, and learning mindset (e.g. \"A terraform ..."
-          },
-          {
-            "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-            "source": "transcript line 1",
+            "source": "transcript line 3",
             "agent": "Hiring Manager Agent",
-            "explanation": "Jordan Hayes presents a strong execution and delivery profile for Principal Cloud Infrastructure Architect (e.g. \"Walk u..."
+            "explanation": "Jordan Hayes presents a strong execution and delivery profile for Principal Cloud Infrastructure Architect (e.g. \"We dep..."
           },
           {
-            "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-            "source": "transcript line 1",
+            "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+            "source": "transcript line 3",
             "agent": "Skeptic Agent",
             "explanation": "Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents...."
           }
         ],
         "concerns": [
           {
-            "quote": "Walk us through your multi-region Kubernetes deployment with Terraform.",
-            "source": "transcript line 1",
+            "quote": "We deployed Terraform modules across 3 AWS regions with EKS.",
+            "source": "transcript line 3",
             "agent": "Skeptic Agent",
             "explanation": "Jordan Hayes's technical claims appear verified with low discrepancy risk across source documents...."
           }
@@ -431,7 +407,7 @@
             "responding_to": "Hiring Manager Agent",
             "stance": "Reinforce",
             "message": "Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.",
-            "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
+            "cites_quote": "We deployed Terraform modules across 3 AWS regions with EKS."
           },
           {
             "round_number": 1,
@@ -439,7 +415,7 @@
             "responding_to": "Technical Agent",
             "stance": "Disagree",
             "message": "Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.",
-            "cites_quote": "Walk us through your multi-region Kubernetes deployment with Terraform."
+            "cites_quote": "We deployed Terraform modules across 3 AWS regions with EKS."
           },
           {
             "round_number": 2,
@@ -447,17 +423,17 @@
             "responding_to": "Skeptic Agent",
             "stance": "Agree",
             "message": "Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.",
-            "cites_quote": "A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
+            "cites_quote": "terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership."
           }
         ],
-        "markdown_content": "# Candidate Evaluation Report: Jordan Hayes\n**Target Role:** Principal Cloud Infrastructure Architect (Senior)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Jordan Hayes applying for Principal Cloud Infrastructure Architect. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. \n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.5) | Hire (9.5) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Hire (7.5) | Hire (7.5) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n- **[Technical Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 2)\n- **[HR / Culture Agent]** *\"A terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 4)\n- **[Hiring Manager Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"Walk us through your multi-region Kubernetes deployment with Terraform.\"* (transcript line 1)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- *All JD evaluation dimensions had sufficient source evidence.*\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.\"\n"
+        "markdown_content": "# Candidate Evaluation Report: Jordan Hayes\n**Target Role:** Principal Cloud Infrastructure Architect (Senior)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Jordan Hayes applying for Principal Cloud Infrastructure Architect. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. \n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.5) | Hire (9.5) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Hire (7.5) | Hire (7.5) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 3)\n- **[Technical Agent]** *\"terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 5)\n- **[HR / Culture Agent]** *\"terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 5)\n- **[Hiring Manager Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 3)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 3)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- *All JD evaluation dimensions had sufficient source evidence.*\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.\"\n"
       },
-      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_4b58e857.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_0ad2d35b.mp3"
     }
   },
   "stage6_comparison": {
     "batch_id": "batch_role_skyline_cloud",
-    "timestamp": "2026-08-28T10:28:02.125742+00:00",
+    "timestamp": "2026-08-28T10:29:05.171993+00:00",
     "job_description_title": "Principal Cloud Infrastructure Architect",
     "rankings": [
       {
