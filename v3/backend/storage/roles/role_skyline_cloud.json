@@ -19,11 +19,11 @@
     "raw_text": "\n    JOB DESCRIPTION: Principal Cloud Infrastructure Architect\n    Company: Skyline Cloud Systems\n    Role: Build scalable Kubernetes clusters, Terraform infrastructure, and high-throughput Go gRPC services.\n    Required Skills: Go, Kubernetes, Terraform, gRPC, AWS\n    Responsibilities:\n    - Architect multi-region EKS Kubernetes clusters.\n    - Automate infrastructure provisioning using Terraform.\n    Qualifications:\n    - 7+ years of cloud platform engineering experience.\n    "
   },
   "created_at": "2026-08-28T08:51:44.073376+00:00",
-  "updated_at": "2026-08-28T10:30:43.781506+00:00",
+  "updated_at": "2026-08-28T10:33:33.820572+00:00",
   "candidate_results": {
     "cand_jordan": {
-      "run_id": "run_276ca4f8",
-      "timestamp": "2026-08-28T10:30:43.795011+00:00",
+      "run_id": "run_3c694d89",
+      "timestamp": "2026-08-28T10:33:33.830842+00:00",
       "profile": {
         "candidate_id": "cand_jordan",
         "candidate_name": "Jordan Hayes",
@@ -428,12 +428,12 @@
         ],
         "markdown_content": "# Candidate Evaluation Report: Jordan Hayes\n**Target Role:** Principal Cloud Infrastructure Architect (Senior)  \n**Final Recommendation:** `Strong Hire` | **Confidence Level:** `95%`\n\n---\n\n## 1. Executive Summary & Rationale\nThe evaluation panel reached a final recommendation of Strong Hire (95% confidence) for Jordan Hayes applying for Principal Cloud Infrastructure Architect. Evidence weighting factored quote verification, persona confidence, and post-debate stance shifts. \n\n---\n\n## 2. Agent Deliberation Summary\n| Agent Persona | Initial Verdict (Score) | Final Verdict (Score) | Position Changed? | Key Driver |\n|---|---|---|---|---|\n| Technical Agent | Hire (9.5) | Hire (9.5) | No | Position reinforced after reviewing cross-agent evidence. |\n| HR / Culture Agent | Strong Hire (9.0) | Strong Hire (9.0) | No | Position reinforced after reviewing cross-agent evidence. |\n| Hiring Manager Agent | Hire (8.4) | Hire (8.4) | No | Position reinforced after reviewing cross-agent evidence. |\n| Skeptic Agent | Hire (7.5) | Hire (7.5) | No | Position reinforced after reviewing cross-agent evidence. |\n\n---\n\n## 3. Verified Candidate Strengths\n- **[Technical Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 3)\n- **[Technical Agent]** *\"terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 5)\n- **[HR / Culture Agent]** *\"terraform drift caused a DNS outage. I ran an incident retro, updated our CI/CD pre-commit hooks, and took 100% ownership.\"* (transcript line 5)\n- **[Hiring Manager Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 3)\n\n---\n\n## 4. Key Concerns & Red Flags\n- **[Skeptic Agent]** *\"We deployed Terraform modules across 3 AWS regions with EKS.\"* (transcript line 3)\n\n---\n\n## 5. Not Assessed / Insufficient Evidence (Section B Rule)\nThe following evaluation dimensions contained no source quotes in the candidate profile/transcript and were not scored to prevent guesswork:\n- *All JD evaluation dimensions had sufficient source evidence.*\n\n---\n\n## 6. Debate Highlights\n**Round 1 - Technical Agent** (responding to *Hiring Manager Agent*) [Reinforce]:\n> \"Jordan Hayes's technical evidence directly aligns with primary deliverables required for Principal Cloud Infrastructure Architect.\"\n\n**Round 1 - Skeptic Agent** (responding to *Technical Agent*) [Disagree]:\n> \"Recommend verifying Jordan Hayes's hands-on depth during initial onboarding milestones.\"\n\n**Round 2 - HR / Culture Agent** (responding to *Skeptic Agent*) [Agree]:\n> \"Jordan Hayes's communication and transparency in source documents provide high confidence in team integration.\"\n"
       },
-      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_276ca4f8.mp3"
+      "audio_url": "F:\\Downloads\\Promptwars\\v3\\backend\\storage\\audio\\run_3c694d89.mp3"
     }
   },
   "stage6_comparison": {
     "batch_id": "batch_role_skyline_cloud",
-    "timestamp": "2026-08-28T10:30:43.797313+00:00",
+    "timestamp": "2026-08-28T10:33:35.667601+00:00",
     "job_description_title": "Principal Cloud Infrastructure Architect",
     "rankings": [
       {

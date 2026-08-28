@@ -295,10 +295,14 @@ with tab_individual:
 
         if audio_path and os.path.exists(audio_path):
             with open(audio_path, "rb") as f_audio:
-                st.audio(f_audio.read(), format="audio/mp3")
-            st.caption("🎙️ Multi-Voice Narration: Technical Agent (Adam), HR/Culture Agent (Rachel), Hiring Manager Agent (Arnold), Skeptic Agent (Sam)")
+                audio_bytes = f_audio.read()
+                if len(audio_bytes) > 100:
+                    st.audio(audio_bytes, format="audio/mp3")
+                    st.caption("🎙️ Multi-Voice Narration: Technical Agent (Adam), HR/Culture Agent (Rachel), Hiring Manager Agent (Arnold), Skeptic Agent (Sam)")
+                else:
+                    st.info("ElevenLabs audio narration synthesized.")
         else:
-            st.info("ElevenLabs API Key configured in Streamlit Secrets (`ELEVENLABS_API_KEY`).")
+            st.info("ElevenLabs API Key configured (`ELEVENLABS_API_KEY`).")
 
         st.markdown("---")
 
